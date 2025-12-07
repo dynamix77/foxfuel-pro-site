@@ -1,0 +1,1855 @@
+/**
+ * FOX FUEL B2B WEBSITE - SITEWIDE PRODUCTION STYLESHEET
+ *
+ * Version: 1.0.0
+ * Last Updated: December 2024
+ *
+ * This stylesheet provides unified design system implementation across:
+ * - Homepage_PRODUCTION.html
+ * - Services_Hub_PRODUCTION.html
+ * - Bulk_Fuel_Delivery_PRODUCTION.html
+ * - Fleet_Fueling_PRODUCTION.html
+ * - Jobsite_Fueling_PRODUCTION.html
+ * - Generator_Fueling_PRODUCTION.html
+ *
+ * Claude Skills Applied:
+ * - Skill #11: Frontend Design Implementation
+ * - Skill #14: Brand Guidelines Enforcement
+ * - Skill #10: Accessibility Standards (WCAG 2.1 AA)
+ * - Skill #29: CTA Styling & Conversion Logic
+ * - Skill #23: UX Responsiveness & Interaction Hierarchy
+ */
+
+/* ========================================================================
+   1. CSS CUSTOM PROPERTIES (DESIGN TOKENS) - Skill #14: Brand Guidelines
+   ======================================================================== */
+
+:root {
+  /* Brand Colors - Fox Fuel Orange & Supporting Palette */
+  --color-primary: #D2691E;              /* Fox Orange - primary brand color */
+  --color-primary-hover: #C55A0F;        /* Darker orange for hover states */
+  --color-primary-light: #FFE4CC;        /* Light orange for backgrounds */
+
+  --color-secondary: #2E7D32;            /* Green - success, trust indicators */
+  --color-secondary-hover: #1B5E20;
+
+  --color-emergency: #C62828;            /* Red - emergency CTAs */
+  --color-emergency-hover: #B71C1C;
+
+  --color-warning: #F57C00;              /* Amber - coming soon badges */
+  --color-info: #1976D2;                 /* Blue - informational elements */
+
+  /* Neutral Colors */
+  --color-gray-50: #FAFAFA;
+  --color-gray-100: #F5F5F5;
+  --color-gray-200: #EEEEEE;
+  --color-gray-300: #E0E0E0;
+  --color-gray-400: #BDBDBD;
+  --color-gray-500: #9E9E9E;
+  --color-gray-600: #757575;
+  --color-gray-700: #616161;
+  --color-gray-800: #424242;
+  --color-gray-900: #212121;
+
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+
+  /* Semantic Colors */
+  --color-text-primary: #333333;         /* Main body text */
+  --color-text-secondary: #666666;       /* Secondary text */
+  --color-text-muted: #999999;           /* Muted/disabled text */
+  --color-text-inverse: #FFFFFF;         /* Text on dark backgrounds */
+
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F5F5F5;
+  --color-bg-tertiary: #FAFAFA;
+
+  --color-border: #E0E0E0;
+  --color-border-light: #F0F0F0;
+
+  /* Typography */
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-headings: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;     /* 18px */
+  --font-size-xl: 1.25rem;      /* 20px */
+  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-3xl: 1.875rem;    /* 30px */
+  --font-size-4xl: 2.25rem;     /* 36px */
+  --font-size-5xl: 3rem;        /* 48px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Spacing Scale (8px base unit) */
+  --space-1: 0.25rem;    /* 4px */
+  --space-2: 0.5rem;     /* 8px */
+  --space-3: 0.75rem;    /* 12px */
+  --space-4: 1rem;       /* 16px */
+  --space-5: 1.25rem;    /* 20px */
+  --space-6: 1.5rem;     /* 24px */
+  --space-8: 2rem;       /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+  --space-20: 5rem;      /* 80px */
+  --space-24: 6rem;      /* 96px */
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* Breakpoints (Mobile-first) */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* Container Max-Width */
+  --container-max-width: 1200px;
+  --container-padding: 1rem;
+}
+
+/* ========================================================================
+   2. RESET & BASE STYLES - Normalize across browsers
+   ======================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  overflow-x: hidden;
+}
+
+/* ========================================================================
+   3. TYPOGRAPHY - Skill #14: Brand Guidelines
+   ======================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-headings);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-6);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+}
+
+h6 {
+  font-size: var(--font-size-base);
+}
+
+p {
+  margin-bottom: var(--space-4);
+}
+
+.subheadline {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+}
+
+.section-intro {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  max-width: 800px;
+  margin: 0 auto var(--space-8);
+  text-align: center;
+}
+
+strong {
+  font-weight: var(--font-weight-semibold);
+}
+
+em {
+  font-style: italic;
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-6);
+}
+
+li {
+  margin-bottom: var(--space-2);
+}
+
+/* Screen Reader Only - Skill #10: Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ========================================================================
+   4. LAYOUT PRIMITIVES - Container & Grid Systems
+   ======================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Skip Link - Skill #10: Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-2) var(--space-4);
+  text-decoration: none;
+  z-index: 10000;
+  font-weight: var(--font-weight-semibold);
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--color-white);
+  outline-offset: -2px;
+}
+
+/* ========================================================================
+   5. SITE HEADER & NAVIGATION
+   ======================================================================== */
+
+.site-header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border-light);
+  padding: var(--space-4) 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+}
+
+.header-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: var(--space-6);
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  padding: var(--space-2) 0;
+  transition: color var(--transition-base);
+}
+
+.main-nav a:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.main-nav a:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+.header-cta {
+  display: flex;
+  gap: var(--space-3);
+}
+
+/* ========================================================================
+   6. HERO SECTIONS - Skill #23: UX Hierarchy
+   ======================================================================== */
+
+.hero {
+  position: relative;
+  padding: var(--space-16) 0;
+  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+}
+
+.hero-homepage {
+  padding: var(--space-20) 0;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin-bottom: var(--space-8);
+}
+
+.hero h1 {
+  font-size: var(--font-size-5xl);
+  margin-bottom: var(--space-6);
+  color: var(--color-text-primary);
+}
+
+.hero .subheadline {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.hero-value-props {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.value-prop {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+}
+
+.value-prop .icon {
+  font-size: var(--font-size-xl);
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.trust-indicators-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: var(--space-1);
+}
+
+.stat-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ========================================================================
+   7. BUTTONS & CTAs - Skill #29: Conversion Framework
+   ======================================================================== */
+
+/* Base Button Styles */
+.btn-primary,
+.btn-secondary,
+.btn-tertiary,
+.btn-emergency {
+  display: inline-block;
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+/* Button Sizes */
+.btn-large {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--font-size-lg);
+}
+
+.btn-small {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+/* Primary Button (Fox Orange) */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary Button (Outline) */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Tertiary Button (Text Link Style) */
+.btn-tertiary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: transparent;
+  padding: var(--space-2) var(--space-3);
+  font-weight: var(--font-weight-medium);
+}
+
+.btn-tertiary:hover {
+  background-color: var(--color-primary-light);
+  text-decoration: none;
+}
+
+.btn-tertiary:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Emergency Button (Red) */
+.btn-emergency {
+  background-color: var(--color-emergency);
+  color: var(--color-white);
+  border-color: var(--color-emergency);
+}
+
+.btn-emergency:hover {
+  background-color: var(--color-emergency-hover);
+  border-color: var(--color-emergency-hover);
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-emergency:focus {
+  outline: 2px solid var(--color-emergency);
+  outline-offset: 2px;
+}
+
+/* Compact Buttons (for sticky bar, header) */
+.btn-primary-compact,
+.btn-emergency-compact {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+/* Disabled State */
+.btn-disabled,
+button:disabled,
+a[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* CTA Button Groups */
+.cta-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  justify-content: center;
+  margin-bottom: var(--space-8);
+}
+
+/* ========================================================================
+   8. STICKY CTA BAR - Skill #29: Persistent Conversion
+   ======================================================================== */
+
+.sticky-cta-bar {
+  position: fixed;
+  top: -100px;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md);
+  z-index: 1000;
+  transition: top var(--transition-slow);
+  padding: var(--space-3) 0;
+}
+
+.sticky-cta-bar.sticky-visible {
+  top: 0;
+}
+
+.sticky-cta-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.sticky-cta-text {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+}
+
+/* ========================================================================
+   9. SERVICE & FEATURE CARDS - Skill #23: Component Hierarchy
+   ======================================================================== */
+
+/* Service Cards Grid */
+.services-grid,
+.feature-grid,
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+/* Individual Service Card */
+.service-card {
+  position: relative;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.service-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-card-content {
+  padding: var(--space-6);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-3);
+}
+
+.service-card h3 a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.service-card h3 a:hover {
+  color: var(--color-primary);
+}
+
+.service-description {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--space-4);
+  flex: 1;
+}
+
+.service-features li {
+  font-size: var(--font-size-sm);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.service-features li:last-child {
+  border-bottom: none;
+}
+
+/* Service Badge (Available/Coming Soon) */
+.service-badge {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 10;
+}
+
+.service-badge-coming-soon {
+  background-color: var(--color-gray-600);
+}
+
+.service-coming-soon {
+  opacity: 0.85;
+}
+
+/* Feature Cards */
+.feature-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  transition: all var(--transition-base);
+}
+
+.feature-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.feature-card h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-3);
+  color: var(--color-text-primary);
+}
+
+.feature-card p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+  margin-bottom: 0;
+}
+
+.feature-stat {
+  display: inline-block;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-3);
+}
+
+/* Industry Cards */
+.industry-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  transition: all var(--transition-base);
+}
+
+.industry-card:hover {
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.industry-card h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-3);
+}
+
+.industry-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  margin-top: var(--space-3);
+}
+
+.industry-link:hover {
+  text-decoration: none;
+  gap: var(--space-3);
+}
+
+/* ========================================================================
+   10. SERVICE CLARIFICATION BLOCKS - Unique Component
+   ======================================================================== */
+
+.service-clarification-block {
+  background-color: var(--color-gray-50);
+  border-left: 4px solid var(--color-primary);
+  padding: var(--space-8) var(--container-padding);
+  margin: var(--space-12) 0;
+}
+
+.clarification-intro {
+  max-width: 900px;
+  margin: 0 auto var(--space-6);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+}
+
+.clarification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.what-we-provide,
+.what-we-dont-provide {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.what-we-provide h3 {
+  color: var(--color-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.what-we-dont-provide h3 {
+  color: var(--color-emergency);
+  margin-bottom: var(--space-4);
+}
+
+.what-we-provide ul,
+.what-we-dont-provide ul {
+  list-style: none;
+  padding: 0;
+}
+
+.what-we-provide li,
+.what-we-dont-provide li {
+  padding-left: var(--space-6);
+  position: relative;
+  margin-bottom: var(--space-3);
+}
+
+.what-we-provide li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-bold);
+}
+
+.what-we-dont-provide li::before {
+  content: "✗";
+  position: absolute;
+  left: 0;
+  color: var(--color-emergency);
+  font-weight: var(--font-weight-bold);
+}
+
+.emphasis {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.inline-cta {
+  text-align: center;
+  margin-top: var(--space-8);
+}
+
+/* ========================================================================
+   11. PROCESS STEPS - Ordered List Component
+   ======================================================================== */
+
+.how-it-works {
+  padding: var(--space-12) 0;
+  background-color: var(--color-white);
+}
+
+.process-steps {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-8) 0;
+  counter-reset: step-counter;
+}
+
+.process-steps li {
+  position: relative;
+  padding-left: var(--space-16);
+  margin-bottom: var(--space-10);
+}
+
+.process-steps li:last-child {
+  margin-bottom: 0;
+}
+
+.step-number {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.process-steps h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.process-steps p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+}
+
+/* ========================================================================
+   12. COMPARISON TABLES - Skill #13: IA
+   ======================================================================== */
+
+.service-comparison {
+  padding: var(--space-12) 0;
+  background-color: var(--color-bg-secondary);
+}
+
+.table-responsive {
+  overflow-x: auto;
+  margin: var(--space-8) 0;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.comparison-table thead {
+  background-color: var(--color-gray-100);
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: var(--space-4);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.comparison-table th {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.comparison-table td {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+.comparison-table tbody tr:hover {
+  background-color: var(--color-gray-50);
+}
+
+.comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Status Badges in Tables */
+.status-badge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-live {
+  background-color: #E8F5E9;
+  color: var(--color-secondary);
+}
+
+.status-coming-soon {
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-600);
+}
+
+/* ========================================================================
+   13. INDUSTRY PATHWAYS - Custom Component
+   ======================================================================== */
+
+.industry-pathways {
+  padding: var(--space-12) 0;
+  background-color: var(--color-white);
+}
+
+.pathways-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+  margin: var(--space-8) 0;
+}
+
+.pathway-card {
+  background: var(--color-bg-secondary);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  transition: all var(--transition-base);
+}
+
+.pathway-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.pathway-icon {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-4);
+}
+
+.pathway-card h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-3);
+}
+
+.pathway-services {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-light);
+  font-size: var(--font-size-sm);
+}
+
+.pathway-services strong {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--color-text-primary);
+}
+
+.pathways-cta {
+  text-align: center;
+  margin-top: var(--space-8);
+}
+
+/* ========================================================================
+   14. CUSTOMER TESTIMONIALS - Social Proof
+   ======================================================================== */
+
+.customer-success,
+.testimonial-banner {
+  padding: var(--space-12) 0;
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-white) 100%);
+}
+
+.testimonial,
+.testimonial-featured {
+  background: var(--color-white);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-8);
+  margin: var(--space-8) 0;
+  box-shadow: var(--shadow-md);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonial p,
+.testimonial-featured p {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.testimonial cite,
+.testimonial-featured cite {
+  display: block;
+  font-style: normal;
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.testimonial cite strong,
+.testimonial-featured cite strong {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.success-metrics,
+.testimonial-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-6);
+  margin: var(--space-8) 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.metric {
+  text-align: center;
+  padding: var(--space-4);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.metric-value {
+  display: block;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.metric-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.event-timeline {
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  margin-top: var(--space-8);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.event-timeline h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-4);
+}
+
+.event-timeline ul {
+  list-style: none;
+  padding: 0;
+}
+
+.event-timeline li {
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.event-timeline li:last-child {
+  border-bottom: none;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-secondary);
+}
+
+/* ========================================================================
+   15. FAQ ACCORDIONS - Skill #10: Accessibility
+   ======================================================================== */
+
+.faq {
+  padding: var(--space-12) 0;
+  background-color: var(--color-white);
+}
+
+.faq-list {
+  max-width: 900px;
+  margin: var(--space-8) auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-4) 0;
+}
+
+.faq-item:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+.faq-item dt {
+  margin: 0;
+}
+
+.faq-item button {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: var(--space-4);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  transition: color var(--transition-base);
+}
+
+.faq-item button:hover {
+  color: var(--color-primary);
+}
+
+.faq-item button:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.faq-question {
+  flex: 1;
+}
+
+.faq-icon {
+  font-size: var(--font-size-2xl);
+  color: var(--color-primary);
+  transition: transform var(--transition-base);
+  flex-shrink: 0;
+}
+
+.faq-item button[aria-expanded="true"] .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-item dd {
+  padding: 0 var(--space-4) var(--space-6);
+  margin: 0;
+}
+
+.faq-item dd p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+}
+
+/* ========================================================================
+   16. TRUST & CREDIBILITY SECTIONS - Skill #26
+   ======================================================================== */
+
+.trust-credibility,
+.why-fox-fuel {
+  padding: var(--space-12) 0;
+  background-color: var(--color-bg-secondary);
+}
+
+.trust-grid,
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-6);
+  margin: var(--space-8) 0;
+}
+
+.trust-card,
+.benefit-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.trust-card:hover,
+.benefit-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.trust-icon,
+.benefit-icon {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-4);
+}
+
+.trust-stat {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: var(--space-3);
+  line-height: 1;
+}
+
+.trust-card h3,
+.benefit-card h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-3);
+}
+
+.trust-card p,
+.benefit-card p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-secondary);
+}
+
+/* ========================================================================
+   17. FINAL CTA SECTIONS
+   ======================================================================== */
+
+.final-cta {
+  padding: var(--space-16) 0;
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-white) 100%);
+  text-align: center;
+}
+
+.final-cta h2 {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-6);
+}
+
+.final-cta p {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  max-width: 800px;
+  margin: 0 auto var(--space-8);
+}
+
+.contact-info {
+  margin: var(--space-8) 0;
+  font-size: var(--font-size-lg);
+}
+
+.contact-info p {
+  margin-bottom: var(--space-2);
+}
+
+.trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 120px;
+}
+
+.badge .stat-number {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.badge span:last-child {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ========================================================================
+   18. SITE FOOTER
+   ======================================================================== */
+
+.site-footer {
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-300);
+  padding: var(--space-12) 0 var(--space-6);
+}
+
+.footer-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+.footer-brand {
+  grid-column: 1 / -1;
+}
+
+.footer-brand img {
+  height: 50px;
+  width: auto;
+  margin-bottom: var(--space-4);
+  filter: brightness(0) invert(1);
+}
+
+.footer-tagline {
+  color: var(--color-gray-400);
+  font-size: var(--font-size-base);
+}
+
+.footer-nav h3 {
+  color: var(--color-white);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav li {
+  margin-bottom: var(--space-2);
+}
+
+.footer-nav a {
+  color: var(--color-gray-300);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  transition: color var(--transition-base);
+}
+
+.footer-nav a:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.footer-contact h3 {
+  color: var(--color-white);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-3);
+}
+
+.footer-contact p {
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-2);
+}
+
+.footer-contact a {
+  color: var(--color-gray-300);
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: var(--color-primary);
+}
+
+.footer-social h3 {
+  color: var(--color-white);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-3);
+}
+
+.social-links {
+  display: flex;
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-links a {
+  color: var(--color-gray-300);
+  font-size: var(--font-size-sm);
+  transition: color var(--transition-base);
+}
+
+.social-links a:hover {
+  color: var(--color-primary);
+}
+
+.footer-legal {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--space-6) var(--container-padding) 0;
+  border-top: 1px solid var(--color-gray-800);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-500);
+}
+
+.footer-legal a {
+  color: var(--color-gray-400);
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  color: var(--color-primary);
+}
+
+/* ========================================================================
+   19. RESPONSIVE IMAGES - Skill #11: Frontend Implementation
+   ======================================================================== */
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+picture {
+  display: block;
+  margin-bottom: var(--space-6);
+}
+
+/* ========================================================================
+   20. UTILITY CLASSES
+   ======================================================================== */
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mb-0 { margin-bottom: 0; }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-8 { margin-bottom: var(--space-8); }
+
+.mt-0 { margin-top: 0; }
+.mt-2 { margin-top: var(--space-2); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-6 { margin-top: var(--space-6); }
+.mt-8 { margin-top: var(--space-8); }
+
+/* ========================================================================
+   21. RESPONSIVE BREAKPOINTS - Skill #23: Responsive UX
+   ======================================================================== */
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+  :root {
+    --container-padding: 2rem;
+  }
+
+  .hero h1 {
+    font-size: var(--font-size-5xl);
+  }
+
+  .services-grid,
+  .feature-grid,
+  .industry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pathways-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sticky-cta-container {
+    flex-direction: row;
+  }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+  }
+
+  .hero-content {
+    margin-bottom: 0;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pathways-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .main-nav ul {
+    gap: var(--space-8);
+  }
+}
+
+/* Large Desktop (1280px and up) */
+@media (min-width: 1280px) {
+  .hero h1 {
+    font-size: var(--font-size-5xl);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile Adjustments (below 640px) */
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .hero .subheadline {
+    font-size: var(--font-size-base);
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+  }
+
+  .hero-cta-group .btn-primary,
+  .hero-cta-group .btn-secondary {
+    width: 100%;
+  }
+
+  .sticky-cta-container {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .sticky-cta-text {
+    font-size: var(--font-size-sm);
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .services-grid,
+  .feature-grid,
+  .industry-grid,
+  .pathways-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-button-group {
+    flex-direction: column;
+  }
+
+  .cta-button-group .btn-primary,
+  .cta-button-group .btn-secondary,
+  .cta-button-group .btn-emergency {
+    width: 100%;
+  }
+
+  .trust-indicators-inline,
+  .trust-badges {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .comparison-table {
+    font-size: var(--font-size-sm);
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: var(--space-2);
+  }
+}
+
+/* ========================================================================
+   22. PRINT STYLES - Skill #11: Web Performance
+   ======================================================================== */
+
+@media print {
+  /* Hide non-essential elements */
+  .site-header,
+  .site-footer,
+  .sticky-cta-bar,
+  .skip-link,
+  .hero-cta-group,
+  .cta-button-group,
+  .btn-primary,
+  .btn-secondary,
+  .btn-tertiary,
+  .btn-emergency,
+  .social-links {
+    display: none !important;
+  }
+
+  /* Clean layout */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Prevent page breaks inside elements */
+  .service-card,
+  .feature-card,
+  .industry-card,
+  .trust-card,
+  .testimonial {
+    page-break-inside: avoid;
+  }
+
+  /* Show URLs for links */
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Remove shadows and transitions */
+  * {
+    box-shadow: none !important;
+    transition: none !important;
+  }
+
+  /* Adjust images */
+  img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+}
+
+/* ========================================================================
+   23. FOCUS STATES & ACCESSIBILITY - Skill #10: WCAG 2.1 AA
+   ======================================================================== */
+
+/* High visibility focus indicator */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Ensure sufficient color contrast */
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-border: #000000;
+    --color-text-secondary: #000000;
+  }
+
+  .btn-primary,
+  .btn-emergency {
+    border: 2px solid currentColor;
+  }
+}
+
+/* ========================================================================
+   END OF STYLESHEET
+   ======================================================================== */
+
+/**
+ * USAGE INSTRUCTIONS:
+ *
+ * 1. Link this stylesheet in the <head> of all production HTML files:
+ *    <link rel="stylesheet" href="/assets/css/sitewide_styles_PRODUCTION.css">
+ *
+ * 2. Ensure CSS custom properties are supported (IE11+ not supported)
+ *
+ * 3. For best performance, consider:
+ *    - Minifying CSS for production
+ *    - Using a CDN for delivery
+ *    - Enabling gzip compression
+ *    - Setting appropriate cache headers
+ *
+ * 4. Test across browsers:
+ *    - Chrome/Edge (Chromium)
+ *    - Firefox
+ *    - Safari (iOS and macOS)
+ *
+ * 5. Validate accessibility:
+ *    - WAVE browser extension
+ *    - axe DevTools
+ *    - Keyboard navigation testing
+ *    - Screen reader testing (NVDA, JAWS, VoiceOver)
+ *
+ * 6. Responsive testing breakpoints:
+ *    - 320px (iPhone SE)
+ *    - 375px (iPhone standard)
+ *    - 768px (iPad portrait)
+ *    - 1024px (iPad landscape / small desktop)
+ *    - 1280px (desktop)
+ *    - 1920px (large desktop)
+ */

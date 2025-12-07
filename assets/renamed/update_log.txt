@@ -1,0 +1,12 @@
+FOX FUEL B2B - IMAGE REFERENCE UPDATE LOG
+======================================================================
+
+Files Updated: 1
+Total Replacements: 1
+
+DETAILED LOG:
+----------------------------------------------------------------------
+
+File: .specstory\history\2025-12-02_21-20Z-finalizing-the-b2b-website-for-fox-fuel.md
+  unnamed (3).jpg → assets_renamed/fuelcubes/fuelcube-portable-tank-construction-site-01.jpg
+

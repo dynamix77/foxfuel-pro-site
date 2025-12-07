@@ -1,0 +1,209 @@
+/**
+ * Fox Fuel B2B Website - UI Elements Stylesheet
+ * Generated automatically for unmapped UI images
+ */
+
+/* ============================================
+   LOGO
+   ============================================ */
+
+.ui-logo-fox-fuel {
+    background-image: url('/assets_renamed/branding/branding-fox-fuel-logo-main-01.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 200px;
+    height: 60px;
+    display: inline-block;
+}
+
+/* ============================================
+   HOMEPAGE ADVANTAGE ICONS
+   ============================================ */
+
+.ui-icon-advantage-uptime {
+    background-image: url('/assets_renamed/ui/ui-homepage-advantage-icon-uptime-01.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+}
+
+.ui-icon-advantage-service {
+    background-image: url('/assets_renamed/ui/ui-homepage-advantage-icon-service-01.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+}
+
+.ui-icon-advantage-compliance {
+    background-image: url('/assets_renamed/ui/ui-homepage-advantage-icon-compliance-01.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+}
+
+.ui-icon-advantage-safety {
+    background-image: url('/assets_renamed/ui/ui-homepage-advantage-icon-safety-01.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+}
+
+/* ============================================
+   HOMEPAGE SECTION BACKGROUNDS
+   ============================================ */
+
+.homepage-hero-section {
+    background-image: url('/assets_renamed/ui/ui-homepage-hero-background-gradient-01.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.homepage-advantages-section {
+    background-image: url('/assets_renamed/ui/ui-homepage-advantages-section-background-01.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.homepage-industries-section {
+    background-image: url('/assets_renamed/ui/ui-homepage-industries-section-background-01.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ============================================
+   HOMEPAGE SERVICE CARDS
+   ============================================ */
+
+.ui-card-service-delivery {
+    background-image: url('/assets_renamed/ui/ui-homepage-service-card-delivery-01.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 200px;
+    display: block;
+}
+
+.ui-card-service-monitoring {
+    background-image: url('/assets_renamed/ui/ui-homepage-service-card-monitoring-01.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 200px;
+    display: block;
+}
+
+.ui-card-service-maintenance {
+    background-image: url('/assets_renamed/ui/ui-homepage-service-card-maintenance-01.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 200px;
+    display: block;
+}
+
+.ui-card-service-support {
+    background-image: url('/assets_renamed/ui/ui-homepage-service-card-support-01.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 200px;
+    display: block;
+}
+
+/* ============================================
+   HOMEPAGE INDUSTRY CARDS
+   ============================================ */
+
+.ui-card-industry-aviation {
+    background-image: url('/assets_renamed/ui/ui-homepage-industry-card-aviation-01.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 200px;
+    display: block;
+}
+
+.ui-card-industry-construction {
+    background-image: url('/assets_renamed/ui/ui-homepage-industry-card-construction-01.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 200px;
+    display: block;
+}
+
+/* ============================================
+   MONITORING DASHBOARD UI ELEMENTS
+   ============================================ */
+
+.ui-dashboard-consumption-graphs {
+    background-image: url('/assets_renamed/ui/ui-fuel-management-dashboard-consumption-graphs-01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 300px;
+    display: block;
+}
+
+.ui-dashboard-fuel-levels {
+    background-image: url('/assets_renamed/ui/ui-monitoring-dashboard-fuel-levels-analytics-01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 300px;
+    display: block;
+}
+
+.ui-dashboard-scheduling {
+    background-image: url('/assets_renamed/ui/ui-monitoring-screen-delivery-scheduling-data-01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 300px;
+    display: block;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .ui-logo-fox-fuel {
+        width: 150px;
+        height: 45px;
+    }
+    
+    .ui-icon-advantage-uptime,
+    .ui-icon-advantage-service,
+    .ui-icon-advantage-compliance,
+    .ui-icon-advantage-safety {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .ui-card-service-delivery,
+    .ui-card-service-monitoring,
+    .ui-card-service-maintenance,
+    .ui-card-service-support,
+    .ui-card-industry-aviation,
+    .ui-card-industry-construction {
+        min-height: 150px;
+    }
+}
+
