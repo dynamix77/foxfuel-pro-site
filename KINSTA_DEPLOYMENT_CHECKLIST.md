@@ -6,7 +6,7 @@
 ## 1. Repository Confirmation
 
 ### ✅ Verify GitHub Repository
-- [ ] Confirm GitHub repository URL: `https://github.com/YOUR_USERNAME/foxfuel-pro-site`
+- [ ] Confirm GitHub repository URL: `https://github.com/dynamix77/foxfuel-pro-site`
 - [ ] Confirm branch: `main`
 - [ ] Confirm `index.html` exists at repository root
 - [ ] Confirm `assets/` folder structure:
