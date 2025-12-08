@@ -404,6 +404,27 @@ li {
 .header-cta {
   display: flex;
   gap: var(--space-3);
+  align-items: center;
+}
+
+.header-residential-link {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-3);
+  margin-right: var(--space-2);
+  transition: color var(--transition-base);
+}
+
+.header-residential-link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .header-residential-link {
+    display: none;
+  }
 }
 
 /* ========================================================================
@@ -949,7 +970,226 @@ a[disabled] {
 
 .how-it-works {
   padding: var(--space-12) 0;
+  background-color: var(--color-bg-secondary);
+}
+
+.how-it-works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+}
+
+.how-it-works-step {
   background-color: var(--color-white);
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.how-it-works-step .step-number {
+  position: relative;
+  margin: 0 auto var(--space-4);
+  width: 64px;
+  height: 64px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.how-it-works-step h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-3);
+  color: var(--color-text-primary);
+}
+
+.how-it-works-step p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+  .how-it-works-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================================================
+   AT A GLANCE SUMMARY BLOCKS - Phase 2.4 Content Density
+   ======================================================================== */
+
+.ff-summary-block {
+  padding: var(--space-8) 0;
+  background-color: var(--color-bg-secondary);
+  margin: var(--space-8) 0;
+}
+
+.ff-summary-block h2 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-5);
+  color: var(--color-text-primary);
+}
+
+.ff-summary-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-6) 0;
+}
+
+.ff-summary-list li {
+  padding: var(--space-3) 0 var(--space-3) var(--space-8);
+  position: relative;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+}
+
+.ff-summary-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+}
+
+.ff-summary-bestfor {
+  margin-top: var(--space-6);
+  padding: var(--space-5);
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-primary);
+}
+
+.ff-summary-bestfor h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-2);
+  color: var(--color-text-primary);
+}
+
+.ff-summary-bestfor p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: var(--line-height-relaxed);
+}
+
+@media (max-width: 768px) {
+  .ff-summary-block {
+    padding: var(--space-6) 0;
+    margin: var(--space-6) 0;
+  }
+  
+  .ff-summary-list li {
+    padding-left: var(--space-6);
+  }
+}
+
+/* ========================================================================
+   BOTTOM CTA BLOCKS - Phase E Standardization
+   ======================================================================== */
+
+.ff-bottom-cta {
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-8);
+  padding: var(--space-10) var(--space-6);
+  text-align: center;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+}
+
+.ff-bottom-cta h2 {
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.ff-bottom-cta p {
+  margin-bottom: var(--space-6);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ff-bottom-cta-button {
+  display: inline-block;
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: 2px solid var(--color-primary);
+  transition: all var(--transition-base);
+}
+
+.ff-bottom-cta-button:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.ff-bottom-cta-button:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .ff-bottom-cta {
+    padding: var(--space-8) var(--space-4);
+    margin-top: var(--space-8);
+  }
+  
+  .ff-bottom-cta h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .ff-bottom-cta p {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Residential Card - Compact B2B Demotion */
+.residential-card {
+  padding: var(--space-8) 0;
+  background-color: var(--color-gray-100);
+  border-top: 1px solid var(--color-border);
+}
+
+.residential-card-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: var(--space-6);
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.residential-card-content h2 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-3);
+  color: var(--color-text-primary);
+}
+
+.residential-card-content p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-5);
+  line-height: var(--line-height-relaxed);
 }
 
 .process-steps {
