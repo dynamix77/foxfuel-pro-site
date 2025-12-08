@@ -4075,3 +4075,185 @@ The dropdown works across all pages and matches the existing design system.
 
 ---
 
+_**User (2025-12-08 17:37Z)**_
+
+You are working inside my static site repo for pro.foxfuel.com.
+
+
+
+The current navigation is not what I want. Right now it looks like multiple industry links were added directly to the main nav bar. That is incorrect.
+
+
+
+I want this behavior instead:
+
+
+
+1) In the top navigation row there must be exactly ONE main item called "Industries".
+
+   - That parent item should link to: /industries/index.html
+
+
+
+2) The individual industry pages must NOT appear as separate top-level nav items in the main row.
+
+
+
+3) When a user hovers over or focuses on "Industries", a dropdown / submenu should appear directly underneath it, using the same dropdown pattern and CSS classes already used elsewhere in the site (for example whatever is used for any existing menu that has children).
+
+
+
+4) Inside that dropdown, add these submenu items with labels and URLs:
+
+
+
+   - Construction → /industries/construction.html
+
+   - Data Centers → /industries/data-centers.html
+
+   - Hospitals & Healthcare → /industries/hospitals-healthcare.html
+
+   - Agriculture → /industries/agriculture.html
+
+   - Airports & Ground Service → /industries/airports-ground-service.html
+
+   - Bus Companies → /industries/bus-companies.html
+
+   - Car Dealerships → /industries/car-dealerships.html
+
+   - Manufacturing → /industries/manufacturing.html
+
+   - Marinas → /industries/marinas.html
+
+   - Mining & Quarry → /industries/mining-quarry.html
+
+   - Municipalities → /industries/municipalities.html
+
+   - Power Plants → /industries/power-plants.html
+
+   - Scrap Metal → /industries/scrap-metal.html
+
+   - Taxi Companies → /industries/taxi-companies.html
+
+   - Truck Stops → /industries/truck-stops.html
+
+
+
+5) Implementation details:
+
+
+
+   - First, find the existing dropdown implementation in this repo (any menu item that already shows a submenu on hover) and reuse the same HTML structure and CSS classes so the Industries dropdown matches the existing style and behavior.
+
+   - Update the shared header / nav partial if one exists. If the nav HTML is duplicated in multiple pages, update all of them so the nav is consistent on every page.
+
+   - Remove any extra top-level nav items that directly reference industry pages.
+
+
+
+6) After applying the changes:
+
+
+
+   - Show a summary of which files were modified.
+
+   - Show the full diffs for the navigation sections so I can confirm that only one "Industries" item exists in the main row and that the industry links appear only in the dropdown submenu.
+
+
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="read_file">
+<details>
+<summary>Tool use: **read_file**</summary>
+
+Status: **loading**
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+
+---
+
+
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="grep">
+<details>
+<summary>Tool use: **grep**</summary>
+
+Status: **loading**
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+
+---
+
+
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="read_file">
+<details>
+<summary>Tool use: **read_file**</summary>
+
+Status: **loading**
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+
+---
+
+
+
+---
+
+
+
+---
+
