@@ -7,9 +7,10 @@
     background-size: cover;
     background-position: center;
     position: relative;
-    color: white;
+    color: #FFFFFF;
 }
 
+/* Navy Overlay for Contrast */
 .hero-industry::before {
     content: '';
     position: absolute;
@@ -17,13 +18,94 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 100%);
+    /* Navy: #0A1931 - Stronger contrast for white text */
+    background: linear-gradient(to right, rgba(10, 25, 49, 0.9) 0%, rgba(10, 25, 49, 0.65) 100%);
     z-index: 1;
 }
 
 .hero-industry .container {
     position: relative;
     z-index: 2;
+}
+
+/* Hero Typography */
+.hero-industry h1,
+.hero-industry h2,
+.hero-industry h3,
+.hero-industry p,
+.hero-industry .subheadline {
+    color: #FFFFFF;
+}
+
+.hero-industry .subheadline {
+    font-size: var(--font-size-lg);
+    max-width: 650px;
+    margin-bottom: var(--space-lg);
+    opacity: 0.95;
+    line-height: 1.5;
+}
+
+/* Hero CTAs */
+.hero-industry .hero-cta-group {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-lg);
+}
+
+.hero-industry .btn-primary {
+    background-color: #C8102E;
+    /* Fox Fuel Red */
+    color: #FFFFFF;
+    border: 2px solid #C8102E;
+}
+
+.hero-industry .btn-primary:hover {
+    background-color: #A60C25;
+    border-color: #A60C25;
+    box-shadow: 0 4px 12px rgba(200, 16, 46, 0.3);
+}
+
+.hero-industry .btn-secondary {
+    background-color: rgba(10, 25, 49, 0.8);
+    /* Navy with slight transparency */
+    color: #FFFFFF;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.hero-industry .btn-secondary:hover {
+    background-color: #FFFFFF;
+    color: #0A1931;
+    border-color: #FFFFFF;
+}
+
+/* Trust Strip in Hero */
+/* Trust Strip in Hero - SUPPRESSED per request */
+.hero-industry .trust-strip {
+    display: none !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-industry {
+        padding: var(--space-xl) 0;
+        text-align: left;
+    }
+
+    .hero-industry::before {
+        /* Darker overlay on mobile for readability */
+        background: rgba(10, 25, 49, 0.85);
+    }
+
+    .hero-industry .hero-cta-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-industry .btn {
+        width: 100%;
+    }
 }
 
 /* Challenges Section */
@@ -96,4 +178,14 @@
     border-top: 1px solid var(--color-border);
     padding-top: var(--space-xl);
     margin-top: var(--space-xl);
+}
+
+/* Suppress Legacy Hero Elements */
+.hero-tabs,
+.breadcrumb,
+.subnav,
+.subnav-bar,
+.hero-accent,
+.checks {
+    display: none !important;
 }
