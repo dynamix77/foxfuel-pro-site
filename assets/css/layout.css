@@ -1,0 +1,224 @@
+/* Layout - Grid, Header, Footer, Structure */
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.container-narrow {
+    max-width: 1000px;
+}
+
+/* Sections */
+section {
+    padding: var(--space-xxl) 0;
+}
+
+section.bg-muted {
+    background-color: var(--color-bg-muted);
+}
+
+section.bg-dark {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+}
+
+/* Header */
+.site-header {
+    background-color: var(--color-bg);
+    box-shadow: var(--shadow-nav);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 80px;
+    /* Fixed height for consistency */
+}
+
+.header-container {
+    max-width: 1440px;
+    /* Slightly wider for nav */
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+/* Navigation - Desktop */
+.main-nav ul {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+.main-nav a {
+    font-weight: 600;
+    font-size: var(--font-size-md);
+    color: var(--color-secondary);
+}
+
+.main-nav a:hover {
+    color: var(--color-primary);
+}
+
+/* Dropdown */
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--color-bg);
+    box-shadow: var(--shadow-card);
+    border-radius: var(--radius-sm);
+    padding: var(--space-sm) 0;
+    min-width: 200px;
+    display: none;
+    flex-direction: column;
+    gap: 0 !important;
+    border-top: 3px solid var(--color-primary);
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--color-bg-muted);
+    color: var(--color-primary);
+}
+
+/* Mobile Nav Toggle (Hidden on Desktop) */
+.mobile-toggle {
+    display: none;
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    padding-top: var(--space-xxl);
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-md) var(--space-xl);
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: var(--space-xl);
+}
+
+.footer-brand .footer-tagline {
+    margin-top: var(--space-sm);
+    color: #a0aebf;
+    font-size: var(--font-size-sm);
+}
+
+.footer-col h3 {
+    color: var(--color-text-light);
+    font-size: var(--font-size-md);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-md);
+}
+
+.footer-col ul li {
+    margin-bottom: var(--space-xs);
+}
+
+.footer-col a {
+    color: #cbd5e1;
+    font-size: var(--font-size-sm);
+}
+
+.footer-col a:hover {
+    color: var(--color-bg);
+}
+
+.footer-contact p {
+    color: #cbd5e1;
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-xs);
+}
+
+.footer-contact a {
+    color: var(--color-b);
+    text-decoration: underline;
+}
+
+.footer-legal {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--space-md) var(--space-md);
+    text-align: center;
+    font-size: var(--font-size-xs);
+    color: #94a3b8;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.footer-legal a {
+    color: #94a3b8;
+}
+
+.footer-legal a:hover {
+    color: var(--color-bg);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .header-container {
+        padding: 0 var(--space-md);
+    }
+
+    .main-nav {
+        display: none;
+        /* Placeholder for mobile menu implementation */
+    }
+
+    .mobile-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: var(--color-secondary);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+}
