@@ -1,0 +1,132 @@
+/* Services Page Specific Styles */
+
+/* Hero Overrides */
+.hero-services {
+    background-color: var(--color-bg);
+}
+
+.hero-services h1 {
+    font-size: var(--font-size-hero);
+    margin-bottom: var(--space-md);
+}
+
+/* Feature Grid Adjustments for Detail Pages */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+}
+
+.feature-item {
+    background: var(--color-bg);
+    padding: var(--space-lg);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    transition: transform 0.2s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+    display: block;
+}
+
+.feature-item h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-xs);
+}
+
+.feature-item p {
+    font-size: var(--font-size-md);
+    color: var(--color-text-muted);
+}
+
+/* FuelCube Teaser on Services Index */
+.fuelcube-teaser {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    padding: var(--space-xxl) 0;
+}
+
+.fuelcube-teaser h2 {
+    color: white;
+}
+
+.fuelcube-teaser p {
+    color: #cbd5e1;
+}
+
+/* Split Text + Image Section for Details */
+.split-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xxl);
+    align-items: center;
+    margin: var(--space-xxl) 0;
+}
+
+.split-content img {
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+}
+
+.split-content.reverse {
+    direction: ltr;
+    /* Ensure grid is standard */
+}
+
+/* Industry Strip */
+.industry-strip {
+    background-color: var(--color-bg-muted);
+    padding: var(--space-xl) 0;
+}
+
+.industry-strip-grid {
+    display: flex;
+    gap: var(--space-md);
+    overflow-x: auto;
+    padding-bottom: var(--space-sm);
+}
+
+.industry-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-xs) var(--space-md);
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 100px;
+    font-weight: 600;
+    color: var(--color-secondary);
+    white-space: nowrap;
+}
+
+.industry-chip:hover {
+    background: var(--color-bg-muted);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .split-content {
+        grid-template-columns: 1fr;
+    }
+
+    .split-content.reverse .content {
+        order: 2;
+    }
+
+    .split-content.reverse .image {
+        order: 1;
+    }
+}
