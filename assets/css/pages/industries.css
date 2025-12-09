@@ -1,0 +1,99 @@
+/* Industries Page Specific Styles */
+
+/* Hero Overrides */
+.hero-industry {
+    background-color: var(--color-bg-dark);
+    /* Fallback */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+}
+
+.hero-industry::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: 1;
+}
+
+.hero-industry .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Challenges Section */
+.challenges-section {
+    background-color: var(--color-bg-muted);
+    padding: var(--space-xxl) 0;
+}
+
+.challenges-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-md);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.challenges-list li {
+    position: relative;
+    padding-left: 2rem;
+    font-size: var(--font-size-lg);
+    line-height: 1.6;
+}
+
+.challenges-list li::before {
+    content: "⚠️";
+    /* Or another warning/pain icon */
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+}
+
+/* Solutions Grid overrides if needed, otherwise use .feature-grid */
+
+/* What We Fuel Section */
+.what-we-fuel-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    justify-content: center;
+    margin-top: var(--space-lg);
+}
+
+.fuel-chip {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 50px;
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+}
+
+.fuel-chip::before {
+    content: "•";
+    color: var(--color-primary);
+    margin-right: var(--space-xs);
+    font-size: 1.5em;
+    line-height: 0.5;
+}
+
+/* Territory Statement */
+.territory-statement {
+    text-align: center;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-xl);
+    margin-top: var(--space-xl);
+}
