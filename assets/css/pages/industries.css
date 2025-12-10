@@ -1,0 +1,260 @@
+/* Industries Page Specific Styles */
+
+/* Hero Overrides */
+.hero-industry {
+    background-color: var(--color-bg-dark);
+    /* Fallback */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #FFFFFF;
+}
+
+/* Navy Overlay for Contrast */
+.hero-industry::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Navy: #0A1931 - Stronger contrast for white text */
+    background: linear-gradient(to right, rgba(10, 25, 49, 0.9) 0%, rgba(10, 25, 49, 0.65) 100%);
+    z-index: 1;
+}
+
+.hero-industry .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Typography */
+.hero-industry h1,
+.hero-industry h2,
+.hero-industry h3,
+.hero-industry p,
+.hero-industry .subheadline {
+    color: #FFFFFF;
+}
+
+.hero-industry .subheadline {
+    font-size: var(--font-size-lg);
+    max-width: 650px;
+    margin-bottom: var(--space-lg);
+    opacity: 0.95;
+    line-height: 1.5;
+}
+
+/* Hero CTAs */
+.hero-industry .hero-cta-group {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-lg);
+}
+
+.hero-industry .btn-primary {
+    background-color: #C8102E;
+    /* Fox Fuel Red */
+    color: #FFFFFF;
+    border: 2px solid #C8102E;
+}
+
+.hero-industry .btn-primary:hover {
+    background-color: #A60C25;
+    border-color: #A60C25;
+    box-shadow: 0 4px 12px rgba(200, 16, 46, 0.3);
+}
+
+.hero-industry .btn-secondary {
+    background-color: rgba(10, 25, 49, 0.8);
+    /* Navy with slight transparency */
+    color: #FFFFFF;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.hero-industry .btn-secondary:hover {
+    background-color: #FFFFFF;
+    color: #0A1931;
+    border-color: #FFFFFF;
+}
+
+/* Trust Strip in Hero */
+/* Trust Strip in Hero - SUPPRESSED per request */
+.hero-industry .trust-strip {
+    display: none !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-industry {
+        padding: var(--space-xl) 0;
+        text-align: left;
+    }
+
+    .hero-industry::before {
+        /* Darker overlay on mobile for readability */
+        background: rgba(10, 25, 49, 0.85);
+    }
+
+    .hero-industry .hero-cta-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-industry .btn {
+        width: 100%;
+    }
+}
+
+/* Challenges Section */
+.challenges-section {
+    background-color: var(--color-bg-muted);
+    padding: var(--space-xxl) 0;
+}
+
+.challenges-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-md);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.challenges-list li {
+    position: relative;
+    padding-left: 2rem;
+    font-size: var(--font-size-lg);
+    line-height: 1.6;
+}
+
+.challenges-list li::before {
+    content: "⚠️";
+    /* Or another warning/pain icon */
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+}
+
+/* Solutions Grid overrides if needed, otherwise use .feature-grid */
+
+/* Suppress Legacy Hero Elements */
+.hero-tabs,
+.breadcrumb,
+.subnav,
+.subnav-bar,
+.hero-accent,
+.checks {
+    display: none !important;
+}
+
+/* 3. Industry Trust Strip (Post-Hero) */
+.industry-trust-strip {
+    background: #F5F6F8;
+    padding: 24px 0;
+}
+
+.industry-trust-strip .trust-strip-grid {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.industry-trust-strip .trust-item {
+    text-align: center;
+}
+
+.industry-trust-strip .trust-value {
+    display: block;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #0A1931;
+}
+
+.industry-trust-strip .trust-label {
+    font-size: 0.875rem;
+    color: #555555;
+}
+
+/* 4. Download Guide CTA */
+.industry-download {
+    background: #FFFFFF;
+    padding: 40px 0;
+    border-top: 1px solid #E2E4E8;
+    border-bottom: 1px solid #E2E4E8;
+}
+
+.industry-download-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.industry-download .download-text h3 {
+    margin-bottom: 8px;
+}
+
+.industry-download .download-text p {
+    margin: 0;
+    max-width: 520px;
+    color: #555555;
+}
+
+@media (max-width: 768px) {
+    .industry-download-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .industry-download a.btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* 5. What We Fuel - Updated */
+.what-we-fuel {
+    padding: 56px 0;
+}
+
+.what-we-fuel h2 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.what-we-fuel-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 0;
+    /* Override previous if any */
+}
+
+.fuel-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid #E2E4E8;
+    font-size: 0.875rem;
+    background: #FFFFFF;
+    color: #333333;
+    /* Reset previous styles if conflicting */
+    box-shadow: none;
+}
+
+.fuel-chip::before {
+    /* Remove previous bullet if it exists or keep consistency? Prompt styling implies no bullet or just text? 
+       Prompt says: "display: inline-flex; align-items: center;" but doesn't mention the bullet ::before pseudo element from previous CSS. 
+       The prompt CSS block does NOT include the ::before rule. I should explicitly remove or override it if I want to match the prompt exactly. 
+       However, the prompt says "Upgrade... into an Icon/Chip Grid" and "Re-use existing items". 
+       I will assume the prompt CSS is the source of truth. */
+    content: none;
+    margin: 0;
+}
