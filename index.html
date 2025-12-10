@@ -6,6 +6,18 @@
   <title>Commercial Fuel Delivery & On-Site Fuel Solutions | Fox Fuel</title>
   <meta name="description" content="Reliable bulk fuel delivery and FuelCube on-site fueling solutions for construction, fleets, agriculture, and industrial operations. 99% on-time delivery, 24/7 support across PA, NJ, DE.">
 
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Commercial Fuel Delivery & On-Site Fuel Solutions | Fox Fuel">
+  <meta property="og:description" content="Reliable bulk fuel delivery and FuelCube on-site fueling solutions for construction, fleets, agriculture, and industrial operations. 99% on-time delivery, 24/7 support across PA, NJ, DE.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pro.foxfuel.com/">
+  <meta property="og:image" content="https://pro.foxfuel.com/assets/renamed/composite/composite-aerial-facility-fuelcube-delivery-truck-01.jpg">
+  <meta property="og:site_name" content="Fox Fuel Pro">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Commercial Fuel Delivery & On-Site Fuel Solutions | Fox Fuel">
+  <meta name="twitter:description" content="Reliable bulk fuel delivery and FuelCube on-site fueling solutions for construction, fleets, agriculture, and industrial operations. 99% on-time delivery, 24/7 support across PA, NJ, DE.">
+  <meta name="twitter:image" content="https://pro.foxfuel.com/assets/renamed/composite/composite-aerial-facility-fuelcube-delivery-truck-01.jpg">
+
   <!-- CSS Architecture -->
   <link rel="stylesheet" href="/assets/css/base.css">
   <link rel="stylesheet" href="/assets/css/layout.css">
@@ -29,6 +41,53 @@
     }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Fox Fuel",
+    "url": "https://pro.foxfuel.com",
+    "logo": "https://pro.foxfuel.com/assets/renamed/branding/branding-fox-fuel-logo-main-01.png",
+    "telephone": "+1-215-659-1616",
+    "email": "info@foxfuel.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "PA, NJ, DE"
+    },
+    "areaServed": [
+      {
+        "@type": "State",
+        "name": "Pennsylvania"
+      },
+      {
+        "@type": "State",
+        "name": "New Jersey"
+      },
+      {
+        "@type": "State",
+        "name": "Delaware"
+      }
+    ],
+    "sameAs": [
+      "https://www.foxfuel.com"
+    ]
+  }
+  </script>  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://pro.foxfuel.com/"
+    }
+  ]
+}
+  </script>
+
+
   <link rel="canonical" href="https://pro.foxfuel.com/">
 </head>
 <body>
@@ -72,7 +131,44 @@
       <div class="header-cta">
         <a href="https://www.foxfuel.com/contact/" class="btn btn-primary">Request a Quote</a>
       </div>
-      <button class="mobile-toggle" aria-label="Toggle Navigation">☰</button>
+      
+    
+      <button class="mobile-menu-toggle" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="mobile-menu-overlay"></div>
+      <nav class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header" style="padding: 0 24px 24px; color: #fff; font-size: 1.5rem; font-weight: 700;">
+           Menu
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="https://foxfuel.com/heating-oil/">Heating Oil</a></li>
+            <li class="mobile-has-submenu">
+                <button class="mobile-submenu-toggle">Commercial Services <span class="arrow">▼</span></button>
+                <ul class="mobile-submenu">
+                    <li><a href="/services/bulk-fuel-delivery.html">Bulk Fuel Delivery</a></li>
+                    <li><a href="/services/fleet-fueling.html">Fleet Fueling</a></li>
+                    <li><a href="/services/jobsite-fueling.html">Jobsite Fueling</a></li>
+                    <li><a href="/services/generator-fueling.html">Generator Fueling</a></li>
+                    <li><a href="/services/monitoring-fuel-management.html">Fuel Tank Monitoring</a></li>
+                </ul>
+            </li>
+            <li class="mobile-has-submenu">
+                <button class="mobile-submenu-toggle">Industries <span class="arrow">▼</span></button>
+                <ul class="mobile-submenu">
+                    <li><a href="/industries/construction.html">Construction</a></li>
+                    <li><a href="/industries/data-centers.html">Data Centers</a></li>
+                    <li><a href="/industries/hospitals-healthcare.html">Hospitals &amp; Healthcare</a></li>
+                    <li><a href="/industries/manufacturing.html">Manufacturing</a></li>
+                    <li><a href="/industries/mining-quarry.html">Mining &amp; Quarry</a></li>
+                    <li><a href="/industries/index.html">View All Industries</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.foxfuel.com/contact/">Contact Us</a></li>
+        </ul>
+        <a href="https://www.foxfuel.com/contact/" class="btn btn-primary mobile-cta">Request a Quote</a>
+      </nav>
     </div>
   </header>
 
@@ -86,12 +182,12 @@
             <p class="subheadline">Reliable commercial fuel delivery and FuelCube on-site fueling solutions tailored to your business needs.</p>
             <div class="hero-cta-group">
               <a href="https://www.foxfuel.com/contact/" class="btn btn-primary btn-large">Request Site Assessment</a>
-              <a href="/fuelcube/purchase-program.html" class="btn btn-secondary btn-large">Explore FuelCube</a>
+              <a href="/fuelcube/purchase-program.html" class="btn btn-secondary btn-large">View FuelCube Options</a>
             </div>
             <p class="text-muted"><small>Serving PA, NJ, and DE with 24/7 Emergency Support</small></p>
           </div>
           <div class="hero-image">
-            <img src="/assets/renamed/composite/composite-aerial-facility-fuelcube-delivery-truck-01.jpg" alt="Aerial view of Fox Fuel delivery truck and FuelCube">
+            <img src="/assets/renamed/composite/composite-aerial-facility-fuelcube-delivery-truck-01.jpg" alt="Aerial view of Fox Fuel delivery truck and FuelCube" loading="lazy">
           </div>
         </div>
       </div>
@@ -132,13 +228,13 @@
     <!-- FuelCube Highlight (Split Section) -->
     <section class="fuelcube-highlight">
       <div class="fuelcube-image">
-        <img src="/assets/renamed/composite/composite-aerial-multi-site-fuelcube-deployment-01.jpg" alt="FuelCube Multi-Site Deployment">
+        <img src="/assets/renamed/composite/composite-aerial-multi-site-fuelcube-deployment-01.jpg" alt="FuelCube Multi-Site Deployment" loading="lazy">
       </div>
       <div class="fuelcube-content">
         <h2>FuelCube OnSite Advantage</h2>
         <p>The FuelCube OnSite Advantage Program provides fully managed on-site diesel storage with automatic monitoring, priority delivery, and Western Global FuelCube equipment. Eliminate off-site fueling trips, prevent fuel runouts, and reduce equipment idle time.</p>
         <div>
-          <a href="/fuelcube/purchase-program.html" class="btn btn-primary">Explore Programs</a>
+          <a href="/fuelcube/purchase-program.html" class="btn btn-primary">View FuelCube Programs</a>
         </div>
       </div>
     </section>
@@ -151,37 +247,37 @@
         <div class="industries-grid">
           <!-- Construction -->
           <a href="/industries/construction.html" class="industry-tile">
-            <img src="/assets/renamed/aerial/aerial-construction-site-large-project-tanks-01.jpg" alt="Construction Site">
+            <img src="/assets/renamed/aerial/aerial-construction-site-large-project-tanks-01.jpg" alt="Construction Site" loading="lazy">
             <div class="industry-label">Construction</div>
           </a>
 
           <!-- Manufacturing -->
           <a href="/industries/manufacturing.html" class="industry-tile">
-            <img src="/assets/renamed/aerial/aerial-industrial-facility-fuel-infrastructure-01.jpg" alt="Manufacturing Facility">
+            <img src="/assets/renamed/aerial/aerial-industrial-facility-fuel-infrastructure-01.jpg" alt="Manufacturing Facility" loading="lazy">
             <div class="industry-label">Manufacturing</div>
           </a>
 
           <!-- Mining -->
           <a href="/industries/mining-quarry.html" class="industry-tile">
-            <img src="/assets/renamed/aerial/aerial-mining-operation-remote-fuelcube-01.jpg" alt="Mining Operation">
+            <img src="/assets/renamed/aerial/aerial-mining-operation-remote-fuelcube-01.jpg" alt="Mining Operation" loading="lazy">
             <div class="industry-label">Mining & Quarry</div>
           </a>
 
           <!-- Fleet -->
           <a href="/services/fleet-fueling.html" class="industry-tile">
-            <img src="/assets/renamed/aerial/aerial-fleet-yard-organized-parking-fuelcube-01.jpg" alt="Fleet Operations">
+            <img src="/assets/renamed/aerial/aerial-fleet-yard-organized-parking-fuelcube-01.jpg" alt="Fleet Operations" loading="lazy">
             <div class="industry-label">Fleet Operations</div>
           </a>
 
           <!-- Healthcare -->
           <a href="/industries/hospitals-healthcare.html" class="industry-tile">
-            <img src="/assets/renamed/equipment/equipment-generator-setup-fuelcube-backup-power-01.jpg" alt="Healthcare Power Systems">
+            <img src="/assets/renamed/equipment/equipment-generator-setup-fuelcube-backup-power-01.jpg" alt="Healthcare Power Systems" loading="lazy">
             <div class="industry-label">Healthcare</div>
           </a>
 
           <!-- Data Centers -->
           <a href="/industries/data-centers.html" class="industry-tile">
-            <img src="/assets/renamed/equipment/equipment-fuel-cabinet-pump-system-01.jpg" alt="Data Center Fuel Systems">
+            <img src="/assets/renamed/equipment/equipment-fuel-cabinet-pump-system-01.jpg" alt="Data Center Fuel Systems" loading="lazy">
             <div class="industry-label">Data Centers</div>
           </a>
         </div>
@@ -259,5 +355,6 @@
     </div>
   </footer>
 
+<script src="/assets/js/mobile-menu.js"></script>
 </body>
 </html>
