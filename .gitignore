@@ -22,3 +22,14 @@ node_modules/
 dist/
 build/
 
+# Cursor/spec story history
+.specstory/
+
+# Local backups and exports
+assets_backup_*/
+assets/*.zip
+assets/**/*.zip
+
+# Local tooling outputs
+IMAGE_AUDIT_REPORT.md
+PRE_DEPLOY_CHECKLIST.md
