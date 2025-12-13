@@ -33,3 +33,4 @@ assets/**/*.zip
 # Local tooling outputs
 IMAGE_AUDIT_REPORT.md
 PRE_DEPLOY_CHECKLIST.md
+tools/
