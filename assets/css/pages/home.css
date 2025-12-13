@@ -1,0 +1,496 @@
+/* Homepage-Specific Layout Rules */
+
+/* Homepage Hero Section */
+/* Note: Base hero styles are in components.css */
+/* This file contains only homepage-specific overrides and new wireframe sections */
+
+/* Homepage Hero - Responsive 2-Column Layout */
+.hero-home {
+  /* Ensure proper bottom spacing to prevent collision with next section */
+  padding-bottom: var(--space-xxxl);
+  margin-bottom: 0;
+}
+
+/* Hero Grid - Mobile: Stacked (text first, image second) */
+.hero-home .hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+/* Hero Image - Mobile & Base Styles */
+.hero-home .hero-image {
+  width: 100%;
+  order: 2; /* Image appears second on mobile */
+}
+
+.hero-home .hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* object-fit:cover only if height is constrained - prefer no constraint */
+  /* No height constraint applied - image maintains natural aspect ratio */
+}
+
+/* Hero Content - Mobile */
+.hero-home .hero-content {
+  width: 100%;
+  order: 1; /* Content appears first on mobile */
+}
+
+/* Desktop Layout: 2-Column 50/50 with Generous Gap */
+@media (min-width: 992px) {
+  .hero-home .hero-grid {
+    grid-template-columns: 1fr 1fr; /* 50/50 split */
+    gap: var(--space-xxl); /* Generous gap */
+    align-items: center;
+  }
+
+  .hero-home .hero-content {
+    order: 1; /* Content on left */
+  }
+
+  .hero-home .hero-image {
+    order: 2; /* Image on right */
+  }
+
+  .hero-home .hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* No height constraint - maintains natural aspect ratio */
+  }
+}
+
+/* Who We Serve Section - Card Grid */
+.who-we-serve {
+  padding: var(--space-xxl) 0;
+}
+
+.who-we-serve .section-intro {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-xl);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Card Grid - Mobile: 1 Column */
+.who-we-serve-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+/* Card Styles */
+.who-we-serve-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition-fast);
+}
+
+.who-we-serve-card:hover {
+  border-color: var(--color-primary);
+}
+
+.who-we-serve-card h3 {
+  font-size: var(--font-size-xl);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-md);
+  line-height: 1.3;
+}
+
+.who-we-serve-card p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+  flex-grow: 1;
+}
+
+.who-we-serve-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.who-we-serve-link:hover {
+  text-decoration: underline;
+}
+
+/* Tablet: 2 Columns */
+@media (min-width: 768px) {
+  .who-we-serve-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+}
+
+/* Desktop: 2x2 Grid (4 Cards) */
+@media (min-width: 992px) {
+  .who-we-serve-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+}
+
+/* Core Programs Section - 3 Equal-Height Cards */
+.core-programs {
+  padding: var(--space-xxl) 0;
+}
+
+.core-programs .section-intro {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-xl);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Card Grid - Mobile: Stacked (1 Column) */
+.core-programs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+/* Card Styles */
+.core-program-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition-fast);
+}
+
+.core-program-card:hover {
+  border-color: var(--color-primary);
+}
+
+.core-program-card h3 {
+  font-size: var(--font-size-xl);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-md);
+  line-height: 1.3;
+}
+
+.core-program-card p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+  flex-grow: 1;
+}
+
+.core-program-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.core-program-link:hover {
+  text-decoration: underline;
+}
+
+/* Desktop: 3 Equal-Height Cards */
+@media (min-width: 992px) {
+  .core-programs-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    align-items: stretch; /* Ensures equal height */
+  }
+
+  .core-program-card {
+    height: 100%; /* Ensures cards fill grid cell height */
+  }
+}
+
+/* FuelCube Spotlight Section - Two-Column Layout */
+.fuelcube-spotlight {
+  padding: var(--space-xxl) 0;
+  background: var(--color-bg);
+}
+
+/* Grid - Mobile: Stacked (content first, image second) */
+.fuelcube-spotlight-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+/* Content Column */
+.fuelcube-spotlight-content {
+  width: 100%;
+  order: 1;
+}
+
+.fuelcube-spotlight-content h2 {
+  font-size: var(--font-size-xxl);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-lg);
+  line-height: 1.2;
+}
+
+/* Bullet List */
+.fuelcube-spotlight-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-xl) 0;
+}
+
+.fuelcube-spotlight-bullets li {
+  position: relative;
+  padding-left: var(--space-lg);
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: var(--font-size-md);
+}
+
+.fuelcube-spotlight-bullets li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+}
+
+.fuelcube-spotlight-cta {
+  margin-top: var(--space-lg);
+}
+
+/* Image Column */
+.fuelcube-spotlight-image {
+  width: 100%;
+  order: 2;
+}
+
+.fuelcube-spotlight-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-sm);
+}
+
+/* Desktop: Two-Column Layout */
+@media (min-width: 992px) {
+  .fuelcube-spotlight-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xxl);
+    align-items: center;
+  }
+
+  .fuelcube-spotlight-content {
+    order: 1; /* Content on left */
+  }
+
+  .fuelcube-spotlight-image {
+    order: 2; /* Image on right */
+  }
+
+  .fuelcube-spotlight-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* Why Fox Fuel Section - 4-Up Trust Grid */
+.why-fox-fuel {
+  padding: var(--space-xxl) 0;
+}
+
+.why-fox-fuel .section-intro {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-xl);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Trust Grid - Mobile: 1 Column */
+.why-fox-fuel-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+/* Trust Card Styles */
+.why-fox-fuel-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition-fast);
+}
+
+.why-fox-fuel-card:hover {
+  border-color: var(--color-primary);
+}
+
+.why-fox-fuel-card h3 {
+  font-size: var(--font-size-xl);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-md);
+  line-height: 1.3;
+}
+
+.why-fox-fuel-card p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Tablet: 2 Columns */
+@media (min-width: 768px) {
+  .why-fox-fuel-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+}
+
+/* Desktop: 4-Up Grid */
+@media (min-width: 992px) {
+  .why-fox-fuel-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+  }
+}
+
+/* How It Works Section - 4-Step Process */
+.how-it-works {
+  padding: var(--space-xxl) 0;
+}
+
+.how-it-works .section-intro {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-xl);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Steps Container - Mobile: Stacked Vertical */
+.how-it-works-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* Step Item */
+.how-it-works-step {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.how-it-works-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  flex-shrink: 0;
+}
+
+.how-it-works-step h3 {
+  font-size: var(--font-size-xl);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-xs);
+  line-height: 1.3;
+}
+
+.how-it-works-step p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+  font-size: var(--font-size-md);
+}
+
+/* Desktop: Horizontal Steps */
+@media (min-width: 992px) {
+  .how-it-works-steps {
+    flex-direction: row;
+    gap: var(--space-xl);
+    align-items: flex-start;
+  }
+
+  .how-it-works-step {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .how-it-works-number {
+    margin-bottom: var(--space-md);
+  }
+}
+
+/* Final CTA Section - Full-Width CTA Band */
+.final-cta {
+  padding: var(--space-xxxl) 0;
+  background: var(--color-bg-muted);
+  border-top: 1px solid var(--color-border);
+}
+
+.final-cta-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.final-cta-content h2 {
+  font-size: var(--font-size-xxl);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-xl);
+  line-height: 1.2;
+}
+
+.final-cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tablet and Desktop: Horizontal Buttons */
+@media (min-width: 768px) {
+  .final-cta-buttons {
+    flex-direction: row;
+    gap: var(--space-lg);
+  }
+
+  .final-cta-content h2 {
+    font-size: 36px;
+  }
+}
+
