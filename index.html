@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="/assets/css/base.css">
   <link rel="stylesheet" href="/assets/css/layout.css">
   <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/pages/home.css">
 
   <script type="application/ld+json">
   {
@@ -129,82 +130,154 @@
 <body>
 
   <!-- Header -->
-    <header class="site-header">
-    <div class="header-container">
-      <div class="logo">
-        <a href="/">
-          <img src="/assets/renamed/branding/branding-fox-fuel-logo-main-01.png" alt="Fox Fuel" width="180" height="60">
+  <header class="site-header">
+    <div class="header-top-bar">
+      <div class="header-top-bar-content">
+        <a href="tel:+12156591616" class="header-phone">
+          <span>📞</span>
+          <span>(215) 659-1616</span>
         </a>
       </div>
-      <nav class="main-nav">
-        <ul class="nav-list">
-          <li class="nav-item"><a href="/">Home</a></li>
-          <li class="nav-item"><a href="https://foxfuel.com/heating-oil/">Heating Oil</a></li>
-          <li class="nav-item has-dropdown">
-            <a href="/services/index.html">Commercial Services ▾</a>
-            <ul class="nav-dropdown">
-              <li><a href="/services/bulk-fuel-delivery.html">Bulk Fuel Delivery</a></li>
-              <li><a href="/services/fleet-fueling.html">Fleet Fueling</a></li>
-              <li><a href="/services/jobsite-fueling.html">Jobsite Fueling</a></li>
-              <li><a href="/services/generator-fueling.html">Generator Fueling</a></li>
-              <li><a href="/services/monitoring-fuel-management.html">Fuel Tank Monitoring</a></li>
-            </ul>
-          </li>
-          <li class="nav-item has-dropdown">
-            <a href="/industries/index.html">Industries ▾</a>
-            <ul class="nav-dropdown">
-              <li><a href="/industries/construction.html">Construction</a></li>
-              <li><a href="/industries/data-centers.html">Data Centers</a></li>
-              <li><a href="/industries/hospitals-healthcare.html">Hospitals &amp; Healthcare</a></li>
-              <li><a href="/industries/manufacturing.html">Manufacturing</a></li>
-              <li><a href="/industries/mining-quarry.html">Mining &amp; Quarry</a></li>
-              <li><a href="/industries/index.html">View All Industries</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a href="https://www.foxfuel.com/contact/">Contact Us</a></li>
-        </ul>
-      </nav>
-      <div class="header-cta">
-        <a href="https://www.foxfuel.com/contact/" class="btn btn-primary">Request a Quote</a>
-      </div>
-      
-    
-      <button class="mobile-menu-toggle" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="mobile-menu-overlay"></div>
-      <nav class="mobile-menu" id="mobile-menu">
-        <div class="mobile-menu-header" style="padding: 0 24px 24px; color: #fff; font-size: 1.5rem; font-weight: 700;">
-           Menu
+    </div>
+    <div class="header-main">
+      <div class="header-container">
+        <div class="logo">
+          <a href="/">
+            <img src="/assets/renamed/branding/branding-fox-fuel-logo-main-01.png" alt="Fox Fuel" width="180" height="60">
+          </a>
         </div>
-        <ul class="mobile-nav-list">
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/">Home</a></li>
+            <li class="nav-item has-dropdown">
+              <a href="/construction-fuel/">Construction Fuel ▾</a>
+              <ul class="nav-dropdown">
+                <li><a href="/services/jobsite-fueling.html">Jobsite Fueling</a></li>
+                <li><a href="/services/bulk-fuel-delivery.html">Bulk Delivery</a></li>
+                <li><a href="/industries/construction.html">Construction Industries</a></li>
+              </ul>
+            </li>
+            <li class="nav-item has-dropdown">
+              <a href="/fleet-fueling/">Fleet Fueling ▾</a>
+              <ul class="nav-dropdown">
+                <li><a href="/services/fleet-fueling.html">Fleet Services</a></li>
+                <li><a href="/services/monitoring-fuel-management.html">Fuel Management</a></li>
+                <li><a href="/industries/bus-companies.html">Fleet Industries</a></li>
+              </ul>
+            </li>
+            <li class="nav-item has-dropdown">
+              <a href="/generator-backup-power/">Generator &amp; Backup Power ▾</a>
+              <ul class="nav-dropdown">
+                <li><a href="/services/generator-fueling.html">Generator Fueling</a></li>
+                <li><a href="/industries/data-centers.html">Data Centers</a></li>
+                <li><a href="/industries/hospitals-healthcare.html">Healthcare</a></li>
+                <li><a href="/industries/power-plants.html">Power Plants</a></li>
+              </ul>
+            </li>
+            <li class="nav-item has-dropdown">
+              <a href="/onsite-fueling-fuelcube/">On-Site Fueling &amp; FuelCube ▾</a>
+              <ul class="nav-dropdown">
+                <li><a href="/fuelcube/models.html">FuelCube Models</a></li>
+                <li><a href="/fuelcube/purchase-program.html">Purchase Program</a></li>
+                <li><a href="/fuelcube/rental-program.html">Rental Program</a></li>
+                <li><a href="/fuelcube/placement-support.html">Placement &amp; Support</a></li>
+                <li><a href="/fuelcube/compliance-safety.html">Compliance &amp; Safety</a></li>
+              </ul>
+            </li>
+            <li class="nav-item has-dropdown">
+              <a href="/why-fox-fuel/">Why Fox Fuel ▾</a>
+              <ul class="nav-dropdown">
+                <li><a href="/why-fox-fuel/about.html">About Us</a></li>
+                <li><a href="/why-fox-fuel/service-area.html">Service Area</a></li>
+                <li><a href="/why-fox-fuel/reliability.html">Reliability &amp; Performance</a></li>
+                <li><a href="/why-fox-fuel/customer-success.html">Customer Success</a></li>
+              </ul>
+            </li>
+            <li class="nav-item has-dropdown">
+              <a href="/resources/">Resources ▾</a>
+              <ul class="nav-dropdown">
+                <li><a href="/resources/fuel-management-guide.html">Fuel Management Guide</a></li>
+                <li><a href="/resources/compliance.html">Compliance Resources</a></li>
+                <li><a href="/resources/industry-insights.html">Industry Insights</a></li>
+                <li><a href="/resources/faqs.html">FAQs</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-cta">
+          <a href="https://www.foxfuel.com/contact/" class="btn btn-primary">Request Quote</a>
+        </div>
+        
+        <button class="mobile-menu-toggle" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="mobile-menu-overlay"></div>
+        <nav class="mobile-menu" id="mobile-menu">
+          <div class="mobile-menu-header" style="padding: 0 24px 24px; color: #fff; font-size: 1.5rem; font-weight: 700;">
+            Menu
+          </div>
+          <ul class="mobile-nav-list">
             <li><a href="/">Home</a></li>
-            <li><a href="https://foxfuel.com/heating-oil/">Heating Oil</a></li>
             <li class="mobile-has-submenu">
-                <button class="mobile-submenu-toggle">Commercial Services <span class="arrow">▼</span></button>
-                <ul class="mobile-submenu">
-                    <li><a href="/services/bulk-fuel-delivery.html">Bulk Fuel Delivery</a></li>
-                    <li><a href="/services/fleet-fueling.html">Fleet Fueling</a></li>
-                    <li><a href="/services/jobsite-fueling.html">Jobsite Fueling</a></li>
-                    <li><a href="/services/generator-fueling.html">Generator Fueling</a></li>
-                    <li><a href="/services/monitoring-fuel-management.html">Fuel Tank Monitoring</a></li>
-                </ul>
+              <button class="mobile-submenu-toggle">Construction Fuel <span class="arrow">▼</span></button>
+              <ul class="mobile-submenu">
+                <li><a href="/services/jobsite-fueling.html">Jobsite Fueling</a></li>
+                <li><a href="/services/bulk-fuel-delivery.html">Bulk Delivery</a></li>
+                <li><a href="/industries/construction.html">Construction Industries</a></li>
+              </ul>
             </li>
             <li class="mobile-has-submenu">
-                <button class="mobile-submenu-toggle">Industries <span class="arrow">▼</span></button>
-                <ul class="mobile-submenu">
-                    <li><a href="/industries/construction.html">Construction</a></li>
-                    <li><a href="/industries/data-centers.html">Data Centers</a></li>
-                    <li><a href="/industries/hospitals-healthcare.html">Hospitals &amp; Healthcare</a></li>
-                    <li><a href="/industries/manufacturing.html">Manufacturing</a></li>
-                    <li><a href="/industries/mining-quarry.html">Mining &amp; Quarry</a></li>
-                    <li><a href="/industries/index.html">View All Industries</a></li>
-                </ul>
+              <button class="mobile-submenu-toggle">Fleet Fueling <span class="arrow">▼</span></button>
+              <ul class="mobile-submenu">
+                <li><a href="/services/fleet-fueling.html">Fleet Services</a></li>
+                <li><a href="/services/monitoring-fuel-management.html">Fuel Management</a></li>
+                <li><a href="/industries/bus-companies.html">Fleet Industries</a></li>
+              </ul>
             </li>
-            <li><a href="https://www.foxfuel.com/contact/">Contact Us</a></li>
-        </ul>
-        <a href="https://www.foxfuel.com/contact/" class="btn btn-primary mobile-cta">Request a Quote</a>
-      </nav>
+            <li class="mobile-has-submenu">
+              <button class="mobile-submenu-toggle">Generator &amp; Backup Power <span class="arrow">▼</span></button>
+              <ul class="mobile-submenu">
+                <li><a href="/services/generator-fueling.html">Generator Fueling</a></li>
+                <li><a href="/industries/data-centers.html">Data Centers</a></li>
+                <li><a href="/industries/hospitals-healthcare.html">Healthcare</a></li>
+                <li><a href="/industries/power-plants.html">Power Plants</a></li>
+              </ul>
+            </li>
+            <li class="mobile-has-submenu">
+              <button class="mobile-submenu-toggle">On-Site Fueling &amp; FuelCube <span class="arrow">▼</span></button>
+              <ul class="mobile-submenu">
+                <li><a href="/fuelcube/models.html">FuelCube Models</a></li>
+                <li><a href="/fuelcube/purchase-program.html">Purchase Program</a></li>
+                <li><a href="/fuelcube/rental-program.html">Rental Program</a></li>
+                <li><a href="/fuelcube/placement-support.html">Placement &amp; Support</a></li>
+                <li><a href="/fuelcube/compliance-safety.html">Compliance &amp; Safety</a></li>
+              </ul>
+            </li>
+            <li class="mobile-has-submenu">
+              <button class="mobile-submenu-toggle">Why Fox Fuel <span class="arrow">▼</span></button>
+              <ul class="mobile-submenu">
+                <li><a href="/why-fox-fuel/about.html">About Us</a></li>
+                <li><a href="/why-fox-fuel/service-area.html">Service Area</a></li>
+                <li><a href="/why-fox-fuel/reliability.html">Reliability &amp; Performance</a></li>
+                <li><a href="/why-fox-fuel/customer-success.html">Customer Success</a></li>
+              </ul>
+            </li>
+            <li class="mobile-has-submenu">
+              <button class="mobile-submenu-toggle">Resources <span class="arrow">▼</span></button>
+              <ul class="mobile-submenu">
+                <li><a href="/resources/fuel-management-guide.html">Fuel Management Guide</a></li>
+                <li><a href="/resources/compliance.html">Compliance Resources</a></li>
+                <li><a href="/resources/industry-insights.html">Industry Insights</a></li>
+                <li><a href="/resources/faqs.html">FAQs</a></li>
+              </ul>
+            </li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+          <a href="tel:+12156591616" class="mobile-cta" style="display: block; margin: 24px; padding: 12px; background: var(--color-primary); color: #fff; text-align: center; border-radius: 4px; text-decoration: none; font-weight: 600;">📞 (215) 659-1616</a>
+          <a href="https://www.foxfuel.com/contact/" class="btn btn-primary mobile-cta">Request Quote</a>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -214,138 +287,209 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-content">
-            <h1>Fueling Success Across Industries</h1>
-            <p class="subheadline">Reliable commercial fuel delivery and FuelCube on-site fueling solutions tailored to your business needs.</p>
-            <div class="hero-cta-group">
-              <a href="https://www.foxfuel.com/contact/" class="btn btn-primary btn-large">Request Site Assessment</a>
-              <a href="/fuelcube/purchase-program.html" class="btn btn-secondary btn-large">View FuelCube Options</a>
+            <!-- SAFE TO EDIT TEXT ONLY: Headline, subheadline, trust metrics, button text -->
+            <h1>Zero-Runout Fuel Reliability for Commercial Operations</h1>
+            <p class="subheadline">Serving construction companies, fleet operators, and critical infrastructure across Pennsylvania, New Jersey, and Delaware with 99% on-time delivery.</p>
+            
+            <div class="hero-trust-row">
+              <div class="trust-metric">
+                <div class="trust-number">43+</div>
+                <div class="trust-label">Years in Business</div>
+              </div>
+              <div class="trust-metric">
+                <div class="trust-number">24/7</div>
+                <div class="trust-label">Emergency Availability</div>
+              </div>
+              <div class="trust-metric">
+                <div class="trust-number">PA, NJ, DE</div>
+                <div class="trust-label">Service Area</div>
+              </div>
             </div>
-            <p class="text-muted"><small>Serving PA, NJ, and DE with 24/7 Emergency Support</small></p>
+            
+            <div class="hero-cta-group">
+              <a href="https://www.foxfuel.com/contact/" class="btn btn-primary btn-large">Request a Site Assessment</a>
+              <a href="/contact.html" class="btn btn-secondary btn-large">Talk to a Fuel Specialist</a>
+            </div>
+            <!-- END SAFE TO EDIT TEXT ONLY -->
           </div>
           <div class="hero-image">
-            <img src="/assets/renamed/composite/composite-aerial-facility-fuelcube-delivery-truck-01.jpg" alt="Aerial view of Fox Fuel delivery truck and FuelCube" loading="lazy">
+            <img src="/assets/renamed/composite/composite-aerial-facility-fuelcube-delivery-truck-01.jpg" alt="Fox Fuel commercial fuel delivery operations with FuelCube on-site storage" loading="eager">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Three-Service Grid -->
-    <section class="bg-muted">
+    <!-- Who We Serve Section -->
+    <section class="who-we-serve">
       <div class="container">
-        <h2>Core Fuel Programs</h2>
-        <div class="service-section-grid">
-          <!-- Bulk Delivery -->
-          <article class="service-card">
-            <div class="service-icon">🚚</div>
-            <h3>Bulk Fuel Delivery</h3>
-            <p>Reliable bulk fuel delivery to your location with competitive pricing and flexible scheduling. Volume-based pricing bands with contract options for consistent supply.</p>
-            <a href="/services/bulk-fuel-delivery.html" class="link-text">Learn More →</a>
-          </article>
-
-          <!-- Fleet Fueling -->
-          <article class="service-card">
-            <div class="service-icon">⛽</div>
-            <h3>Fleet Fueling</h3>
-            <p>Complete fleet fueling solutions through monitored on-site FuelCube tank programs. Telemetry-based automated reordering eliminates manual monitoring.</p>
-            <a href="/services/fleet-fueling.html" class="link-text">Learn More →</a>
-          </article>
-
-          <!-- Jobsite Fueling -->
-          <article class="service-card">
-            <div class="service-icon">🏗️</div>
-            <h3>Jobsite Fueling</h3>
-            <p>Temporary FuelCube deployment for construction and industrial jobsites. Job-costed metered dispensing for accurate project accounting.</p>
-            <a href="/services/jobsite-fueling.html" class="link-text">Learn More →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- FuelCube Highlight (Split Section) -->
-    <section class="fuelcube-highlight">
-      <div class="fuelcube-image">
-        <img src="/assets/renamed/composite/composite-aerial-multi-site-fuelcube-deployment-01.jpg" alt="FuelCube Multi-Site Deployment" loading="lazy">
-      </div>
-      <div class="fuelcube-content">
-        <h2>FuelCube OnSite Advantage</h2>
-        <p>The FuelCube OnSite Advantage Program provides fully managed on-site diesel storage with automatic monitoring, priority delivery, and Western Global FuelCube equipment. Eliminate off-site fueling trips, prevent fuel runouts, and reduce equipment idle time.</p>
-        <div>
-          <a href="/fuelcube/purchase-program.html" class="btn btn-primary">View FuelCube Programs</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Industries Grid -->
-    <section>
-      <div class="container">
-        <h2>Industries We Serve</h2>
+        <!-- SAFE TO EDIT TEXT ONLY: Section title, intro, card titles, descriptions, link text -->
+        <h2>Who We Serve</h2>
+        <p class="section-intro">Trusted fuel solutions for industries across Pennsylvania, New Jersey, and Delaware.</p>
         
-        <div class="industries-grid">
-          <!-- Construction -->
-          <a href="/industries/construction.html" class="industry-tile">
-            <img src="/assets/renamed/aerial/aerial-construction-site-large-project-tanks-01.jpg" alt="Construction Site" loading="lazy">
-            <div class="industry-label">Construction</div>
-          </a>
+        <div class="who-we-serve-grid">
+          <article class="who-we-serve-card">
+            <h3>Construction</h3>
+            <p>Eliminate equipment downtime with on-site fuel storage and reliable jobsite delivery for construction projects.</p>
+            <a href="/industries/construction.html" class="who-we-serve-link">View Solutions</a>
+          </article>
 
-          <!-- Manufacturing -->
-          <a href="/industries/manufacturing.html" class="industry-tile">
-            <img src="/assets/renamed/aerial/aerial-industrial-facility-fuel-infrastructure-01.jpg" alt="Manufacturing Facility" loading="lazy">
-            <div class="industry-label">Manufacturing</div>
-          </a>
+          <article class="who-we-serve-card">
+            <h3>Fleet Operations</h3>
+            <p>Automated fuel management with monitored on-site storage and priority delivery scheduling for fleet operators.</p>
+            <a href="/services/fleet-fueling.html" class="who-we-serve-link">View Solutions</a>
+          </article>
 
-          <!-- Mining -->
-          <a href="/industries/mining-quarry.html" class="industry-tile">
-            <img src="/assets/renamed/aerial/aerial-mining-operation-remote-fuelcube-01.jpg" alt="Mining Operation" loading="lazy">
-            <div class="industry-label">Mining & Quarry</div>
-          </a>
+          <article class="who-we-serve-card">
+            <h3>Healthcare</h3>
+            <p>24/7 emergency generator fueling with NFPA 110 compliance support for hospitals and critical healthcare facilities.</p>
+            <a href="/industries/hospitals-healthcare.html" class="who-we-serve-link">View Solutions</a>
+          </article>
 
-          <!-- Fleet -->
-          <a href="/services/fleet-fueling.html" class="industry-tile">
-            <img src="/assets/renamed/aerial/aerial-fleet-yard-organized-parking-fuelcube-01.jpg" alt="Fleet Operations" loading="lazy">
-            <div class="industry-label">Fleet Operations</div>
-          </a>
-
-          <!-- Healthcare -->
-          <a href="/industries/hospitals-healthcare.html" class="industry-tile">
-            <img src="/assets/renamed/equipment/equipment-generator-setup-fuelcube-backup-power-01.jpg" alt="Healthcare Power Systems" loading="lazy">
-            <div class="industry-label">Healthcare</div>
-          </a>
-
-          <!-- Data Centers -->
-          <a href="/industries/data-centers.html" class="industry-tile">
-            <img src="/assets/renamed/equipment/equipment-fuel-cabinet-pump-system-01.jpg" alt="Data Center Fuel Systems" loading="lazy">
-            <div class="industry-label">Data Centers</div>
-          </a>
+          <article class="who-we-serve-card">
+            <h3>Data Centers</h3>
+            <p>Reliable backup power fuel solutions with 4-hour emergency response for data centers and critical infrastructure.</p>
+            <a href="/industries/data-centers.html" class="who-we-serve-link">View Solutions</a>
+          </article>
         </div>
+        <!-- END SAFE TO EDIT TEXT ONLY -->
       </div>
     </section>
 
-    <!-- Trust / Proof Strip -->
-    <section class="trust-strip">
+    <!-- Core Programs Section -->
+    <section class="core-programs">
       <div class="container">
-        <div class="trust-grid">
-          <div class="trust-item">
-            <span class="trust-number">99%</span>
-            <span class="trust-label">On-Time Delivery</span>
+        <!-- SAFE TO EDIT TEXT ONLY: Section title, intro, card titles, descriptions, link text -->
+        <h2>Core Programs</h2>
+        <p class="section-intro">Comprehensive fuel solutions designed for your operational needs.</p>
+        
+        <div class="core-programs-grid">
+          <article class="core-program-card">
+            <h3>Bulk Fuel Delivery</h3>
+            <p>Reliable bulk fuel delivery with volume-based pricing and flexible scheduling. Terminal-quality diesel and heating oil with metered delivery documentation.</p>
+            <a href="/services/bulk-fuel-delivery.html" class="core-program-link">View Program</a>
+          </article>
+
+          <article class="core-program-card">
+            <h3>On-Site FuelCube Systems</h3>
+            <p>Fully managed on-site fuel storage solutions with Western Global FuelCube equipment. Automated monitoring, priority delivery, and compliance support for permanent or temporary installations.</p>
+            <a href="/fuelcube/models.html" class="core-program-link">View Program</a>
+          </article>
+
+          <article class="core-program-card">
+            <h3>Fuel Monitoring & Management</h3>
+            <p>Advanced fuel monitoring providing real-time visibility and automated delivery scheduling. Cellular telemetry tracks fuel levels 24/7 preventing runouts and optimizing operations.</p>
+            <a href="/services/monitoring-fuel-management.html" class="core-program-link">View Program</a>
+          </article>
+        </div>
+        <!-- END SAFE TO EDIT TEXT ONLY -->
+      </div>
+    </section>
+
+    <!-- FuelCube Spotlight Section -->
+    <section class="fuelcube-spotlight">
+      <div class="container">
+        <div class="fuelcube-spotlight-grid">
+          <div class="fuelcube-spotlight-content">
+            <!-- SAFE TO EDIT TEXT ONLY: Headline, bullet text, button text -->
+            <h2>On-Site Fueling Without the Downtime</h2>
+            <ul class="fuelcube-spotlight-bullets">
+              <li>Eliminate off-site fuel runs</li>
+              <li>Reduce labor downtime</li>
+              <li>Predictable fuel availability</li>
+              <li>Compliance-ready equipment</li>
+            </ul>
+            <div class="fuelcube-spotlight-cta">
+              <a href="/fuelcube/models.html" class="btn btn-primary">View FuelCube Options</a>
+            </div>
+            <!-- END SAFE TO EDIT TEXT ONLY -->
           </div>
-          <div class="trust-item">
-            <span class="trust-number">43+</span>
-            <span class="trust-label">Years in Business</span>
-          </div>
-          <div class="trust-item">
-            <span class="trust-number">24/7</span>
-            <span class="trust-label">Emergency Support</span>
+          <div class="fuelcube-spotlight-image">
+            <img src="/assets/renamed/composite/composite-aerial-multi-site-fuelcube-deployment-01.jpg" alt="FuelCube Multi-Site Deployment" loading="lazy">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Final CTA Band -->
-    <section class="cta-band">
-      <div class="container container-narrow">
-        <h2>Ready to Fuel Your Business?</h2>
-        <p>Join 200+ businesses relying on Fox Fuel for commercial fuel delivery and on-site fueling solutions across PA, NJ, and DE.</p>
-        <a href="https://www.foxfuel.com/contact/" class="btn btn-large">Request Site Assessment</a>
+    <!-- Why Fox Fuel Section -->
+    <section class="why-fox-fuel">
+      <div class="container">
+        <!-- SAFE TO EDIT TEXT ONLY: Section title, intro, card titles, descriptions -->
+        <h2>Why Fox Fuel</h2>
+        <p class="section-intro">Trusted commercial fuel partner with proven reliability and expertise.</p>
+        
+        <div class="why-fox-fuel-grid">
+          <article class="why-fox-fuel-card">
+            <h3>Commercial-Only Focus</h3>
+            <p>We specialize exclusively in commercial fuel delivery, ensuring your business operations receive the dedicated attention and expertise they require.</p>
+          </article>
+
+          <article class="why-fox-fuel-card">
+            <h3>Active Monitoring & Dispatch</h3>
+            <p>Real-time telemetry monitoring and automated dispatch systems ensure fuel is delivered before you run out, eliminating downtime.</p>
+          </article>
+
+          <article class="why-fox-fuel-card">
+            <h3>Compliance & Safety First</h3>
+            <p>NFPA 110 compliant equipment, UL 142 certified tanks, and full EPA/DOT regulatory support keep your operations safe and compliant.</p>
+          </article>
+
+          <article class="why-fox-fuel-card">
+            <h3>Regional Reliability (PA, NJ)</h3>
+            <p>Deep regional expertise across Pennsylvania and New Jersey ensures local knowledge, faster response times, and reliable supply chain relationships.</p>
+          </article>
+        </div>
+        <!-- END SAFE TO EDIT TEXT ONLY -->
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+      <div class="container">
+        <!-- SAFE TO EDIT TEXT ONLY: Section title, intro, step titles, step descriptions -->
+        <h2>How It Works</h2>
+        <p class="section-intro">Simple, streamlined process from initial assessment to ongoing fuel management.</p>
+        
+        <div class="how-it-works-steps">
+          <div class="how-it-works-step">
+            <div class="how-it-works-number">1</div>
+            <h3>Site Assessment</h3>
+            <p>We evaluate your fuel needs, site requirements, and operational goals to recommend the optimal solution.</p>
+          </div>
+
+          <div class="how-it-works-step">
+            <div class="how-it-works-number">2</div>
+            <h3>Fuel Program Design</h3>
+            <p>Based on your assessment, we design a fuel delivery program or on-site storage solution tailored to your operations.</p>
+          </div>
+
+          <div class="how-it-works-step">
+            <div class="how-it-works-number">3</div>
+            <h3>Deployment & Setup</h3>
+            <p>Our team handles all logistics, from FuelCube placement to delivery scheduling and monitoring system setup.</p>
+          </div>
+
+          <div class="how-it-works-step">
+            <div class="how-it-works-number">4</div>
+            <h3>Monitoring & Ongoing Supply</h3>
+            <p>Automated monitoring, priority delivery scheduling, and 24/7 support ensure zero-runout reliability.</p>
+          </div>
+        </div>
+        <!-- END SAFE TO EDIT TEXT ONLY -->
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+      <div class="container">
+        <div class="final-cta-content">
+          <!-- SAFE TO EDIT TEXT ONLY: Headline, button text -->
+          <h2>Let's Design a Fuel Program That Eliminates Downtime</h2>
+          <div class="final-cta-buttons">
+            <a href="https://www.foxfuel.com/contact/" class="btn btn-primary btn-large">Request a Site Assessment</a>
+            <a href="/contact.html" class="btn btn-secondary btn-large">Talk to a Fuel Specialist</a>
+          </div>
+          <!-- END SAFE TO EDIT TEXT ONLY -->
+        </div>
       </div>
     </section>
   </main>
@@ -359,22 +503,22 @@
       </div>
 
       <div class="footer-col">
-        <h3>Services</h3>
+        <h3>Solutions</h3>
         <ul>
-          <li><a href="/services/bulk-fuel-delivery.html">Bulk Fuel Delivery</a></li>
-          <li><a href="/services/fleet-fueling.html">Fleet Fueling</a></li>
-          <li><a href="/services/jobsite-fueling.html">Jobsite Fueling</a></li>
-          <li><a href="/services/generator-fueling.html">Generator Fueling</a></li>
+          <li><a href="/construction-fuel/">Construction Fuel</a></li>
+          <li><a href="/fleet-fueling/">Fleet Fueling</a></li>
+          <li><a href="/generator-backup-power/">Generator &amp; Backup Power</a></li>
+          <li><a href="/onsite-fueling-fuelcube/">On-Site Fueling &amp; FuelCube</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h3>Industries</h3>
+        <h3>Company</h3>
         <ul>
-          <li><a href="/industries/construction.html">Construction</a></li>
-          <li><a href="/industries/hospitals-healthcare.html">Healthcare</a></li>
-          <li><a href="/industries/data-centers.html">Data Centers</a></li>
-          <li><a href="/industries/index.html">View All Industries</a></li>
+          <li><a href="/why-fox-fuel/">Why Fox Fuel</a></li>
+          <li><a href="/resources/">Resources</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
         </ul>
       </div>
 
@@ -386,10 +530,33 @@
       </div>
     </div>
 
+    <!-- Footer Emergency CTA -->
+    <div class="footer-emergency-cta">
+      <div class="container">
+        <div class="footer-emergency-content">
+          <div class="footer-emergency-text">
+            <strong>🚨 Need Emergency Fuel?</strong>
+            <p>24/7 emergency fuel delivery available. Call now for immediate assistance.</p>
+          </div>
+          <a href="tel:+12156591616" class="btn btn-primary btn-large" aria-label="Call emergency fuel hotline (215) 659-1616">
+            Call (215) 659-1616
+          </a>
+        </div>
+      </div>
+    </div>
+
     <div class="footer-legal">
       <p>&copy; 2024 Fox Fuel. All rights reserved. | <a href="/sitemap.xml">Sitemap</a> | Serving PA, NJ, DE since 1981</p>
     </div>
   </footer>
+
+  <!-- Sticky Mobile Phone CTA -->
+  <div class="sticky-mobile-cta" aria-label="Call Fox Fuel">
+    <a href="tel:+12156591616" class="sticky-phone-btn" aria-label="Call emergency fuel hotline (215) 659-1616">
+      <span class="sticky-phone-icon">📞</span>
+      <span class="sticky-phone-text">Call (215) 659-1616</span>
+    </a>
+  </div>
 
 <script src="/assets/js/mobile-menu.js"></script>
 </body>
