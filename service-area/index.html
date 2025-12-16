@@ -6,13 +6,38 @@
   <title>Service Area | Commercial Fuel Delivery PA NJ DE | Fox Fuel</title>
   <meta name="description" content="Fox Fuel provides commercial fuel delivery across Pennsylvania, New Jersey, and Delaware. Regional fleet. Local dispatch.">
 
-  <link rel="stylesheet" href="../assets/css/tokens.css">
-  <link rel="stylesheet" href="../assets/css/reset.css">
-  <link rel="stylesheet" href="../assets/css/layout.css">
-  <link rel="stylesheet" href="../assets/css/components.css">
-  <link rel="stylesheet" href="../assets/css/utilities.css">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/utilities.css">
 
   <link rel="canonical" href="https://pro.foxfuel.com/service-area/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Fox Fuel Co.",
+    "description": "Commercial fuel delivery services including bulk diesel, generator fueling, and on-site tank programs.",
+    "url": "https://pro.foxfuel.com",
+    "telephone": "(215) 659-1616",
+    "email": "commercial@foxfuel.com",
+    "foundingDate": "1981",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "PA",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      {"@type": "State", "name": "Pennsylvania"},
+      {"@type": "State", "name": "New Jersey"},
+      {"@type": "State", "name": "Delaware"}
+    ],
+    "openingHours": "Mo-Su 00:00-24:00",
+    "priceRange": "$$"
+  }
+  </script>
 </head>
 <body>
 
@@ -21,7 +46,7 @@
     <div class="header-container">
       <div class="logo">
         <a href="https://pro.foxfuel.com/">
-          <img src="../assets/images/fox-fuel-logo.svg" alt="Fox Fuel" width="180" height="60">
+          <img src="/assets/images/fox-fuel-logo.svg" alt="Fox Fuel" width="180" height="60">
         </a>
       </div>
       <nav class="main-nav">
@@ -30,7 +55,7 @@
             <a href="/services/index.html">Services</a>
             <ul class="nav-dropdown">
               <li><a href="/services/bulk-fuel-delivery.html">Bulk Fuel Delivery</a></li>
-              <li><a href="/services/fleet-fueling.html">Fleet Fueling</a></li>
+              <li><a href="/services/tank-programs-fleets.html">Tank Programs for Fleets</a></li>
               <li><a href="/services/jobsite-fueling.html">Jobsite Fueling</a></li>
               <li><a href="/services/generator-fueling.html">Generator Fueling</a></li>
               <li><a href="/services/commercial-heating-oil.html">Commercial Heating Oil</a></li>
@@ -67,7 +92,7 @@
             <button class="mobile-submenu-toggle">Services</button>
             <ul class="mobile-submenu">
               <li><a href="/services/bulk-fuel-delivery.html">Bulk Fuel Delivery</a></li>
-              <li><a href="/services/fleet-fueling.html">Fleet Fueling</a></li>
+              <li><a href="/services/tank-programs-fleets.html">Tank Programs for Fleets</a></li>
               <li><a href="/services/jobsite-fueling.html">Jobsite Fueling</a></li>
               <li><a href="/services/generator-fueling.html">Generator Fueling</a></li>
               <li><a href="/services/commercial-heating-oil.html">Commercial Heating Oil</a></li>
@@ -100,6 +125,24 @@
       <div class="container">
         <h1>SERVICE AREA</h1>
         <p class="lead">Fox Fuel provides commercial fuel delivery across Pennsylvania, New Jersey, and Delaware. Regional fleet. Local dispatch. No out-of-state brokerage.</p>
+      </div>
+    </section>
+
+    <!-- Service Area Map -->
+    <section class="service-area-map-section" style="background: #2F2F2F; padding: 3rem 0;">
+      <div class="container">
+        <!-- TODO: Add service area map image showing PA, NJ, DE coverage -->
+        <div class="service-area-map-placeholder" style="background: #1A1A1A; border-radius: 8px; height: 400px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+          <div style="text-align: center;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <p style="color: #E5E5E5; font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">PA • NJ • DE</p>
+            <p style="color: #999999; font-size: 0.875rem;">Service Area Coverage</p>
+          </div>
+        </div>
+        <p style="color: #E5E5E5; text-align: center; font-size: 0.9375rem;">Not sure if we serve your area? Call <a href="tel:+12156591616" style="color: #C8102E; font-weight: bold;">(215) 659-1616</a> to confirm.</p>
       </div>
     </section>
 
@@ -156,7 +199,7 @@
   <footer class="site-footer" style="background: #1A1A1A;">
     <div class="footer-container">
       <div class="footer-brand">
-        <img src="../assets/images/fox-fuel-logo-white.svg" alt="Fox Fuel" width="150" height="50">
+        <img src="/assets/images/fox-fuel-logo-white.svg" alt="Fox Fuel" width="150" height="50">
         <p class="footer-tagline">Commercial Fuel Delivery Since 1981</p>
       </div>
 
@@ -164,7 +207,7 @@
         <h3>SERVICES</h3>
         <ul>
           <li><a href="/services/bulk-fuel-delivery.html">Bulk Fuel Delivery</a></li>
-          <li><a href="/services/fleet-fueling.html">Fleet Fueling</a></li>
+          <li><a href="/services/tank-programs-fleets.html">Tank Programs for Fleets</a></li>
           <li><a href="/services/jobsite-fueling.html">Jobsite Fueling</a></li>
           <li><a href="/services/generator-fueling.html">Generator Fueling</a></li>
           <li><a href="/services/commercial-heating-oil.html">Commercial Heating Oil</a></li>
@@ -202,6 +245,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/main.js"></script>
+  <script src="/assets/js/main.js"></script>
 </body>
 </html>
