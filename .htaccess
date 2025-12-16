@@ -1,0 +1,78 @@
+# Fox Fuel Pro - Apache Redirect Configuration
+# Generated per Section 5.3 of Master Subdomain Implementation Specification v1.4
+
+RewriteEngine On
+RewriteBase /
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Renamed pages - 301 redirects
+RewriteRule ^industries/hospitals-healthcare\.html$ /industries/healthcare.html [R=301,L]
+RewriteRule ^industries/hospitals-healthcare/?$ /industries/healthcare.html [R=301,L]
+RewriteRule ^services/monitoring-fuel-management\.html$ /services/fuel-monitoring.html [R=301,L]
+RewriteRule ^services/monitoring-fuel-management/?$ /services/fuel-monitoring.html [R=301,L]
+
+# FuelCube redirects - consolidated to tank programs
+RewriteRule ^fuelcube/(.*)$ /services/tank-programs.html [R=301,L]
+RewriteRule ^fuelcube/?$ /services/tank-programs.html [R=301,L]
+
+# Deleted unauthorized industry pages - redirect to industries index
+RewriteRule ^industries/mining-quarry\.html$ /industries/ [R=301,L]
+RewriteRule ^industries/mining-quarry/?$ /industries/ [R=301,L]
+RewriteRule ^industries/agriculture\.html$ /industries/ [R=301,L]
+RewriteRule ^industries/agriculture/?$ /industries/ [R=301,L]
+RewriteRule ^industries/airports-ground-service\.html$ /industries/ [R=301,L]
+RewriteRule ^industries/airports-ground-service/?$ /industries/ [R=301,L]
+RewriteRule ^industries/bus-companies\.html$ /industries/ [R=301,L]
+RewriteRule ^industries/bus-companies/?$ /industries/ [R=301,L]
+RewriteRule ^industries/car-dealerships\.html$ /industries/ [R=301,L]
+RewriteRule ^industries/car-dealerships/?$ /industries/ [R=301,L]
+RewriteRule ^industries/marinas\.html$ /industries/ [R=301,L]
+RewriteRule ^industries/marinas/?$ /industries/ [R=301,L]
+RewriteRule ^industries/municipalities\.html$ /industries/ [R=301,L]
+RewriteRule ^industries/municipalities/?$ /industries/ [R=301,L]
+RewriteRule ^industries/power-plants\.html$ /industries/ [R=301,L]
+RewriteRule ^industries/power-plants/?$ /industries/ [R=301,L]
+RewriteRule ^industries/scrap-metal\.html$ /industries/ [R=301,L]
+RewriteRule ^industries/scrap-metal/?$ /industries/ [R=301,L]
+RewriteRule ^industries/taxi-companies\.html$ /industries/ [R=301,L]
+RewriteRule ^industries/taxi-companies/?$ /industries/ [R=301,L]
+RewriteRule ^industries/truck-stops\.html$ /industries/ [R=301,L]
+RewriteRule ^industries/truck-stops/?$ /industries/ [R=301,L]
+
+# Old monitoring path redirects
+RewriteRule ^services/monitoring/?$ /services/fuel-monitoring.html [R=301,L]
+
+# Old residential/program paths - redirect to home
+RewriteRule ^residential/(.*)$ / [R=301,L]
+RewriteRule ^products/(.*)$ /services/tank-programs.html [R=301,L]
+RewriteRule ^resources/(.*)$ / [R=301,L]
+RewriteRule ^careers/(.*)$ / [R=301,L]
+RewriteRule ^privacy-policy/(.*)$ / [R=301,L]
+RewriteRule ^terms-of-service/(.*)$ / [R=301,L]
+RewriteRule ^heating-oil/(.*)$ / [R=301,L]
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Cache control for static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# Error documents
+ErrorDocument 404 /index.html

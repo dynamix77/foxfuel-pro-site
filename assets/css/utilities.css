@@ -1,0 +1,159 @@
+/* ========================================
+   UTILITIES - Helper Classes
+   ========================================
+   Quick, single-purpose classes.
+   Add sparingly. Prefer component classes.
+   ======================================== */
+
+/* ----------------------------------------
+   DISPLAY
+   ---------------------------------------- */
+.hidden { display: none !important; }
+.block { display: block; }
+.inline-block { display: inline-block; }
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.grid { display: grid; }
+
+/* ----------------------------------------
+   FLEXBOX
+   ---------------------------------------- */
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+.gap-1 { gap: var(--space-1); }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+.gap-8 { gap: var(--space-8); }
+
+/* ----------------------------------------
+   TEXT
+   ---------------------------------------- */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-xs { font-size: var(--text-xs); }
+.text-sm { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg { font-size: var(--text-lg); }
+.text-xl { font-size: var(--text-xl); }
+.text-2xl { font-size: var(--text-2xl); }
+.text-3xl { font-size: var(--text-3xl); }
+
+.font-normal { font-weight: var(--font-normal); }
+.font-medium { font-weight: var(--font-medium); }
+.font-semibold { font-weight: var(--font-semibold); }
+.font-bold { font-weight: var(--font-bold); }
+
+.uppercase { text-transform: uppercase; }
+.capitalize { text-transform: capitalize; }
+.lowercase { text-transform: lowercase; }
+
+.leading-tight { line-height: var(--leading-tight); }
+.leading-normal { line-height: var(--leading-normal); }
+.leading-relaxed { line-height: var(--leading-relaxed); }
+
+/* ----------------------------------------
+   COLORS
+   ---------------------------------------- */
+.text-primary { color: var(--color-brand-primary); }
+.text-secondary { color: var(--color-brand-secondary); }
+.text-white { color: var(--color-white); }
+.text-black { color: var(--color-black); }
+.text-gray { color: var(--color-gray-500); }
+.text-muted { color: var(--color-gray-500); }
+
+/* ----------------------------------------
+   BACKGROUNDS
+   ---------------------------------------- */
+.bg-white { background-color: var(--color-white); }
+.bg-gray { background-color: var(--color-gray-50); }
+.bg-muted { background-color: var(--color-gray-50); }
+.bg-dark { background-color: var(--color-black); }
+.bg-primary { background-color: var(--color-brand-primary); }
+.bg-secondary { background-color: var(--color-brand-secondary); }
+
+/* ----------------------------------------
+   SPACING
+   ---------------------------------------- */
+/* Margin */
+.m-0 { margin: 0; }
+.m-auto { margin: auto; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.mt-0 { margin-top: 0; }
+.mt-4 { margin-top: var(--space-4); }
+.mt-6 { margin-top: var(--space-6); }
+.mt-8 { margin-top: var(--space-8); }
+.mb-0 { margin-bottom: 0; }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-8 { margin-bottom: var(--space-8); }
+
+/* Padding */
+.p-0 { padding: 0; }
+.p-4 { padding: var(--space-4); }
+.p-6 { padding: var(--space-6); }
+.p-8 { padding: var(--space-8); }
+.py-4 { padding-top: var(--space-4); padding-bottom: var(--space-4); }
+.py-6 { padding-top: var(--space-6); padding-bottom: var(--space-6); }
+.py-8 { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+.py-12 { padding-top: var(--space-12); padding-bottom: var(--space-12); }
+.py-16 { padding-top: var(--space-16); padding-bottom: var(--space-16); }
+.px-4 { padding-left: var(--space-4); padding-right: var(--space-4); }
+.px-6 { padding-left: var(--space-6); padding-right: var(--space-6); }
+
+/* ----------------------------------------
+   WIDTH
+   ---------------------------------------- */
+.w-full { width: 100%; }
+.max-w-narrow { max-width: var(--max-width-narrow); }
+.max-w-default { max-width: var(--max-width); }
+.max-w-wide { max-width: var(--max-width-wide); }
+
+/* ----------------------------------------
+   RESPONSIVE VISIBILITY
+   ---------------------------------------- */
+/* Hide on mobile, show on desktop */
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .desktop-only {
+    display: block;
+  }
+}
+
+/* Show on mobile, hide on desktop */
+.mobile-only {
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+/* ----------------------------------------
+   SCREEN READER ONLY
+   ---------------------------------------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

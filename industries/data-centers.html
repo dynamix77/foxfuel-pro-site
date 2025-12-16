@@ -74,90 +74,91 @@
 
   <link rel="canonical" href="https://pro.foxfuel.com/industries/data-centers.html">
 
-  <link rel="stylesheet" href="/assets/css/base.css">
-  <link rel="stylesheet" href="/assets/css/layout.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/pages/industries.css">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/utilities.css">
+  <link rel="stylesheet" href="../assets/css/pages/industries.css">
 </head>
 
 <body>
 
   <!-- Header -->
-    <header class="site-header">
+  <header class="site-header">
     <div class="header-container">
       <div class="logo">
-        <a href="/">
-          <img src="/assets/renamed/branding/branding-fox-fuel-logo-main-01.png" alt="Fox Fuel" width="180" height="60">
+        <a href="https://pro.foxfuel.com/">
+          <img src="../assets/images/fox-fuel-logo.svg" alt="Fox Fuel" width="180" height="60">
         </a>
       </div>
       <nav class="main-nav">
         <ul class="nav-list">
-          <li class="nav-item"><a href="/">Home</a></li>
-          <li class="nav-item"><a href="https://foxfuel.com/heating-oil/">Heating Oil</a></li>
           <li class="nav-item has-dropdown">
-            <a href="/services/index.html">Commercial Services ▾</a>
+            <a href="/services/index.html">Services</a>
             <ul class="nav-dropdown">
               <li><a href="/services/bulk-fuel-delivery.html">Bulk Fuel Delivery</a></li>
               <li><a href="/services/fleet-fueling.html">Fleet Fueling</a></li>
               <li><a href="/services/jobsite-fueling.html">Jobsite Fueling</a></li>
               <li><a href="/services/generator-fueling.html">Generator Fueling</a></li>
-              <li><a href="/services/monitoring-fuel-management.html">Fuel Tank Monitoring</a></li>
+              <li><a href="/services/commercial-heating-oil.html">Commercial Heating Oil</a></li>
+              <li><a href="/services/tank-programs.html">On-Site Tank Programs</a></li>
+              <li><a href="/services/emergency-delivery.html">Emergency Delivery</a></li>
             </ul>
           </li>
           <li class="nav-item has-dropdown">
-            <a href="/industries/index.html">Industries ▾</a>
+            <a href="/industries/index.html">Industries</a>
             <ul class="nav-dropdown">
               <li><a href="/industries/construction.html">Construction</a></li>
-              <li><a href="/industries/data-centers.html">Data Centers</a></li>
-              <li><a href="/industries/hospitals-healthcare.html">Hospitals &amp; Healthcare</a></li>
+              <li><a href="/industries/fleet-transportation.html">Fleet &amp; Transportation</a></li>
               <li><a href="/industries/manufacturing.html">Manufacturing</a></li>
-              <li><a href="/industries/mining-quarry.html">Mining &amp; Quarry</a></li>
-              <li><a href="/industries/index.html">View All Industries</a></li>
+              <li><a href="/industries/healthcare.html">Healthcare</a></li>
+              <li><a href="/industries/data-centers.html">Data Centers</a></li>
+              <li><a href="/industries/municipal-government.html">Municipal &amp; Government</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a href="https://www.foxfuel.com/contact/">Contact Us</a></li>
+          <li class="nav-item"><a href="/service-area/">Service Area</a></li>
+          <li class="nav-item"><a href="/about/">About</a></li>
         </ul>
       </nav>
       <div class="header-cta">
-        <a href="https://www.foxfuel.com/contact/" class="btn btn-primary">Request a Quote</a>
+        <a href="tel:+12156591616" class="btn btn-emergency">Emergency: (215) 659-1616</a>
+        <a href="/contact/" class="btn btn-primary">Request Quote</a>
       </div>
-      
-    
       <button class="mobile-menu-toggle" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
       <div class="mobile-menu-overlay"></div>
       <nav class="mobile-menu" id="mobile-menu">
-        <div class="mobile-menu-header" style="padding: 0 24px 24px; color: #fff; font-size: 1.5rem; font-weight: 700;">
-           Menu
-        </div>
         <ul class="mobile-nav-list">
-            <li><a href="/">Home</a></li>
-            <li><a href="https://foxfuel.com/heating-oil/">Heating Oil</a></li>
-            <li class="mobile-has-submenu">
-                <button class="mobile-submenu-toggle">Commercial Services <span class="arrow">▼</span></button>
-                <ul class="mobile-submenu">
-                    <li><a href="/services/bulk-fuel-delivery.html">Bulk Fuel Delivery</a></li>
-                    <li><a href="/services/fleet-fueling.html">Fleet Fueling</a></li>
-                    <li><a href="/services/jobsite-fueling.html">Jobsite Fueling</a></li>
-                    <li><a href="/services/generator-fueling.html">Generator Fueling</a></li>
-                    <li><a href="/services/monitoring-fuel-management.html">Fuel Tank Monitoring</a></li>
-                </ul>
-            </li>
-            <li class="mobile-has-submenu">
-                <button class="mobile-submenu-toggle">Industries <span class="arrow">▼</span></button>
-                <ul class="mobile-submenu">
-                    <li><a href="/industries/construction.html">Construction</a></li>
-                    <li><a href="/industries/data-centers.html">Data Centers</a></li>
-                    <li><a href="/industries/hospitals-healthcare.html">Hospitals &amp; Healthcare</a></li>
-                    <li><a href="/industries/manufacturing.html">Manufacturing</a></li>
-                    <li><a href="/industries/mining-quarry.html">Mining &amp; Quarry</a></li>
-                    <li><a href="/industries/index.html">View All Industries</a></li>
-                </ul>
-            </li>
-            <li><a href="https://www.foxfuel.com/contact/">Contact Us</a></li>
+          <li class="mobile-has-submenu">
+            <button class="mobile-submenu-toggle">Services</button>
+            <ul class="mobile-submenu">
+              <li><a href="/services/bulk-fuel-delivery.html">Bulk Fuel Delivery</a></li>
+              <li><a href="/services/fleet-fueling.html">Fleet Fueling</a></li>
+              <li><a href="/services/jobsite-fueling.html">Jobsite Fueling</a></li>
+              <li><a href="/services/generator-fueling.html">Generator Fueling</a></li>
+              <li><a href="/services/commercial-heating-oil.html">Commercial Heating Oil</a></li>
+              <li><a href="/services/tank-programs.html">On-Site Tank Programs</a></li>
+              <li><a href="/services/emergency-delivery.html">Emergency Delivery</a></li>
+            </ul>
+          </li>
+          <li class="mobile-has-submenu">
+            <button class="mobile-submenu-toggle">Industries</button>
+            <ul class="mobile-submenu">
+              <li><a href="/industries/construction.html">Construction</a></li>
+              <li><a href="/industries/fleet-transportation.html">Fleet &amp; Transportation</a></li>
+              <li><a href="/industries/manufacturing.html">Manufacturing</a></li>
+              <li><a href="/industries/healthcare.html">Healthcare</a></li>
+              <li><a href="/industries/data-centers.html">Data Centers</a></li>
+              <li><a href="/industries/municipal-government.html">Municipal &amp; Government</a></li>
+            </ul>
+          </li>
+          <li><a href="/service-area/">Service Area</a></li>
+          <li><a href="/about/">About</a></li>
         </ul>
-        <a href="https://www.foxfuel.com/contact/" class="btn btn-primary mobile-cta">Request a Quote</a>
+        <a href="tel:+12156591616" class="btn btn-emergency mobile-cta">Emergency: (215) 659-1616</a>
+        <a href="/contact/" class="btn btn-primary mobile-cta">Request Quote</a>
       </nav>
     </div>
   </header>
@@ -165,18 +166,25 @@
   <main>
     <!-- Hero Section -->
     <section class="hero-industry"
-      style="background-image: url('/assets/renamed/jobsites/jobsite-data-center-server-room-01.jpg');">
+      style="background-image: url('../assets/images/hero/data-centers-hero.jpg');">
       <div class="container">
         <div class="hero-content">
           <h1>Fuel for Critical Uptime</h1>
           <p class="subheadline">Priority generator fueling, guaranteed uptime, and compliant storage solutions for mission-critical facilities.</p>
           <div class="hero-cta-group">
-            <a href="https://www.foxfuel.com/contact/" class="btn btn-primary btn-large">Request Generator Uptime Plan</a>
-            <a href="https://www.foxfuel.com/contact/" class="btn btn-secondary btn-large">Talk to a Data Center Fuel Specialist</a>
+            <a href="/contact/" class="btn btn-primary btn-large">Request Quote</a>
+            <a href="/contact/" class="btn btn-secondary btn-large">Request Quote</a>
           </div>
         </div>
       </div>
     </section>
+
+    <section class="service-hero-image">
+      <div class="container">
+        <img src="../assets/renamed/jobsites/jobsite-data-center-server-room-01.jpg" alt="Data center server room" loading="lazy" class="full-width-image">
+      </div>
+    </section>
+
     <!-- Trust Strip -->
     <section class="industry-trust-strip">
       <div class="container trust-strip-grid">
@@ -207,6 +215,9 @@
           <li><strong>Disaster Resilience:</strong> In a regional blackout, you need a fuel partner who prioritizes
             critical infrastructure over residential delivery.</li>
         </ul>
+        <div class="content-image">
+          <img src="../assets/renamed/services/services-generator-fueling-data-center-backup-01.jpg" alt="Data center backup generator fueling" loading="lazy">
+        </div>
       </div>
     </section>
 
@@ -238,7 +249,7 @@
       <div class="container">
         <div class="split-content">
           <div class="image">
-            <img src="/assets/renamed/equipment/equipment-generator-setup-fuelcube-backup-power-01.jpg"
+            <img src="../assets/images/industries/data-centers-content.jpg"
               alt="Backup Power Storage" loading="lazy">
           </div>
           <div class="content">
@@ -274,15 +285,22 @@
       </div>
     </section>
 
-    <!-- Final CTA Band -->
-        <!-- Download Guide -->
+    <!-- Download Guide -->
     <section class="industry-download">
       <div class="container industry-download-inner">
         <div class="download-text">
           <h3>Download the Data Center Fuel Planning Guide</h3>
           <p>Get a one-page summary you can share with your team, including delivery options, on-site tanks, and emergency coverage.</p>
         </div>
-        <a href="https://www.foxfuel.com/contact/" class="btn btn-secondary">Talk to a Fuel Specialist</a>
+        <a href="/contact/" class="btn btn-secondary">Request Quote</a>
+      </div>
+    </section>
+
+    <!-- Service Availability Section -->
+    <section class="service-availability">
+      <div class="container">
+        <h2>SERVICE AVAILABILITY</h2>
+        <p>Service availability varies by location, industry requirements, and volume. Contact us to confirm eligibility for your specific operation.</p>
       </div>
     </section>
 
@@ -291,51 +309,57 @@
       <div class="container container-narrow">
         <h2>Secure your uptime today.</h2>
         <p>Partner with a fuel provider who understands critical power.</p>
-        <a href="https://www.foxfuel.com/contact/" class="btn btn-large">Request a Quote</a>
+        <a href="/contact/" class="btn btn-large">Request Quote</a>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" style="background: #1A1A1A;">
     <div class="footer-container">
       <div class="footer-brand">
-        <img src="/assets/renamed/branding/branding-fox-fuel-logo-main-01.png" alt="Fox Fuel" width="150" height="50">
-        <p class="footer-tagline">Zero-Runout Reliability Since 1981</p>
+        <img src="../assets/images/fox-fuel-logo-white.svg" alt="Fox Fuel" width="150" height="50">
+        <p class="footer-tagline">Commercial Fuel Delivery Since 1981</p>
       </div>
-
       <div class="footer-col">
-        <h3>Services</h3>
+        <h3>SERVICES</h3>
         <ul>
           <li><a href="/services/bulk-fuel-delivery.html">Bulk Fuel Delivery</a></li>
           <li><a href="/services/fleet-fueling.html">Fleet Fueling</a></li>
           <li><a href="/services/jobsite-fueling.html">Jobsite Fueling</a></li>
           <li><a href="/services/generator-fueling.html">Generator Fueling</a></li>
+          <li><a href="/services/commercial-heating-oil.html">Commercial Heating Oil</a></li>
+          <li><a href="/services/tank-programs.html">On-Site Tank Programs</a></li>
+          <li><a href="/services/emergency-delivery.html">Emergency Delivery</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
-        <h3>FuelCube</h3>
+        <h3>INDUSTRIES</h3>
         <ul>
-          <li><a href="/fuelcube/models.html">Models</a></li>
-          <li><a href="/fuelcube/rental-program.html">Rental</a></li>
-          <li><a href="/fuelcube/placement-support.html">Support</a></li>
+          <li><a href="/industries/construction.html">Construction</a></li>
+          <li><a href="/industries/fleet-transportation.html">Fleet &amp; Transportation</a></li>
+          <li><a href="/industries/manufacturing.html">Manufacturing</a></li>
+          <li><a href="/industries/healthcare.html">Healthcare</a></li>
+          <li><a href="/industries/data-centers.html">Data Centers</a></li>
+          <li><a href="/industries/municipal-government.html">Municipal &amp; Government</a></li>
         </ul>
       </div>
-
-      <div class="footer-col footer-contact">
-        <h3>Contact</h3>
-        <p><strong>Phone:</strong> <a href="tel:+12156591616">(215) 659-1616</a></p>
-        <p><strong>Email:</strong> <a href="mailto:info@foxfuel.com">info@foxfuel.com</a></p>
-        <p>24/7 Emergency Support</p>
+      <div class="footer-col">
+        <h3>CONTACT</h3>
+        <p><a href="tel:+12156591616">(215) 659-1616</a></p>
+        <p><a href="mailto:commercial@foxfuel.com">commercial@foxfuel.com</a></p>
+        <p>24/7 Emergency Dispatch</p>
       </div>
     </div>
+    <div class="footer-service-area">
+      <p>Serving PA, NJ, DE</p>
+    </div>
     <div class="footer-legal">
-      <p>&copy; 2024 Fox Fuel. All rights reserved. | <a href="/sitemap.xml">Sitemap</a></p>
+      <p>&copy; 2025 Fox Fuel. All rights reserved.</p>
     </div>
   </footer>
 
-<script src="/assets/js/mobile-menu.js"></script>
+<script src="../assets/js/main.js"></script>
 </body>
 
 </html>

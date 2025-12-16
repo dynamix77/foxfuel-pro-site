@@ -1,0 +1,56 @@
+# Fox Fuel Pro - Redirect Configuration
+# Netlify/Cloudflare Pages format
+# Generated per Section 5.2 of Master Subdomain Implementation Specification v1.4
+
+# Renamed pages - 301 redirects
+/industries/hospitals-healthcare.html    /industries/healthcare.html    301
+/industries/hospitals-healthcare         /industries/healthcare.html    301
+/services/monitoring-fuel-management.html    /services/fuel-monitoring.html    301
+/services/monitoring-fuel-management         /services/fuel-monitoring.html    301
+
+# FuelCube redirects - consolidated to tank programs
+/fuelcube/*                              /services/tank-programs.html   301
+/fuelcube/models.html                    /services/tank-programs.html   301
+/fuelcube/rental-program.html            /services/tank-programs.html   301
+/fuelcube/purchase-program.html          /services/tank-programs.html   301
+/fuelcube/placement-support.html         /services/tank-programs.html   301
+/fuelcube/compliance-safety.html         /services/tank-programs.html   301
+/fuelcube/loan-program/                  /services/tank-programs.html   301
+
+# Deleted unauthorized industry pages - redirect to industries index
+/industries/mining-quarry.html           /industries/    301
+/industries/mining-quarry                /industries/    301
+/industries/agriculture.html             /industries/    301
+/industries/agriculture                  /industries/    301
+/industries/airports-ground-service.html /industries/    301
+/industries/airports-ground-service      /industries/    301
+/industries/bus-companies.html           /industries/    301
+/industries/bus-companies                /industries/    301
+/industries/car-dealerships.html         /industries/    301
+/industries/car-dealerships              /industries/    301
+/industries/marinas.html                 /industries/    301
+/industries/marinas                      /industries/    301
+/industries/municipalities.html          /industries/    301
+/industries/municipalities               /industries/    301
+/industries/power-plants.html            /industries/    301
+/industries/power-plants                 /industries/    301
+/industries/scrap-metal.html             /industries/    301
+/industries/scrap-metal                  /industries/    301
+/industries/taxi-companies.html          /industries/    301
+/industries/taxi-companies               /industries/    301
+/industries/truck-stops.html             /industries/    301
+/industries/truck-stops                  /industries/    301
+
+# Old monitoring path redirects
+/services/monitoring/                    /services/fuel-monitoring.html 301
+
+# Old residential/program paths - redirect to appropriate commercial pages
+/residential/*                           /    301
+/products/*                              /services/tank-programs.html   301
+/resources/*                             /    301
+/careers/*                               /    301
+/privacy-policy/*                        /    301
+/terms-of-service/*                      /    301
+
+# Catch-all for any other old paths
+/heating-oil/*                           /    301
