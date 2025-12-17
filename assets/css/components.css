@@ -982,3 +982,125 @@ a.service-card h3 {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
 }
+
+/* ========================================
+   MOBILE RESPONSIVE OVERRIDES
+   ========================================
+   These !important rules override inline styles
+   on the homepage to ensure mobile responsiveness
+   ======================================== */
+
+/* Service Cards Grid - Homepage */
+.service-cards {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: var(--space-6) !important;
+}
+
+@media (min-width: 640px) {
+  .service-cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .service-cards {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* Steps Grid - How It Works Section */
+.steps-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: var(--space-6) !important;
+}
+
+@media (min-width: 640px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .steps-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* Proof Grid - Stats Bar - Mobile Override */
+.proof-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: var(--space-4) !important;
+}
+
+@media (min-width: 768px) {
+  .proof-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: var(--space-6) !important;
+  }
+}
+
+/* Mobile font size adjustments */
+@media (max-width: 767px) {
+  .proof-value {
+    font-size: var(--text-2xl) !important;
+  }
+
+  .proof-label {
+    font-size: 0.75rem !important;
+  }
+
+  .hero-home h1 {
+    font-size: var(--text-2xl) !important;
+  }
+
+  .hero-home .subheadline {
+    font-size: var(--text-base) !important;
+  }
+
+  .hero-cta-group {
+    flex-direction: column !important;
+  }
+
+  .hero-cta-group .btn {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+
+  .service-card h3 {
+    font-size: var(--text-lg) !important;
+  }
+
+  .service-card p {
+    font-size: var(--text-sm) !important;
+  }
+
+  .industry-card {
+    padding: 2rem 1rem !important;
+    font-size: var(--text-sm) !important;
+  }
+
+  .step h3 {
+    font-size: var(--text-base) !important;
+  }
+
+  .step p {
+    font-size: var(--text-sm) !important;
+  }
+}
+
+/* Ensure minimum touch targets on mobile */
+@media (max-width: 767px) {
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .btn-large {
+    min-height: 44px;
+    padding: var(--space-3) var(--space-4) !important;
+  }
+
+  .btn-large {
+    padding: var(--space-4) var(--space-6) !important;
+  }
+}
