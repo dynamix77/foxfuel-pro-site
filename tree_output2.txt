@@ -1,0 +1,41 @@
+Folder PATH listing
+Volume serial number is 78EF-97FD
+C:.
++---.cursor
+¦   +---plans
++---.specstory
+¦   +---history
++---about
++---assets
+¦   +---css
+¦   ¦   +---pages
+¦   +---images
+¦   ¦   +---branding
+¦   ¦   +---equipment
+¦   ¦   +---hero
+¦   ¦   +---industries
+¦   ¦   +---services
+¦   ¦   +---ui
+¦   +---js
+¦   +---renamed
+¦       +---aerial
+¦       +---branding
+¦       +---compliance
+¦       +---composite
+¦       +---equipment
+¦       +---facilities
+¦       +---fuelcubes
+¦       +---infographics
+¦       +---jobsites
+¦       +---operations
+¦       +---personnel
+¦       +---programs
+¦       +---resources
+¦       +---services
+¦       +---trucks
+¦       +---ui
++---contact
++---emergency
++---industries
++---service-area
++---services

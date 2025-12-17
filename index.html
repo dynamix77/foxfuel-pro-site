@@ -22,6 +22,69 @@
 
   <link rel="canonical" href="https://pro.foxfuel.com/">
 
+  <style>
+    /* How It Works Section - Mobile Responsive Styles */
+    @media (min-width: 992px) {
+      .desktop-line {
+        display: block !important;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .how-it-works .process-steps {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+      }
+
+      .how-it-works h2 {
+        font-size: 1.75rem !important;
+      }
+
+      .how-it-works .step-number {
+        font-size: 2.5rem !important;
+      }
+
+      .how-it-works .step-title {
+        font-size: 1.25rem !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .how-it-works {
+        padding: 3.75rem 0 !important;
+      }
+
+      .how-it-works .section-header {
+        margin-bottom: 3rem !important;
+      }
+
+      .how-it-works h2 {
+        font-size: 1.5rem !important;
+      }
+
+      .how-it-works .subheading {
+        font-size: 1rem !important;
+      }
+
+      .how-it-works .step-number {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+      }
+
+      .how-it-works .step-title {
+        font-size: 1.125rem !important;
+      }
+
+      .how-it-works .step-description {
+        font-size: 0.9375rem !important;
+      }
+
+      .how-it-works .process-steps {
+        gap: 2rem !important;
+      }
+    }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -245,6 +308,55 @@
       </div>
     </section>
 
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works" style="background: #FFFFFF; padding: 5rem 0;">
+      <div class="container" style="max-width: 1200px;">
+        <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+          <span class="pre-heading" style="display: block; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.875rem; color: #666666; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem;">HOW IT WORKS</span>
+          <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 2.25rem; color: #1A1A1A; margin-bottom: 1rem;">From First Call to Scheduled Delivery</h2>
+          <p class="subheading" style="font-family: 'Open Sans', sans-serif; font-size: 1.125rem; color: #666666; max-width: 700px; margin: 0 auto;">Four steps to reliable fuel supply for your operation.</p>
+        </div>
+
+        <div class="process-steps" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 3rem; margin-bottom: 3rem; position: relative;">
+          <!-- Connecting line for desktop -->
+          <div style="position: absolute; top: 30px; left: 10%; right: 10%; height: 2px; background: #E5E5E5; z-index: 0; display: none;" class="desktop-line"></div>
+
+          <div class="step" style="position: relative; z-index: 1;">
+            <div class="step-number" style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 3rem; color: #C8102E; margin-bottom: 1.5rem;">01</div>
+            <h3 class="step-title" style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.375rem; color: #1A1A1A; margin-bottom: 1rem;">Tell Us What You Need</h3>
+            <p class="step-description" style="font-family: 'Open Sans', sans-serif; font-size: 1rem; color: #2F2F2F; line-height: 1.6; margin-bottom: 1rem;">Call or submit a quote request. We ask about your equipment, consumption, location, and delivery preferences. No long forms. A real person responds within one business day.</p>
+            <p class="step-detail" style="font-family: 'Open Sans', sans-serif; font-style: italic; font-size: 0.875rem; color: #666666; line-height: 1.5;">Site assessment available for complex accounts.</p>
+          </div>
+
+          <div class="step" style="position: relative; z-index: 1;">
+            <div class="step-number" style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 3rem; color: #C8102E; margin-bottom: 1.5rem;">02</div>
+            <h3 class="step-title" style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.375rem; color: #1A1A1A; margin-bottom: 1rem;">We Build Your Fuel Plan</h3>
+            <p class="step-description" style="font-family: 'Open Sans', sans-serif; font-size: 1rem; color: #2F2F2F; line-height: 1.6; margin-bottom: 1rem;">Based on your consumption patterns and operational schedule, we recommend a delivery frequency, product type, and service structure. High-volume accounts receive dedicated account management.</p>
+            <p class="step-detail" style="font-family: 'Open Sans', sans-serif; font-style: italic; font-size: 0.875rem; color: #666666; line-height: 1.5;">Pricing options include per-delivery, contract, or rack-plus.</p>
+          </div>
+
+          <div class="step" style="position: relative; z-index: 1;">
+            <div class="step-number" style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 3rem; color: #C8102E; margin-bottom: 1.5rem;">03</div>
+            <h3 class="step-title" style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.375rem; color: #1A1A1A; margin-bottom: 1rem;">Fuel Arrives on Schedule</h3>
+            <p class="step-description" style="font-family: 'Open Sans', sans-serif; font-size: 1rem; color: #2F2F2F; line-height: 1.6; margin-bottom: 1rem;">Our trucks deliver to your location at the agreed time. Drivers confirm delivery quantities, obtain signatures where required, and provide documentation for your records.</p>
+            <p class="step-detail" style="font-family: 'Open Sans', sans-serif; font-style: italic; font-size: 0.875rem; color: #666666; line-height: 1.5;">Delivery tickets and invoices available same-day.</p>
+          </div>
+
+          <div class="step" style="position: relative; z-index: 1;">
+            <div class="step-number" style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 3rem; color: #C8102E; margin-bottom: 1.5rem;">04</div>
+            <h3 class="step-title" style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.375rem; color: #1A1A1A; margin-bottom: 1rem;">We Monitor. You Operate.</h3>
+            <p class="step-description" style="font-family: 'Open Sans', sans-serif; font-size: 1rem; color: #2F2F2F; line-height: 1.6; margin-bottom: 1rem;">For FuelCube accounts, we track your tank levels and schedule the next delivery before you run low. Emergency dispatch remains available 24/7. One number. One vendor. One less thing to manage.</p>
+            <p class="step-detail" style="font-family: 'Open Sans', sans-serif; font-style: italic; font-size: 0.875rem; color: #666666; line-height: 1.5;">Account access for delivery history and invoices.</p>
+          </div>
+        </div>
+
+        <div class="section-cta" style="text-align: center; margin-top: 3rem;">
+          <p style="font-family: 'Open Sans', sans-serif; font-size: 1.125rem; color: #2F2F2F; margin-bottom: 1.5rem;">Ready to get started?</p>
+          <a href="https://www.foxfuel.com/contact/" class="btn btn-primary" style="display: inline-block; background: #C8102E; color: #FFFFFF; padding: 1rem 2rem; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1rem; text-decoration: none; border-radius: 4px; transition: background 0.2s;">Request a Quote</a>
+        </div>
+      </div>
+    </section>
+
     <!-- Industries Section -->
     <section class="industries-section" style="padding: 4rem 0;">
       <div class="container">
@@ -256,35 +368,6 @@
           <a href="/industries/healthcare.html" class="industry-card" style="display: block; background: linear-gradient(rgba(26,26,26,0.7), rgba(26,26,26,0.7)), url('./assets/images/industries/healthcare.jpg'); background-size: cover; background-position: center; color: #FFFFFF; padding: 3rem 2rem; text-align: center; text-decoration: none; font-weight: bold;">HEALTHCARE</a>
           <a href="/industries/data-centers.html" class="industry-card" style="display: block; background: linear-gradient(rgba(26,26,26,0.7), rgba(26,26,26,0.7)), url('./assets/images/industries/data-centers.jpg'); background-size: cover; background-position: center; color: #FFFFFF; padding: 3rem 2rem; text-align: center; text-decoration: none; font-weight: bold;">DATA CENTERS</a>
           <a href="/industries/municipal-government.html" class="industry-card" style="display: block; background: linear-gradient(rgba(26,26,26,0.7), rgba(26,26,26,0.7)), url('./assets/images/industries/municipal-government.jpg'); background-size: cover; background-position: center; color: #FFFFFF; padding: 3rem 2rem; text-align: center; text-decoration: none; font-weight: bold;">MUNICIPAL &amp; GOVERNMENT</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section class="how-it-works-section" style="background: #F5F5F5; padding: 4rem 0;">
-      <div class="container">
-        <h2 style="text-align: center; margin-bottom: 3rem;">HOW IT WORKS</h2>
-        <div class="steps-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
-          <div class="step" style="text-align: center;">
-            <span style="display: block; font-size: 2rem; font-weight: bold; color: #C8102E; margin-bottom: 0.5rem;">01</span>
-            <h3>REQUEST QUOTE</h3>
-            <p>Call or submit form. Provide location, fuel type, volume estimate, and service requirements.</p>
-          </div>
-          <div class="step" style="text-align: center;">
-            <span style="display: block; font-size: 2rem; font-weight: bold; color: #C8102E; margin-bottom: 0.5rem;">02</span>
-            <h3>SITE ASSESSMENT</h3>
-            <p>We confirm access, tank compatibility, and delivery logistics. Custom accounts receive on-site evaluation.</p>
-          </div>
-          <div class="step" style="text-align: center;">
-            <span style="display: block; font-size: 2rem; font-weight: bold; color: #C8102E; margin-bottom: 0.5rem;">03</span>
-            <h3>SCHEDULED DELIVERY</h3>
-            <p>Fuel delivered on agreed schedule. Metered dispensing. Documentation provided same-day.</p>
-          </div>
-          <div class="step" style="text-align: center;">
-            <span style="display: block; font-size: 2rem; font-weight: bold; color: #C8102E; margin-bottom: 0.5rem;">04</span>
-            <h3>ONGOING SERVICE</h3>
-            <p>Automatic reorder for monitored accounts. 24/7 emergency dispatch available. One vendor. One number.</p>
-          </div>
         </div>
       </div>
     </section>
