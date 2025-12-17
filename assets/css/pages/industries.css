@@ -1,260 +1,837 @@
-/* Industries Page Specific Styles */
+/* ========================================
+   INDUSTRIES PAGE STYLES
+   Fox Fuel B2B - Page-Specific Overrides
+   ========================================
 
-/* Hero Overrides */
+   Per Operating Definition §7: Design must signal
+   industrial capability, reliability, and seriousness.
+
+   Per Blueprint §2.8: Visual tone must match
+   operational credibility, not lifestyle branding.
+   ======================================== */
+
+/* ----------------------------------------
+   INDUSTRY PAGE HERO
+   ---------------------------------------- */
 .hero-industry {
-    background-color: var(--color-bg-dark);
-    /* Fallback */
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    color: #FFFFFF;
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-black);
+  background-size: cover;
+  background-position: center;
+  color: var(--color-white);
+  padding: var(--space-16) 0;
 }
 
-/* Navy Overlay for Contrast */
 .hero-industry::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Navy: #0A1931 - Stronger contrast for white text */
-    background: linear-gradient(to right, rgba(10, 25, 49, 0.9) 0%, rgba(10, 25, 49, 0.65) 100%);
-    z-index: 1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 26, 0.85) 0%,
+    rgba(26, 26, 26, 0.7) 50%,
+    rgba(26, 26, 26, 0.6) 100%
+  );
+  z-index: 1;
 }
 
 .hero-industry .container {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
-/* Hero Typography */
-.hero-industry h1,
-.hero-industry h2,
-.hero-industry h3,
-.hero-industry p,
+.hero-industry .hero-content {
+  max-width: 700px;
+}
+
+.hero-industry h1 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-tight);
+}
+
+@media (min-width: 768px) {
+  .hero-industry h1 {
+    font-size: var(--text-4xl);
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-industry h1 {
+    font-size: var(--text-5xl);
+  }
+}
+
 .hero-industry .subheadline {
-    color: #FFFFFF;
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--space-8);
+  line-height: var(--leading-relaxed);
 }
 
-.hero-industry .subheadline {
-    font-size: var(--font-size-lg);
-    max-width: 650px;
-    margin-bottom: var(--space-lg);
-    opacity: 0.95;
-    line-height: 1.5;
+@media (min-width: 768px) {
+  .hero-industry .subheadline {
+    font-size: var(--text-xl);
+  }
 }
 
-/* Hero CTAs */
-.hero-industry .hero-cta-group {
-    display: flex;
-    gap: var(--space-md);
-    flex-wrap: wrap;
-    margin-bottom: var(--space-lg);
-}
-
-.hero-industry .btn-primary {
-    background-color: #C8102E;
-    /* Fox Fuel Red */
-    color: #FFFFFF;
-    border: 2px solid #C8102E;
-}
-
-.hero-industry .btn-primary:hover {
-    background-color: #A60C25;
-    border-color: #A60C25;
-    box-shadow: 0 4px 12px rgba(200, 16, 46, 0.3);
-}
-
-.hero-industry .btn-secondary {
-    background-color: rgba(10, 25, 49, 0.8);
-    /* Navy with slight transparency */
-    color: #FFFFFF;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(4px);
-}
-
-.hero-industry .btn-secondary:hover {
-    background-color: #FFFFFF;
-    color: #0A1931;
-    border-color: #FFFFFF;
-}
-
-/* Trust Strip in Hero */
-/* Trust Strip in Hero - SUPPRESSED per request */
-.hero-industry .trust-strip {
-    display: none !important;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .hero-industry {
-        padding: var(--space-xl) 0;
-        text-align: left;
-    }
-
-    .hero-industry::before {
-        /* Darker overlay on mobile for readability */
-        background: rgba(10, 25, 49, 0.85);
-    }
-
-    .hero-industry .hero-cta-group {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .hero-industry .btn {
-        width: 100%;
-    }
-}
-
-/* Challenges Section */
-.challenges-section {
-    background-color: var(--color-bg-muted);
-    padding: var(--space-xxl) 0;
-}
-
-.challenges-list {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    gap: var(--space-md);
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.challenges-list li {
-    position: relative;
-    padding-left: 2rem;
-    font-size: var(--font-size-lg);
-    line-height: 1.6;
-}
-
-.challenges-list li::before {
-    content: "⚠️";
-    /* Or another warning/pain icon */
-    position: absolute;
-    left: 0;
-    top: 0.2rem;
-}
-
-/* Solutions Grid overrides if needed, otherwise use .feature-grid */
-
-/* Suppress Legacy Hero Elements */
-.hero-tabs,
-.breadcrumb,
-.subnav,
-.subnav-bar,
-.hero-accent,
-.checks {
-    display: none !important;
-}
-
-/* 3. Industry Trust Strip (Post-Hero) */
+/* ----------------------------------------
+   INDUSTRY TRUST STRIP
+   Per §7: Trust through demonstrated capability
+   ---------------------------------------- */
 .industry-trust-strip {
-    background: #F5F6F8;
-    padding: 24px 0;
+  background-color: var(--color-gray-900);
+  padding: var(--space-8) 0;
+  border-bottom: 3px solid var(--color-brand-primary);
 }
 
 .industry-trust-strip .trust-strip-grid {
-    display: flex;
-    justify-content: center;
-    gap: 48px;
-    flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .industry-trust-strip .trust-strip-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .industry-trust-strip .trust-strip-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .industry-trust-strip .trust-item {
-    text-align: center;
+  padding: var(--space-4);
 }
 
 .industry-trust-strip .trust-value {
-    display: block;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #0A1931;
+  display: block;
+  font-family: var(--font-family-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-white);
+  margin-bottom: var(--space-2);
+}
+
+@media (min-width: 768px) {
+  .industry-trust-strip .trust-value {
+    font-size: var(--text-4xl);
+  }
 }
 
 .industry-trust-strip .trust-label {
-    font-size: 0.875rem;
-    color: #555555;
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-gray-300);
 }
 
-/* 4. Download Guide CTA */
-.industry-download {
-    background: #FFFFFF;
-    padding: 40px 0;
-    border-top: 1px solid #E2E4E8;
-    border-bottom: 1px solid #E2E4E8;
+/* ----------------------------------------
+   CHALLENGES SECTION
+   ---------------------------------------- */
+.challenges-section {
+  padding: var(--space-12) 0;
+  background-color: var(--color-white);
 }
 
-.industry-download-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
+.challenges-section h2 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-6);
+  color: var(--color-black);
 }
 
-.industry-download .download-text h3 {
-    margin-bottom: 8px;
+@media (min-width: 768px) {
+  .challenges-section h2 {
+    font-size: var(--text-3xl);
+  }
 }
 
-.industry-download .download-text p {
-    margin: 0;
-    max-width: 520px;
-    color: #555555;
+.challenges-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-8) 0;
 }
 
-@media (max-width: 768px) {
-    .industry-download-inner {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .industry-download a.btn {
-        width: 100%;
-        text-align: center;
-    }
+.challenges-list li {
+  padding: var(--space-4) 0 var(--space-4) var(--space-8);
+  border-bottom: 1px solid var(--color-gray-100);
+  position: relative;
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-gray-700);
 }
 
-/* 5. What We Fuel - Updated */
+.challenges-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.5rem;
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-brand-primary);
+  border-radius: 50%;
+}
+
+.challenges-list li strong {
+  color: var(--color-black);
+  font-weight: var(--font-semibold);
+}
+
+.challenges-list li:last-child {
+  border-bottom: none;
+}
+
+/* ----------------------------------------
+   FEATURE GRID - How We Solve This
+   ---------------------------------------- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .feature-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.feature-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-100);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.feature-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-brand-primary);
+  transform: translateY(-2px);
+}
+
+.feature-card h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-black);
+  margin-bottom: var(--space-3);
+}
+
+.feature-card p {
+  font-size: var(--text-sm);
+  color: var(--color-gray-700);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+/* ----------------------------------------
+   WHAT WE FUEL SECTION
+   FIX: Proper flex layout with gaps
+   ---------------------------------------- */
 .what-we-fuel {
-    padding: 56px 0;
+  padding: var(--space-12) 0;
 }
 
 .what-we-fuel h2 {
-    text-align: center;
-    margin-bottom: 24px;
+  text-align: center;
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-8);
+  color: var(--color-black);
 }
 
 .what-we-fuel-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    margin-top: 0;
-    /* Override previous if any */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
 }
 
+/* CRITICAL FIX: Fuel chip styling with proper spacing */
 .fuel-chip {
-    display: inline-flex;
-    align-items: center;
-    padding: 6px 14px;
-    border-radius: 999px;
-    border: 1px solid #E2E4E8;
-    font-size: 0.875rem;
-    background: #FFFFFF;
-    color: #333333;
-    /* Reset previous styles if conflicting */
-    box-shadow: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-gray-100);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-full);
+  font-family: var(--font-family-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-gray-700);
+  white-space: nowrap;
+  transition: all var(--transition-fast);
 }
 
-.fuel-chip::before {
-    /* Remove previous bullet if it exists or keep consistency? Prompt styling implies no bullet or just text? 
-       Prompt says: "display: inline-flex; align-items: center;" but doesn't mention the bullet ::before pseudo element from previous CSS. 
-       The prompt CSS block does NOT include the ::before rule. I should explicitly remove or override it if I want to match the prompt exactly. 
-       However, the prompt says "Upgrade... into an Icon/Chip Grid" and "Re-use existing items". 
-       I will assume the prompt CSS is the source of truth. */
-    content: none;
-    margin: 0;
+.fuel-chip:hover {
+  background-color: var(--color-brand-primary);
+  border-color: var(--color-brand-primary);
+  color: var(--color-white);
+}
+
+.territory-statement {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+  font-style: italic;
+  margin-top: var(--space-4);
+}
+
+/* ----------------------------------------
+   INDUSTRIES WE SUPPORT SECTION
+   FIX: This is the main spacing issue
+   ---------------------------------------- */
+.industries-supported,
+.industries-we-support {
+  background-color: var(--color-gray-50);
+  padding: var(--space-8) 0;
+  text-align: center;
+}
+
+.industries-supported h3,
+.industries-we-support h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-black);
+  margin-bottom: var(--space-6);
+}
+
+/* CRITICAL FIX: Industry chips with proper spacing */
+.industry-chips,
+.industries-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.industry-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-5);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-full);
+  font-family: var(--font-family-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-gray-700);
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.industry-chip:hover {
+  background-color: var(--color-brand-primary);
+  border-color: var(--color-brand-primary);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+/* ----------------------------------------
+   SPLIT CONTENT / FUELCUBE SECTION
+   ---------------------------------------- */
+.split-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .split-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.split-content .image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.split-content .content h2 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-4);
+  color: var(--color-black);
+}
+
+.split-content .content p {
+  color: var(--color-gray-700);
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-relaxed);
+}
+
+.split-content .content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-6) 0;
+}
+
+.split-content .content ul li {
+  padding: var(--space-2) 0 var(--space-2) var(--space-6);
+  position: relative;
+  color: var(--color-gray-700);
+}
+
+.split-content .content ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-brand-primary);
+  border-radius: 50%;
+}
+
+/* ----------------------------------------
+   INDUSTRY DOWNLOAD SECTION
+   ---------------------------------------- */
+.industry-download {
+  background-color: var(--color-brand-secondary);
+  padding: var(--space-10) 0;
+}
+
+.industry-download-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .industry-download-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.download-text h3 {
+  color: var(--color-white);
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-2);
+}
+
+.download-text p {
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  font-size: var(--text-base);
+}
+
+/* ----------------------------------------
+   SERVICE AVAILABILITY SECTION
+   Per §8: Guardrails must be stated
+   ---------------------------------------- */
+.service-availability {
+  background-color: var(--color-gray-50);
+  padding: var(--space-8) 0;
+  text-align: center;
+  border-top: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.service-availability h2 {
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-gray-500);
+  margin-bottom: var(--space-2);
+  font-weight: var(--font-semibold);
+}
+
+.service-availability p {
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: var(--leading-relaxed);
+}
+
+/* ----------------------------------------
+   CTA BAND - Final Call to Action
+   ---------------------------------------- */
+.cta-band {
+  background-color: var(--color-brand-primary);
+  color: var(--color-white);
+  padding: var(--space-12) 0;
+  text-align: center;
+}
+
+.cta-band h2 {
+  font-size: var(--text-2xl);
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .cta-band h2 {
+    font-size: var(--text-3xl);
+  }
+}
+
+.cta-band p {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto var(--space-8);
+}
+
+.cta-band .btn {
+  background-color: var(--color-white);
+  color: var(--color-brand-primary);
+  border-color: var(--color-white);
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+}
+
+.cta-band .btn:hover {
+  background-color: var(--color-gray-100);
+  color: var(--color-brand-primary-hover);
+}
+
+/* ----------------------------------------
+   CONTENT IMAGES
+   ---------------------------------------- */
+.content-image {
+  margin: var(--space-8) 0;
+  text-align: center;
+}
+
+.content-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.full-width-image {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ----------------------------------------
+   SERVICES FOR INDUSTRY SECTION
+   ---------------------------------------- */
+.services-for-industry {
+  padding: var(--space-12) 0;
+  background-color: var(--color-white);
+}
+
+.services-for-industry h2 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-6);
+  color: var(--color-black);
+}
+
+.services-for-industry ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-6) 0;
+}
+
+.services-for-industry ul li {
+  padding: var(--space-3) 0 var(--space-3) var(--space-6);
+  position: relative;
+  color: var(--color-gray-700);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+.services-for-industry ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-brand-primary);
+  border-radius: 50%;
+}
+
+/* ----------------------------------------
+   PROCUREMENT / SPECIALIZED SECTIONS
+   ---------------------------------------- */
+.procurement-section,
+.operational-benefits,
+.facilities-served {
+  padding: var(--space-10) 0;
+}
+
+.procurement-section h2,
+.operational-benefits h2,
+.facilities-served h2 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-6);
+  color: var(--color-black);
+}
+
+.procurement-section ul,
+.operational-benefits ul,
+.facilities-served ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.procurement-section ul li,
+.operational-benefits ul li,
+.facilities-served ul li {
+  padding: var(--space-3) 0 var(--space-3) var(--space-6);
+  position: relative;
+  color: var(--color-gray-700);
+  font-size: var(--text-base);
+}
+
+.procurement-section ul li::before,
+.operational-benefits ul li::before,
+.facilities-served ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-brand-primary);
+  border-radius: 50%;
+}
+
+/* ----------------------------------------
+   CTA BLOCK (inline dark sections)
+   ---------------------------------------- */
+.cta-block {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: var(--space-12) 0;
+  text-align: center;
+}
+
+.cta-block h2 {
+  font-size: var(--text-2xl);
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+
+.cta-block p {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-block .btn-primary {
+  background-color: var(--color-brand-primary);
+  color: var(--color-white);
+  border-color: var(--color-brand-primary);
+}
+
+.cta-block .btn-primary:hover {
+  background-color: var(--color-brand-primary-hover);
+  border-color: var(--color-brand-primary-hover);
+}
+
+/* ----------------------------------------
+   HERO CTA GROUP
+   ---------------------------------------- */
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .hero-cta-group {
+    flex-direction: row;
+  }
+}
+
+.hero-cta-group .btn {
+  padding: var(--space-4) var(--space-6);
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+}
+
+.hero-cta-group .btn-large {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-lg);
+}
+
+/* ----------------------------------------
+   PAGE HEADER (alternative to hero)
+   ---------------------------------------- */
+.page-header {
+  background-color: var(--color-gray-900);
+  color: var(--color-white);
+  padding: var(--space-12) 0 var(--space-10);
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: var(--text-2xl);
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 768px) {
+  .page-header h1 {
+    font-size: var(--text-3xl);
+  }
+}
+
+.page-header .lead {
+  font-size: var(--text-lg);
+  color: var(--color-gray-300);
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: var(--leading-relaxed);
+}
+
+/* ----------------------------------------
+   SERVICE HERO IMAGE
+   ---------------------------------------- */
+.service-hero-image {
+  padding: var(--space-8) 0;
+  background-color: var(--color-gray-50);
+}
+
+/* ----------------------------------------
+   BG MUTED UTILITY
+   ---------------------------------------- */
+.bg-muted {
+  background-color: var(--color-gray-50);
+}
+
+/* ----------------------------------------
+   VISUAL CARD GRID - Hub Pages
+   ---------------------------------------- */
+.services-grid-visual {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: var(--space-8);
+}
+
+@media (min-width: 640px) {
+  .services-grid-visual {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .services-grid-visual {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service-card-with-image {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.service-card-with-image:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+.service-card-with-image .card-image {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-gray-100);
+}
+
+.service-card-with-image .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-card-with-image:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.service-card-with-image .card-content {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.service-card-with-image .card-content h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-black);
+  margin-bottom: var(--space-3);
+  line-height: var(--leading-tight);
+}
+
+.service-card-with-image .card-content h3 a {
+  color: var(--color-black);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.service-card-with-image .card-content h3 a:hover {
+  color: var(--color-brand-primary);
+}
+
+.service-card-with-image .card-content p {
+  font-size: var(--text-sm);
+  color: var(--color-gray-700);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-4);
+  flex-grow: 1;
+}
+
+.service-card-with-image .card-content .link-text {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-brand-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  margin-top: auto;
+}
+
+.service-card-with-image .card-content .link-text:hover {
+  color: var(--color-brand-primary-hover);
+  text-decoration: underline;
 }

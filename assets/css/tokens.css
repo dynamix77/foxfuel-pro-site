@@ -28,9 +28,13 @@
      ---------------------------------------- */
   --color-black: #1A1A1A;
   --color-gray-900: #2F2F2F;
+  --color-gray-800: #3D3D3D;
   --color-gray-700: #4A4A4A;
+  --color-gray-600: #5C5C5C;
   --color-gray-500: #767676;
+  --color-gray-400: #999999;
   --color-gray-300: #CCCCCC;
+  --color-gray-200: #E0E0E0;
   --color-gray-100: #E5E5E5;
   --color-gray-50: #F5F5F5;
   --color-white: #FFFFFF;
