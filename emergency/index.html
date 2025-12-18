@@ -148,54 +148,60 @@
           <a href="tel:+12156591616" style="color: #FFFFFF; font-size: 1.5rem; font-weight: bold;">(215) 659-1616</a>
         </div>
 
-        <form id="emergency-intake-form" method="POST">
-          <div class="form-group">
-            <label for="contact_name">Name *</label>
-            <input type="text" id="contact_name" name="contact_name" required minlength="2">
-          </div>
+        <div class="form-container" style="border: 2px solid #C8102E;">
+          <form action="https://api.web3forms.com/submit" method="POST" class="foxfuel-form">
 
-          <div class="form-group">
-            <label for="phone">Phone *</label>
-            <input type="tel" id="phone" name="phone" required>
-          </div>
+            <!-- Web3Forms Configuration -->
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <input type="hidden" name="subject" value="URGENT: Emergency Fuel Request - pro.foxfuel.com">
+            <input type="hidden" name="from_name" value="Fox Fuel Commercial Website - EMERGENCY">
+            <input type="hidden" name="redirect" value="https://pro.foxfuel.com/contact/thank-you.html">
+            <input type="checkbox" name="botcheck" style="display: none;">
 
-          <div class="form-group">
-            <label for="location">Location / Address *</label>
-            <input type="text" id="location" name="location" required minlength="5">
-          </div>
+            <div class="form-group">
+              <label for="contact_name">Name <span class="required">*</span></label>
+              <input type="text" id="contact_name" name="contact_name" required minlength="2" placeholder="Your name">
+            </div>
 
-          <div class="form-group">
-            <label for="fuel_type">Fuel Type *</label>
-            <select id="fuel_type" name="fuel_type" required>
-              <option value="">Select Fuel Type</option>
-              <option value="Diesel (on-road)">Diesel (on-road)</option>
-              <option value="Diesel (off-road)">Diesel (off-road)</option>
-              <option value="Heating Oil">Heating Oil</option>
-              <option value="Not Sure">Not Sure</option>
-            </select>
-          </div>
+            <div class="form-group">
+              <label for="phone">Phone <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" required placeholder="(555) 555-5555">
+            </div>
 
-          <div class="form-group">
-            <label for="urgency">Urgency *</label>
-            <select id="urgency" name="urgency" required>
-              <option value="">Select Urgency</option>
-              <option value="Immediate (within hours)">Immediate (within hours)</option>
-              <option value="Today">Today</option>
-              <option value="Tomorrow">Tomorrow</option>
-              <option value="This Week">This Week</option>
-            </select>
-          </div>
+            <div class="form-group">
+              <label for="location">Location / Address <span class="required">*</span></label>
+              <input type="text" id="location" name="location" required minlength="5" placeholder="Where is fuel needed?">
+            </div>
 
-          <div class="form-group">
-            <label for="notes">Additional Details</label>
-            <textarea id="notes" name="notes" maxlength="500" rows="3"></textarea>
-          </div>
+            <div class="form-group">
+              <label for="fuel_type">Fuel Type <span class="required">*</span></label>
+              <select id="fuel_type" name="fuel_type" required>
+                <option value="">Select Fuel Type</option>
+                <option value="Diesel (on-road)">Diesel (on-road)</option>
+                <option value="Diesel (off-road)">Diesel (off-road)</option>
+                <option value="Heating Oil">Heating Oil</option>
+                <option value="Not Sure">Not Sure</option>
+              </select>
+            </div>
 
-          <button type="submit" class="btn btn-primary btn-large" style="background: #C8102E;">Submit Emergency Request</button>
-        </form>
+            <div class="form-group">
+              <label for="urgency">Urgency <span class="required">*</span></label>
+              <select id="urgency" name="urgency" required>
+                <option value="">Select Urgency</option>
+                <option value="Immediate (within hours)">Immediate (within hours)</option>
+                <option value="Today">Today</option>
+                <option value="Tomorrow">Tomorrow</option>
+                <option value="This Week">This Week</option>
+              </select>
+            </div>
 
-        <div class="form-success" style="display: none;">
-          <p>Emergency request received. For immediate dispatch, call <a href="tel:+12156591616">(215) 659-1616</a>.</p>
+            <div class="form-group">
+              <label for="notes">Additional Details</label>
+              <textarea id="notes" name="notes" rows="3" placeholder="Generator type, estimated gallons needed, access instructions..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit Emergency Request</button>
+          </form>
         </div>
       </div>
     </section>
@@ -258,42 +264,6 @@
     </div>
   </footer>
 
-  <script>
-    // TODO: Replace stub handler with actual form submission endpoint
-    // Endpoint should route to emergency dispatch queue or commercial pipeline with urgency flag
-    const EMERGENCY_FORM_ENDPOINT = 'TODO_EMERGENCY_ENDPOINT';
-
-    document.getElementById('emergency-intake-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      // Validate required fields
-      const required = ['contact_name', 'phone', 'location', 'fuel_type', 'urgency'];
-      let valid = true;
-
-      required.forEach(function(field) {
-        const input = document.getElementById(field);
-        if (!input.value || input.value.trim() === '') {
-          valid = false;
-          input.classList.add('error');
-        } else {
-          input.classList.remove('error');
-        }
-      });
-
-      if (!valid) return;
-
-      // Log form data to console with urgency flag (stub handler)
-      const formData = new FormData(this);
-      console.log('EMERGENCY Intake Form Submission:');
-      console.log('URGENCY FLAG: ' + document.getElementById('urgency').value);
-      for (let [key, value] of formData.entries()) {
-        console.log(key + ': ' + value);
-      }
-
-      // Display success message (do NOT clear form per spec)
-      document.querySelector('.form-success').style.display = 'block';
-    });
-  </script>
   <script src="../assets/js/main.js"></script>
 </body>
 </html>

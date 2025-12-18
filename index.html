@@ -411,70 +411,86 @@
         <h2>REQUEST A QUOTE</h2>
         <p style="margin-bottom: 2rem;">Bulk delivery. Tank programs. Emergency dispatch. Submit form or call directly.</p>
 
-        <form id="commercial-intake-form" method="POST" style="text-align: left; max-width: 600px; margin: 0 auto;">
-          <div style="margin-bottom: 1rem;">
-            <label for="company_name" style="display: block; margin-bottom: 0.25rem;">Company Name *</label>
-            <input type="text" id="company_name" name="company_name" required minlength="2" style="width: 100%; padding: 0.75rem; border: none;">
-          </div>
-          <div style="margin-bottom: 1rem;">
-            <label for="contact_name" style="display: block; margin-bottom: 0.25rem;">Contact Name *</label>
-            <input type="text" id="contact_name" name="contact_name" required minlength="2" style="width: 100%; padding: 0.75rem; border: none;">
-          </div>
-          <div style="margin-bottom: 1rem;">
-            <label for="phone" style="display: block; margin-bottom: 0.25rem;">Phone *</label>
-            <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 0.75rem; border: none;">
-          </div>
-          <div style="margin-bottom: 1rem;">
-            <label for="email" style="display: block; margin-bottom: 0.25rem;">Email *</label>
-            <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: none;">
-          </div>
-          <div style="margin-bottom: 1rem;">
-            <label for="industry" style="display: block; margin-bottom: 0.25rem;">Industry *</label>
-            <select id="industry" name="industry" required style="width: 100%; padding: 0.75rem; border: none;">
-              <option value="">Select Industry</option>
-              <option value="Construction">Construction</option>
-              <option value="Fleet & Transportation">Fleet &amp; Transportation</option>
-              <option value="Manufacturing">Manufacturing</option>
-              <option value="Healthcare">Healthcare</option>
-              <option value="Data Centers">Data Centers</option>
-              <option value="Municipal & Government">Municipal &amp; Government</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div style="margin-bottom: 1rem;">
-            <label for="service_interest" style="display: block; margin-bottom: 0.25rem;">Service Interest *</label>
-            <select id="service_interest" name="service_interest" required style="width: 100%; padding: 0.75rem; border: none;">
-              <option value="">Select Service</option>
-              <option value="Bulk Fuel Delivery">Bulk Fuel Delivery</option>
-              <option value="Tank Programs for Fleets">Tank Programs for Fleets</option>
-              <option value="Jobsite Fueling">Jobsite Fueling</option>
-              <option value="Generator Fueling">Generator Fueling</option>
-              <option value="Commercial Heating Oil">Commercial Heating Oil</option>
-              <option value="On-Site Tank Program">On-Site Tank Program</option>
-              <option value="Emergency Delivery">Emergency Delivery</option>
-              <option value="Multiple Services">Multiple Services</option>
-            </select>
-          </div>
-          <div style="margin-bottom: 1rem;">
-            <label for="monthly_volume" style="display: block; margin-bottom: 0.25rem;">Estimated Monthly Volume</label>
-            <select id="monthly_volume" name="monthly_volume" style="width: 100%; padding: 0.75rem; border: none;">
-              <option value="">Select Volume</option>
-              <option value="Under 500 gallons/month">Under 500 gallons/month</option>
-              <option value="500-2,000 gallons/month">500-2,000 gallons/month</option>
-              <option value="2,000-10,000 gallons/month">2,000-10,000 gallons/month</option>
-              <option value="10,000+ gallons/month">10,000+ gallons/month</option>
-              <option value="Not sure">Not sure</option>
-            </select>
-          </div>
-          <div style="margin-bottom: 1.5rem;">
-            <label for="notes" style="display: block; margin-bottom: 0.25rem;">Location / Notes</label>
-            <textarea id="notes" name="notes" maxlength="1000" rows="3" style="width: 100%; padding: 0.75rem; border: none;"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-large" style="background: #C8102E; padding: 1rem 2rem; width: 100%; border: none; color: #FFFFFF; font-size: 1.125rem; cursor: pointer;">Submit Quote Request</button>
-        </form>
+        <div class="form-container" style="margin: 0 auto;">
+          <form action="https://api.web3forms.com/submit" method="POST" class="foxfuel-form">
 
-        <div class="form-success" style="display: none; padding: 2rem; background: #2F2F2F; margin-top: 1rem;">
-          <p>Quote request received. We will respond within one business day.</p>
+            <!-- Web3Forms Configuration -->
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <input type="hidden" name="subject" value="New Commercial Quote Request - pro.foxfuel.com (Homepage)">
+            <input type="hidden" name="from_name" value="Fox Fuel Commercial Website">
+            <input type="hidden" name="redirect" value="https://pro.foxfuel.com/contact/thank-you.html">
+            <input type="checkbox" name="botcheck" style="display: none;">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="company_name">Company Name <span class="required">*</span></label>
+                <input type="text" id="company_name" name="company_name" required minlength="2" placeholder="Your company name">
+              </div>
+              <div class="form-group">
+                <label for="contact_name">Contact Name <span class="required">*</span></label>
+                <input type="text" id="contact_name" name="contact_name" required minlength="2" placeholder="Your name">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required placeholder="(555) 555-5555">
+              </div>
+              <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="you@company.com">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="industry">Industry <span class="required">*</span></label>
+              <select id="industry" name="industry" required>
+                <option value="">Select your industry</option>
+                <option value="Construction">Construction</option>
+                <option value="Fleet & Transportation">Fleet & Transportation</option>
+                <option value="Manufacturing">Manufacturing</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Data Centers">Data Centers</option>
+                <option value="Municipal & Government">Municipal & Government</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="service_interest">Service Interest <span class="required">*</span></label>
+              <select id="service_interest" name="service_interest" required>
+                <option value="">Select a service</option>
+                <option value="Bulk Fuel Delivery">Bulk Fuel Delivery</option>
+                <option value="Tank Programs for Fleets">Tank Programs for Fleets</option>
+                <option value="Jobsite Fueling">Jobsite Fueling</option>
+                <option value="Generator Fueling">Generator Fueling</option>
+                <option value="Commercial Heating Oil">Commercial Heating Oil</option>
+                <option value="On-Site Tank Program">On-Site Tank Program</option>
+                <option value="Emergency Delivery">Emergency Delivery</option>
+                <option value="Multiple Services">Multiple Services / Not Sure</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="monthly_volume">Estimated Monthly Volume</label>
+              <select id="monthly_volume" name="monthly_volume">
+                <option value="">Select estimated volume</option>
+                <option value="Under 500 gallons">Under 500 gallons</option>
+                <option value="500-2,000 gallons">500 - 2,000 gallons</option>
+                <option value="2,000-10,000 gallons">2,000 - 10,000 gallons</option>
+                <option value="10,000+ gallons">10,000+ gallons</option>
+                <option value="Not sure">Not sure</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="notes">Location / Additional Details</label>
+              <textarea id="notes" name="notes" rows="3" placeholder="Tell us about your location, specific needs, or any questions..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit Quote Request</button>
+          </form>
         </div>
 
         <div style="margin-top: 2rem;">

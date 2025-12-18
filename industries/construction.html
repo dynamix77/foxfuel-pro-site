@@ -341,48 +341,47 @@
         <p class="industry-cta__subtitle">Tell us about your project. We respond within one business day.</p>
 
         <div class="industry-cta__form">
-          <form action="/submit-consultation" method="POST">
-            <div class="form-group">
-              <label for="fullName">Full Name *</label>
-              <input type="text" id="fullName" name="fullName" required minlength="2">
+          <form action="https://api.web3forms.com/submit" method="POST" class="foxfuel-form">
+
+            <!-- Web3Forms Configuration -->
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <input type="hidden" name="subject" value="Consultation Request - Construction - pro.foxfuel.com">
+            <input type="hidden" name="from_name" value="Fox Fuel Commercial Website">
+            <input type="hidden" name="redirect" value="https://pro.foxfuel.com/contact/thank-you.html">
+            <input type="checkbox" name="botcheck" style="display: none;">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name <span class="required">*</span></label>
+                <input type="text" id="fullName" name="fullName" required minlength="2" placeholder="Your name">
+              </div>
+              <div class="form-group">
+                <label for="companyName">Company Name <span class="required">*</span></label>
+                <input type="text" id="companyName" name="companyName" required minlength="2" placeholder="Your company">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required placeholder="(555) 555-5555">
+              </div>
+              <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="you@company.com">
+              </div>
             </div>
 
             <div class="form-group">
-              <label for="companyName">Company Name *</label>
-              <input type="text" id="companyName" name="companyName" required minlength="2">
+              <label for="jobTitle">Job Title / Role</label>
+              <input type="text" id="jobTitle" name="jobTitle" placeholder="Your role">
             </div>
 
-            <div class="form-group">
-              <label for="jobTitle">Job Title / Role *</label>
-              <input type="text" id="jobTitle" name="jobTitle" required minlength="2">
-            </div>
+            <input type="hidden" name="industry" value="Construction / Infrastructure">
 
             <div class="form-group">
-              <label for="phone">Phone Number *</label>
-              <input type="tel" id="phone" name="phone" required>
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-
-            <div class="form-group">
-              <label for="industry">Industry *</label>
-              <select id="industry" name="industry" required>
-                <option value="">Select Industry</option>
-                <option value="construction" selected>Construction / Infrastructure</option>
-                <option value="fleet">Fleet / Transportation / Logistics</option>
-                <option value="healthcare">Healthcare / Critical Facilities</option>
-                <option value="municipal">Municipal / Government</option>
-                <option value="industrial">Industrial / Manufacturing</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="discussion">What would you like to discuss? *</label>
-              <textarea id="discussion" name="discussion" required minlength="20" placeholder="Tell us about your project, fuel needs, current challenges, or questions. This helps us prepare for a productive conversation."></textarea>
+              <label for="discussion">What would you like to discuss? <span class="required">*</span></label>
+              <textarea id="discussion" name="discussion" required minlength="20" rows="4" placeholder="Tell us about your project, fuel needs, current challenges, or questions..."></textarea>
             </div>
 
             <div class="form-group">
@@ -394,18 +393,7 @@
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="preferredTime">Preferred Time for Call</label>
-              <select id="preferredTime" name="preferredTime">
-                <option value="">No preference</option>
-                <option value="morning">Morning (8 AM - 12 PM)</option>
-                <option value="afternoon">Afternoon (12 PM - 5 PM)</option>
-              </select>
-            </div>
-
             <button type="submit" class="btn btn-primary btn--full-width">Submit Consultation Request</button>
-
-            <p class="form-disclaimer">By submitting this form, you agree to our <a href="/privacy">Privacy Policy</a> and consent to being contacted about your inquiry.</p>
           </form>
         </div>
 
