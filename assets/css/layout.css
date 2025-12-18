@@ -182,20 +182,25 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 5px;
-  width: 32px;
-  height: 32px;
-  padding: 4px;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
   z-index: calc(var(--z-overlay) + 10);
   position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .mobile-menu-toggle span {
   display: block;
   width: 24px;
-  height: 2px;
-  background-color: var(--color-black);
-  transition: all var(--transition-fast);
+  height: 3px;
+  background-color: #1A1A1A;  /* Explicit color for visibility */
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 @media (min-width: 992px) {
@@ -288,27 +293,43 @@
   font-size: var(--text-base);
   color: var(--color-black);
   text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile submenu arrow indicator */
+.mobile-submenu-toggle .arrow {
+  display: inline-block;
+  transition: transform var(--transition-fast);
+  font-size: 0.75em;
+}
+
+.mobile-submenu-toggle.active .arrow {
+  transform: rotate(180deg);
 }
 
 .mobile-submenu {
-  display: none;
-  padding-bottom: var(--space-4);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 1rem;
 }
 
-.mobile-submenu.is-active,
 .mobile-submenu.open {
-  display: block;
+  /* max-height is set dynamically by JS */
+  padding-bottom: var(--space-4);
 }
 
 .mobile-submenu li a {
   display: block;
-  padding: var(--space-2) var(--space-4);
-  font-size: var(--text-sm);
-  color: var(--color-gray-700);
+  padding: 0.5rem 1rem;
+  font-size: 0.9375rem;
+  color: #4A4A4A;
 }
 
 .mobile-submenu li a:hover {
-  color: var(--color-brand-primary);
+  color: #C8102E;
 }
 
 .mobile-cta {

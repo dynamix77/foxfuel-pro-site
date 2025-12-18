@@ -46,11 +46,11 @@ document.addEventListener('DOMContentLoaded', function () {
             if (submenu.style.maxHeight) {
                 submenu.style.maxHeight = null;
                 submenu.classList.remove('open');
-                arrow.style.transform = 'rotate(0deg)';
+                if (arrow) arrow.style.transform = 'rotate(0deg)';
             } else {
                 submenu.style.maxHeight = submenu.scrollHeight + "px";
                 submenu.classList.add('open');
-                arrow.style.transform = 'rotate(180deg)';
+                if (arrow) arrow.style.transform = 'rotate(180deg)';
             }
 
             // Optional: Close others? 
