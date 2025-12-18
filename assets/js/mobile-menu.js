@@ -36,34 +36,41 @@ document.addEventListener('DOMContentLoaded', function () {
     const submenuToggles = document.querySelectorAll('.mobile-submenu-toggle');
 
     submenuToggles.forEach(btn => {
-        btn.addEventListener('click', function () {
-            // Toggle current
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
             const submenu = this.nextElementSibling;
             const arrow = this.querySelector('.arrow');
 
+            if (!submenu) return;
+
             this.classList.toggle('active');
 
-            if (submenu.style.maxHeight) {
-                submenu.style.maxHeight = null;
+            if (submenu.classList.contains('open')) {
+                // Close submenu
+                submenu.style.maxHeight = '0px';
                 submenu.classList.remove('open');
                 if (arrow) arrow.style.transform = 'rotate(0deg)';
             } else {
-                submenu.style.maxHeight = submenu.scrollHeight + "px";
+                // Open submenu - temporarily remove max-height to measure
+                submenu.style.maxHeight = 'none';
+                const height = submenu.scrollHeight;
+                submenu.style.maxHeight = '0px';
+
+                // Force reflow then animate
+                submenu.offsetHeight;
+                submenu.style.maxHeight = height + 'px';
                 submenu.classList.add('open');
                 if (arrow) arrow.style.transform = 'rotate(180deg)';
             }
-
-            // Optional: Close others? 
-            // The prompt doesn't specify accordion behavior (one open at a time), 
-            // so allowing multiple open is standard and user-friendly.
         });
     });
 
     // Close menu on link click (optional but good UX)
-    const links = mobileMenu ? mobileMenu.querySelectorAll('a:not(.mobile-submenu-toggle)') : [];
+    const links = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
     links.forEach(link => {
         link.addEventListener('click', function () {
-            // Only close if it's not a toggle
             toggleMenu();
         });
     });
