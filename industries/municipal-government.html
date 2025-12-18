@@ -3,19 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Municipal &amp; Government Fuel Services | Fox Fuel</title>
-  <meta name="description" content="Fuel services for municipal and government operations. Public works fleets, school transportation, emergency services. Contract pricing and tax-exempt processing.">
+  <title>Municipal &amp; Government Fuel Services | Public Works Fleet Fueling | Fox Fuel</title>
+  <meta name="description" content="Fuel services for municipal fleets, school buses, and government operations in PA and NJ. Contract pricing, tax-exempt processing, and storm-ready response.">
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="Municipal &amp; Government Fuel Services | Public Works Fleet Fueling | Fox Fuel">
+  <meta property="og:description" content="Fuel services for municipal fleets, school buses, and government operations. Contract pricing and tax-exempt processing.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pro.foxfuel.com/industries/municipal-government">
+  <meta property="og:image" content="https://pro.foxfuel.com/assets/images/hero/municipal-government-hero.jpg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Municipal and Government Fuel Services",
+    "provider": {
+      "@type": "Organization",
+      "name": "Fox Fuel",
+      "url": "https://pro.foxfuel.com"
+    },
+    "description": "Fuel services for municipal fleets, school buses, and government operations across Pennsylvania and New Jersey.",
+    "areaServed": [
+      {"@type": "State", "name": "Pennsylvania"},
+      {"@type": "State", "name": "New Jersey"}
+    ],
+    "serviceType": "Municipal Fuel Delivery"
+  }
+  </script>
+
+  <link rel="canonical" href="https://pro.foxfuel.com/industries/municipal-government">
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/reset.css">
   <link rel="stylesheet" href="../assets/css/layout.css">
   <link rel="stylesheet" href="../assets/css/components.css">
   <link rel="stylesheet" href="../assets/css/utilities.css">
-  <!-- CRITICAL: mobile-overrides.css must load LAST to override inline styles -->
   <link rel="stylesheet" href="../assets/css/mobile-overrides.css">
   <link rel="stylesheet" href="../assets/css/pages/industries.css">
-
-  <link rel="canonical" href="https://pro.foxfuel.com/industries/municipal-government.html">
 </head>
 <body>
 
@@ -46,10 +71,9 @@
             <ul class="nav-dropdown">
               <li><a href="/industries/construction.html">Construction</a></li>
               <li><a href="/industries/fleet-transportation.html">Fleet &amp; Transportation</a></li>
-              <li><a href="/industries/manufacturing.html">Manufacturing</a></li>
-              <li><a href="/industries/healthcare.html">Healthcare</a></li>
-              <li><a href="/industries/data-centers.html">Data Centers</a></li>
+              <li><a href="/industries/healthcare-critical-facilities.html">Healthcare &amp; Critical Facilities</a></li>
               <li><a href="/industries/municipal-government.html">Municipal &amp; Government</a></li>
+              <li><a href="/industries/industrial-manufacturing.html">Industrial &amp; Manufacturing</a></li>
             </ul>
           </li>
           <li class="nav-item"><a href="/service-area/">Service Area</a></li>
@@ -83,10 +107,9 @@
             <ul class="mobile-submenu">
               <li><a href="/industries/construction.html">Construction</a></li>
               <li><a href="/industries/fleet-transportation.html">Fleet &amp; Transportation</a></li>
-              <li><a href="/industries/manufacturing.html">Manufacturing</a></li>
-              <li><a href="/industries/healthcare.html">Healthcare</a></li>
-              <li><a href="/industries/data-centers.html">Data Centers</a></li>
+              <li><a href="/industries/healthcare-critical-facilities.html">Healthcare &amp; Critical Facilities</a></li>
               <li><a href="/industries/municipal-government.html">Municipal &amp; Government</a></li>
+              <li><a href="/industries/industrial-manufacturing.html">Industrial &amp; Manufacturing</a></li>
             </ul>
           </li>
           <li><a href="/service-area/">Service Area</a></li>
@@ -99,110 +122,307 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
-    <section class="hero-industry" style="background-image: url('../assets/images/hero/municipal-government-hero.jpg');">
-      <div class="container">
-        <div class="hero-content">
-          <h1>Municipal & Government Fuel Services</h1>
-          <p class="subheadline">Fuel supply for public works fleets, school transportation, emergency services, and critical infrastructure. Contract pricing and tax-exempt processing.</p>
-          <div class="hero-cta-group">
-            <a href="/contact/" class="btn btn-primary btn-large">Request Quote</a>
-            <a href="tel:+12156591616" class="btn btn-secondary btn-large">Emergency: (215) 659-1616</a>
+    <!-- Section 2: Industry Hero -->
+    <section class="industry-hero industry-hero--municipal" style="background-image: url('../assets/images/hero/municipal-government-hero.jpg');">
+      <div class="industry-hero__content">
+        <span class="industry-hero__badge">Municipal &amp; Government</span>
+        <h1 class="industry-hero__title">Public Services Cannot Wait for Fuel. Neither Can You.</h1>
+        <p class="industry-hero__subtitle">Fuel services for municipal fleets, school buses, public works, and emergency services across Pennsylvania and New Jersey. Contract pricing. Tax-exempt processing. Storm-ready response.</p>
+        <div class="industry-hero__cta-group">
+          <a href="#quote-form" class="btn btn-primary">Discuss Municipal Fuel Needs</a>
+          <a href="tel:+12156591616" class="btn btn-secondary">Call: (215) 659-1616</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Challenge Grid -->
+    <section class="challenge-grid">
+      <div class="challenge-grid__container">
+        <header class="challenge-grid__header">
+          <p class="challenge-grid__eyebrow">The Reality</p>
+          <h2 class="challenge-grid__title">Municipal Fuel Challenges We Solve</h2>
+        </header>
+        <div class="challenge-grid__cards">
+
+          <article class="challenge-card">
+            <div class="challenge-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 class="challenge-card__title">Procurement Complexity</h3>
+            <p class="challenge-card__description">Government purchasing requires bids, contracts, and documentation. Tax-exempt status adds paperwork. Multiple department budgets require allocation tracking. Finding a vendor who understands government procurement is the first challenge.</p>
+            <p class="challenge-card__impact">Impact: Administrative burden. Compliance risk.</p>
+          </article>
+
+          <article class="challenge-card">
+            <div class="challenge-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+              </svg>
+            </div>
+            <h3 class="challenge-card__title">Storm Season Demands</h3>
+            <p class="challenge-card__description">Winter storms require plow trucks running around the clock. Summer storms bring tree crews and utility response. Your normal fuel consumption doubles or triples. Your vendor needs capacity to match your emergency operations.</p>
+            <p class="challenge-card__impact">Impact: Service interruption during emergencies.</p>
+          </article>
+
+          <article class="challenge-card">
+            <div class="challenge-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="challenge-card__title">Multiple Departments, Multiple Needs</h3>
+            <p class="challenge-card__description">Public works needs diesel for heavy equipment. School transportation needs diesel for buses. Police and fire need gasoline and diesel. Parks department needs seasonal fuel. One municipality, many different fuel requirements.</p>
+            <p class="challenge-card__impact">Impact: Coordination overhead. Budget tracking difficulty.</p>
+          </article>
+
+          <article class="challenge-card">
+            <div class="challenge-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="challenge-card__title">Budget Constraints</h3>
+            <p class="challenge-card__description">Taxpayer accountability means every dollar matters. Price volatility makes budgeting difficult. You need predictable costs without sacrificing service reliability. Finding that balance requires a vendor who understands government operations.</p>
+            <p class="challenge-card__impact">Impact: Budget variance. Political pressure.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Our Solutions -->
+    <section class="solutions-section">
+      <div class="solutions-section__container">
+        <header class="solutions-section__header">
+          <p class="solutions-section__eyebrow">Our Solutions</p>
+          <h2 class="solutions-section__title">Municipal Fuel Services</h2>
+          <p class="solutions-section__intro">Fuel programs designed for the unique requirements of government operations. We understand procurement, handle tax-exempt documentation, and scale for emergency response.</p>
+        </header>
+        <div class="solution-cards">
+
+          <article class="solution-card">
+            <h3 class="solution-card__title">Fleet Tank Delivery</h3>
+            <p class="solution-card__description">Scheduled bulk delivery to your municipal yard storage tanks. Keep public works, school transportation, and emergency services fueled and ready. Delivery timing coordinated with your operations.</p>
+            <a href="/services/bulk-fuel-delivery.html" class="solution-card__link">Learn More &rarr;</a>
+          </article>
+
+          <article class="solution-card">
+            <h3 class="solution-card__title">Storm Response Capacity</h3>
+            <p class="solution-card__description">When winter storms hit, plow trucks run around the clock. We maintain capacity to increase delivery frequency during emergencies. Your storm response does not wait for fuel availability.</p>
+            <a href="/services/emergency-delivery.html" class="solution-card__link">Learn More &rarr;</a>
+          </article>
+
+          <article class="solution-card">
+            <h3 class="solution-card__title">Contract Pricing</h3>
+            <p class="solution-card__description">Fixed or index-based pricing structures for budget predictability. We work within your procurement requirements and provide the documentation government purchasing needs.</p>
+            <a href="/contact/" class="solution-card__link">Discuss Pricing &rarr;</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: How We Work -->
+    <section class="process-section">
+      <div class="process-section__container">
+        <header class="process-section__header">
+          <p class="process-section__eyebrow">How It Works</p>
+          <h2 class="process-section__title">Working With Fox Fuel for Municipal Operations</h2>
+        </header>
+        <div class="process-steps">
+
+          <div class="process-step">
+            <div class="process-step__number">01</div>
+            <h3 class="process-step__title">Requirements Review</h3>
+            <p class="process-step__description">We evaluate your fleet composition, storage infrastructure, consumption patterns, and procurement requirements. Understand your budget cycle and contract needs.</p>
           </div>
+
+          <div class="process-step">
+            <div class="process-step__number">02</div>
+            <h3 class="process-step__title">Proposal Development</h3>
+            <p class="process-step__description">We provide pricing and service proposals that meet your procurement requirements. Tax-exempt documentation, W-9s, insurance certificates - the paperwork government purchasing needs.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step__number">03</div>
+            <h3 class="process-step__title">Service Implementation</h3>
+            <p class="process-step__description">Scheduled deliveries begin based on your consumption patterns and tank capacities. Department-level tracking for budget allocation. Storm protocols established.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step__number">04</div>
+            <h3 class="process-step__title">Ongoing Reporting</h3>
+            <p class="process-step__description">Consumption reports by department or location. Documentation for audits and budget reviews. Contract compliance tracking. The data you need to manage taxpayer resources.</p>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section class="service-hero-image">
-      <div class="container">
-        <img src="../assets/renamed/jobsites/jobsite-municipality-city-services-01.jpg" alt="Municipal city services" loading="lazy" class="full-width-image">
-      </div>
-    </section>
+    <!-- Section 6: Why Fox Fuel -->
+    <section class="differentiators">
+      <div class="differentiators__container">
+        <header class="differentiators__header">
+          <h2 class="differentiators__title">Why Municipal Managers Choose Fox Fuel</h2>
+        </header>
+        <div class="differentiator-cards">
 
-    <!-- Trust Strip -->
-    <section class="industry-trust-strip">
-      <div class="container trust-strip-grid">
-        <div class="trust-item">
-          <span class="trust-value">99%</span>
-          <span class="trust-label">On-Time Delivery</span>
+          <article class="differentiator-card">
+            <div class="differentiator-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 class="differentiator-card__title">Government Procurement Experience</h3>
+            <p class="differentiator-card__description">We work with municipalities across PA and NJ. We understand bid requirements, tax-exempt processing, and the documentation government purchasing requires. Not our first time navigating your process.</p>
+          </article>
+
+          <article class="differentiator-card">
+            <div class="differentiator-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+              </svg>
+            </div>
+            <h3 class="differentiator-card__title">Emergency Response Capacity</h3>
+            <p class="differentiator-card__description">Storm operations require fuel availability when everyone else needs it too. We maintain fleet capacity for municipal emergency response. Your plows keep running. Your community stays safe.</p>
+          </article>
+
+          <article class="differentiator-card">
+            <div class="differentiator-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 class="differentiator-card__title">Budget-Ready Reporting</h3>
+            <p class="differentiator-card__description">Consumption data by department, by location, by vehicle. Documentation for audits and council reviews. The reporting you need to demonstrate responsible resource management.</p>
+          </article>
+
         </div>
-        <div class="trust-item">
-          <span class="trust-value">43+</span>
-          <span class="trust-label">Years in Business</span>
+      </div>
+    </section>
+
+    <!-- Section 7: Proof Points -->
+    <section class="proof-section">
+      <div class="proof-section__container">
+        <div class="proof-stats">
+
+          <div class="proof-stat">
+            <div class="proof-stat__number">43+</div>
+            <div class="proof-stat__label">Years Serving PA &amp; NJ</div>
+          </div>
+
+          <div class="proof-stat">
+            <div class="proof-stat__number">24/7</div>
+            <div class="proof-stat__label">Emergency Dispatch</div>
+          </div>
+
+          <div class="proof-stat">
+            <div class="proof-stat__number">50+</div>
+            <div class="proof-stat__label">Municipal Accounts</div>
+          </div>
+
+          <div class="proof-stat">
+            <div class="proof-stat__number">15+</div>
+            <div class="proof-stat__label">Trucks in Fleet</div>
+          </div>
+
         </div>
-        <div class="trust-item">
-          <span class="trust-value">24/7</span>
-          <span class="trust-label">Emergency Support</span>
+      </div>
+    </section>
+
+    <!-- Section 8: Industry CTA -->
+    <section class="industry-cta" id="quote-form">
+      <div class="industry-cta__container">
+        <h2 class="industry-cta__title">Discuss Your Municipal Fuel Needs</h2>
+        <p class="industry-cta__subtitle">Tell us about your operations. We respond within one business day.</p>
+
+        <div class="industry-cta__form">
+          <form action="/submit-consultation" method="POST">
+            <div class="form-group">
+              <label for="fullName">Full Name *</label>
+              <input type="text" id="fullName" name="fullName" required minlength="2">
+            </div>
+
+            <div class="form-group">
+              <label for="companyName">Municipality / Agency Name *</label>
+              <input type="text" id="companyName" name="companyName" required minlength="2">
+            </div>
+
+            <div class="form-group">
+              <label for="jobTitle">Job Title / Role *</label>
+              <input type="text" id="jobTitle" name="jobTitle" required minlength="2">
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="industry">Entity Type *</label>
+              <select id="industry" name="industry" required>
+                <option value="">Select Entity Type</option>
+                <option value="municipality" selected>Municipality / Township / Borough</option>
+                <option value="county">County Government</option>
+                <option value="school">School District</option>
+                <option value="authority">Authority / Utility</option>
+                <option value="state">State Agency</option>
+                <option value="other">Other Government Entity</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="discussion">What would you like to discuss? *</label>
+              <textarea id="discussion" name="discussion" required minlength="20" placeholder="Tell us about your fleet size, fuel storage infrastructure, procurement requirements, and any contract terms we should know about. This helps us prepare for a productive conversation."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Preferred Contact Method</label>
+              <div class="radio-group">
+                <label><input type="radio" name="contactMethod" value="phone"> Phone call</label>
+                <label><input type="radio" name="contactMethod" value="email"> Email</label>
+                <label><input type="radio" name="contactMethod" value="either" checked> Either is fine</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="preferredTime">Preferred Time for Call</label>
+              <select id="preferredTime" name="preferredTime">
+                <option value="">No preference</option>
+                <option value="morning">Morning (8 AM - 12 PM)</option>
+                <option value="afternoon">Afternoon (12 PM - 5 PM)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn--full-width">Submit Consultation Request</button>
+
+            <p class="form-disclaimer">By submitting this form, you agree to our <a href="/privacy">Privacy Policy</a> and consent to being contacted about your inquiry.</p>
+          </form>
+        </div>
+
+        <div class="industry-cta__phone">
+          <p class="industry-cta__phone-label">Or call us directly:</p>
+          <p class="industry-cta__phone-number"><a href="tel:+12156591616">(215) 659-1616</a></p>
         </div>
       </div>
     </section>
 
-    <section class="challenges-section">
-      <div class="container container-narrow">
-        <h2>Services for Municipal Operations</h2>
-        <ul class="challenges-list">
-          <li>Bulk diesel delivery for public works fleets and equipment</li>
-          <li>On-site tank programs for municipal vehicle yards</li>
-          <li>Generator fueling for critical public facilities</li>
-          <li>Emergency dispatch for storm and outage response</li>
-          <li>On-site tank programs for high-volume locations</li>
-        </ul>
-        <div class="content-image">
-          <img src="../assets/renamed/jobsites/jobsite-bus-company-fleet-yard-01.jpg" alt="Municipal fleet yard" loading="lazy">
-        </div>
-      </div>
-    </section>
-
-    <section class="procurement-section" style="background: #F5F5F5;">
-      <div class="container">
-        <h2>GOVERNMENT PROCUREMENT</h2>
-        <ul>
-          <li>Contract pricing structures</li>
-          <li>Tax-exempt processing</li>
-          <li>Documentation for audit requirements</li>
-          <li>Multi-year agreement options</li>
-          <li>Cooperative purchasing compatibility</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="facilities-served">
-      <div class="container">
-        <h2>FACILITIES SERVED</h2>
-        <ul>
-          <li>Public works departments</li>
-          <li>School district transportation</li>
-          <li>Municipal vehicle fleets</li>
-          <li>Water and wastewater treatment</li>
-          <li>Emergency services facilities</li>
-          <li>Administrative buildings</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="cta-block" style="background: #1A1A1A; color: #FFFFFF; padding: 3rem; text-align: center;">
-      <div class="container">
-        <h2>REQUEST A QUOTE</h2>
-        <p>Municipal and government fuel services across PA, NJ, DE. Submit form or call directly.</p>
-        <p style="margin-top: 1.5rem;">
-          <a href="/contact/" class="btn btn-primary" style="background: #C8102E;">Request Quote</a>
-        </p>
-        <p style="margin-top: 1rem;">
-          Call direct: <a href="tel:+12156591616" style="color: #FFFFFF;">(215) 659-1616</a>
-        </p>
-        <p>24/7 emergency dispatch available</p>
-      </div>
-    </section>
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer" style="background: #1A1A1A;">
+  <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-brand">
         <img src="../assets/images/fox-fuel-logo-white.svg" alt="Fox Fuel" width="150" height="50">
         <p class="footer-tagline">Commercial Fuel Delivery Since 1981</p>
       </div>
-
       <div class="footer-col">
         <h3>SERVICES</h3>
         <ul>
@@ -215,19 +435,16 @@
           <li><a href="/services/emergency-delivery.html">Emergency Delivery</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h3>INDUSTRIES</h3>
         <ul>
           <li><a href="/industries/construction.html">Construction</a></li>
           <li><a href="/industries/fleet-transportation.html">Fleet &amp; Transportation</a></li>
-          <li><a href="/industries/manufacturing.html">Manufacturing</a></li>
-          <li><a href="/industries/healthcare.html">Healthcare</a></li>
-          <li><a href="/industries/data-centers.html">Data Centers</a></li>
+          <li><a href="/industries/healthcare-critical-facilities.html">Healthcare &amp; Critical Facilities</a></li>
           <li><a href="/industries/municipal-government.html">Municipal &amp; Government</a></li>
+          <li><a href="/industries/industrial-manufacturing.html">Industrial &amp; Manufacturing</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h3>CONTACT</h3>
         <p><a href="tel:+12156591616">(215) 659-1616</a></p>
@@ -235,11 +452,9 @@
         <p>24/7 Emergency Dispatch</p>
       </div>
     </div>
-
     <div class="footer-service-area">
-      <p>Serving PA, NJ, DE</p>
+      <p>Serving PA &amp; NJ</p>
     </div>
-
     <div class="footer-legal">
       <p>&copy; 2025 Fox Fuel. All rights reserved.</p>
     </div>
