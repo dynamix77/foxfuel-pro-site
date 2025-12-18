@@ -310,15 +310,14 @@
 }
 
 .mobile-submenu {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
+  display: none;
   padding-left: 1rem;
+  padding-bottom: var(--space-4);
 }
 
-.mobile-submenu.open {
-  /* max-height is set dynamically by JS */
-  padding-bottom: var(--space-4);
+/* Show submenu when parent has .open class (set by main.js) */
+.mobile-has-submenu.open .mobile-submenu {
+  display: block;
 }
 
 .mobile-submenu li a {
