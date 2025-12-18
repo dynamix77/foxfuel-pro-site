@@ -89,6 +89,9 @@
   display: flex;
   align-items: center;
   gap: var(--space-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-item {
@@ -107,6 +110,19 @@
 
 .nav-item > a:hover {
   color: var(--color-brand-primary);
+}
+
+/* Dropdown Indicator */
+.nav-item.has-dropdown > a::after {
+  content: ' ▾';
+  display: inline-block;
+  margin-left: var(--space-1);
+  font-size: 0.75em;
+  transition: transform var(--transition-fast);
+}
+
+.nav-item.has-dropdown:hover > a::after {
+  transform: translateY(2px);
 }
 
 /* Dropdown */
