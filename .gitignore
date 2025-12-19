@@ -22,3 +22,10 @@ node_modules/
 dist/
 build/
 
+# Resource Loader tool artifacts
+tools/resource_loader/dist/
+tools/resource_loader/build/
+tools/resource_loader/tmp/
+tools/resource_loader/.venv/
+*.spec
+

@@ -1,0 +1,16 @@
+# Fox Fuel Resource Loader - Dependencies
+# Install: pip install -r requirements.txt
+
+# YAML parsing for front matter
+pyyaml>=6.0
+
+# Image validation (dimensions check)
+Pillow>=10.0
+
+# Drag-and-drop support for Tkinter (optional but recommended)
+# Note: tkinterdnd2 can be tricky on Windows. If it fails, the app
+# falls back to "Browse files" button which works reliably.
+tkinterdnd2>=0.3
+
+# Build tool (for creating .exe)
+pyinstaller>=6.0

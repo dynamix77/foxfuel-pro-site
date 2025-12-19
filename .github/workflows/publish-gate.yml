@@ -1,0 +1,370 @@
+# Publish Gate CI Workflow
+# Validates resource manifest entries, draft front matter, and generated HTML pages
+# Runs on every push and PR to main
+
+name: Publish Gate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'resources/**'
+      - 'scripts/**'
+      - '.github/workflows/publish-gate.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'resources/**'
+      - 'scripts/**'
+      - '.github/workflows/publish-gate.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate manifest (legacy resources)
+        id: validate-manifest
+        run: |
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+
+            console.log('Validating resources.manifest.json (legacy resources)...\n');
+
+            const manifestPath = 'resources/resources.manifest.json';
+            if (!fs.existsSync(manifestPath)) {
+              console.error('ERROR: resources.manifest.json not found');
+              process.exit(1);
+            }
+
+            let manifest;
+            try {
+              manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+            } catch (e) {
+              console.error('ERROR: Invalid JSON in manifest:', e.message);
+              process.exit(1);
+            }
+
+            // Legacy resources don't need all fields - just basic validation
+            const requiredFields = ['slug', 'title', 'shortTitle', 'description', 'category', 'tagType', 'publishDate'];
+            const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+
+            let errors = [];
+
+            manifest.resources.forEach((resource, index) => {
+              const prefix = 'Resource ' + (index + 1) + ' (' + (resource.slug || 'unknown') + ')';
+
+              // Check required fields
+              for (const field of requiredFields) {
+                if (!resource[field]) {
+                  errors.push(prefix + ': Missing required field \"' + field + '\"');
+                }
+              }
+
+              // Validate publishDate format
+              if (resource.publishDate && !dateRegex.test(resource.publishDate)) {
+                errors.push(prefix + ': Invalid publishDate format (expected YYYY-MM-DD)');
+              }
+            });
+
+            if (errors.length > 0) {
+              console.error('Manifest validation FAILED:\n');
+              errors.forEach(e => console.error('  ✗ ' + e));
+              process.exit(1);
+            }
+
+            console.log('✓ Manifest validation passed');
+            console.log('  ' + manifest.resources.length + ' legacy resources defined');
+          "
+
+      - name: Validate drafts front matter
+        id: validate-drafts
+        run: |
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+
+            console.log('Validating drafts folder front matter...\n');
+
+            const draftsDir = 'resources/drafts';
+            if (!fs.existsSync(draftsDir)) {
+              console.log('No drafts folder found - skipping');
+              process.exit(0);
+            }
+
+            const files = fs.readdirSync(draftsDir).filter(f => f.endsWith('.md'));
+            if (files.length === 0) {
+              console.log('No markdown files in drafts folder');
+              process.exit(0);
+            }
+
+            // Load valid tag types from manifest
+            const manifest = JSON.parse(fs.readFileSync('resources/resources.manifest.json', 'utf-8'));
+            const validTagTypes = Object.keys(manifest.categoryTags);
+
+            const requiredFields = ['slug', 'title', 'shortTitle', 'description', 'category', 'tagType', 'publishDate', 'readTimeMinutes'];
+            const dateRegex = /^\\d{4}-\\d{2}-\\d{2}$/;
+
+            let errors = [];
+            let validated = 0;
+
+            files.forEach(file => {
+              const content = fs.readFileSync(path.join(draftsDir, file), 'utf-8');
+              const prefix = file;
+
+              // Check for front matter
+              const fmMatch = content.match(/^---\\n([\\s\\S]*?)\\n---/);
+              if (!fmMatch) {
+                errors.push(prefix + ': No YAML front matter found');
+                return;
+              }
+
+              const frontMatter = fmMatch[1];
+
+              // Parse front matter fields
+              const getField = (field) => {
+                const match = frontMatter.match(new RegExp(field + ':\\\\s*[\"\\']?([^\"\\'\n]+)[\"\\']?'));
+                return match ? match[1].trim() : null;
+              };
+
+              const getNumber = (field) => {
+                const match = frontMatter.match(new RegExp(field + ':\\\\s*(\\\\d+)'));
+                return match ? parseInt(match[1]) : null;
+              };
+
+              // Validate required fields
+              for (const field of requiredFields) {
+                if (field === 'readTimeMinutes') {
+                  if (!getNumber(field)) {
+                    errors.push(prefix + ': Missing or invalid field \"' + field + '\" (must be a number)');
+                  }
+                } else {
+                  if (!getField(field)) {
+                    errors.push(prefix + ': Missing required field \"' + field + '\"');
+                  }
+                }
+              }
+
+              // Validate publishDate format
+              const publishDate = getField('publishDate');
+              if (publishDate && !dateRegex.test(publishDate)) {
+                errors.push(prefix + ': Invalid publishDate format (expected YYYY-MM-DD)');
+              }
+
+              // Validate tagType
+              const tagType = getField('tagType');
+              if (tagType && !validTagTypes.includes(tagType)) {
+                errors.push(prefix + ': Invalid tagType \"' + tagType + '\". Must be one of: ' + validTagTypes.join(', '));
+              }
+
+              // Validate hero section exists
+              if (!frontMatter.includes('hero:')) {
+                errors.push(prefix + ': Missing hero section');
+              } else {
+                // Check hero.src and hero.alt
+                const heroSrcMatch = frontMatter.match(/hero:[\\s\\S]*?src:\\s*[\"']?([^\"'\\n]+)[\"']?/);
+                const heroAltMatch = frontMatter.match(/hero:[\\s\\S]*?alt:\\s*[\"']?([^\"'\\n]+)[\"']?/);
+                if (!heroSrcMatch) {
+                  errors.push(prefix + ': Missing hero.src');
+                }
+                if (!heroAltMatch) {
+                  errors.push(prefix + ': Missing hero.alt');
+                }
+              }
+
+              // Check slug matches filename
+              const slug = getField('slug');
+              const expectedFilename = slug + '.md';
+              if (slug && file !== expectedFilename) {
+                errors.push(prefix + ': Filename should match slug (expected ' + expectedFilename + ')');
+              }
+
+              validated++;
+            });
+
+            console.log('Validated ' + validated + ' draft files\\n');
+
+            if (errors.length > 0) {
+              console.error('Draft validation FAILED:\\n');
+              errors.forEach(e => console.error('  ✗ ' + e));
+              process.exit(1);
+            }
+
+            console.log('✓ Draft validation passed');
+          "
+
+      - name: Validate generated HTML pages
+        id: validate-html
+        run: |
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+
+            console.log('Validating generated HTML pages...\n');
+
+            const manifestPath = 'resources/resources.manifest.json';
+            const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+
+            let errors = [];
+            let validated = 0;
+
+            manifest.resources.forEach(resource => {
+              const htmlPath = path.join('resources', resource.slug + '.html');
+
+              // Check if HTML file exists
+              if (!fs.existsSync(htmlPath)) {
+                // File doesn't exist - could be future content not yet generated
+                // Only error if publishDate is in the past
+                const today = new Date().toISOString().split('T')[0];
+                if (resource.publishDate <= today) {
+                  errors.push(resource.slug + ': HTML file missing for published resource');
+                }
+                return;
+              }
+
+              const html = fs.readFileSync(htmlPath, 'utf-8');
+              const prefix = resource.slug;
+
+              // Check for exactly one .article-header
+              const articleHeaderMatches = html.match(/class=\"article-header\"/g) || [];
+              if (articleHeaderMatches.length !== 1) {
+                errors.push(prefix + ': Expected exactly 1 .article-header, found ' + articleHeaderMatches.length);
+              }
+
+              // Check canonical link
+              const expectedCanonical = 'https://pro.foxfuel.com/resources/' + resource.slug + '.html';
+              if (!html.includes('rel=\"canonical\" href=\"' + expectedCanonical + '\"')) {
+                errors.push(prefix + ': Canonical link missing or incorrect');
+              }
+
+              // Check resource tag class
+              const expectedTagClass = 'resource-card__tag--' + resource.tagType;
+              if (!html.includes(expectedTagClass)) {
+                errors.push(prefix + ': Missing resource tag class ' + expectedTagClass);
+              }
+
+              validated++;
+            });
+
+            console.log('Validated ' + validated + ' HTML files\n');
+
+            if (errors.length > 0) {
+              console.error('HTML validation FAILED:\n');
+              errors.forEach(e => console.error('  ✗ ' + e));
+              process.exit(1);
+            }
+
+            console.log('✓ HTML validation passed');
+          "
+
+      - name: Validate image references
+        id: validate-images
+        run: |
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+
+            console.log('Validating image references...\n');
+
+            const imagesDir = 'resources/images';
+            const draftsDir = 'resources/drafts';
+
+            let errors = [];
+            let warnings = [];
+
+            // Get list of existing images
+            let existingImages = [];
+            if (fs.existsSync(imagesDir)) {
+              existingImages = fs.readdirSync(imagesDir);
+            }
+
+            // Check drafts folder for image references
+            if (fs.existsSync(draftsDir)) {
+              const files = fs.readdirSync(draftsDir).filter(f => f.endsWith('.md'));
+
+              files.forEach(file => {
+                const content = fs.readFileSync(path.join(draftsDir, file), 'utf-8');
+                const fmMatch = content.match(/^---\\n([\\s\\S]*?)\\n---/);
+                if (!fmMatch) return;
+
+                const frontMatter = fmMatch[1];
+                const prefix = file;
+
+                // Extract hero image
+                const heroSrcMatch = frontMatter.match(/hero:[\\s\\S]*?src:\\s*[\"']?([^\"'\\n]+)[\"']?/);
+                if (heroSrcMatch) {
+                  const heroSrc = heroSrcMatch[1].trim();
+                  const heroPath = path.join('resources', heroSrc);
+                  if (!fs.existsSync(heroPath)) {
+                    warnings.push(prefix + ': Hero image not found: ' + heroSrc);
+                  }
+                }
+
+                // Extract inline image
+                const inlineSrcMatch = frontMatter.match(/inlineImage:[\\s\\S]*?src:\\s*[\"']?([^\"'\\n]+)[\"']?/);
+                if (inlineSrcMatch) {
+                  const inlineSrc = inlineSrcMatch[1].trim();
+                  const inlinePath = path.join('resources', inlineSrc);
+                  if (!fs.existsSync(inlinePath)) {
+                    warnings.push(prefix + ': Inline image not found: ' + inlineSrc);
+                  }
+                }
+              });
+            }
+
+            if (warnings.length > 0) {
+              console.log('Image warnings (not blocking - images may be added before publish):');
+              warnings.forEach(w => console.log('  ⚠ ' + w));
+              console.log('');
+            }
+
+            if (errors.length > 0) {
+              console.error('Image validation FAILED:\n');
+              errors.forEach(e => console.error('  ✗ ' + e));
+              process.exit(1);
+            }
+
+            console.log('✓ Image validation passed');
+            console.log('  ' + existingImages.length + ' images found in resources/images/');
+          "
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Publish Gate Validation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Check | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ steps.validate-manifest.outcome }}" == "success" ]; then
+            echo "| Manifest Validation | ✅ Passed |" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "| Manifest Validation | ❌ Failed |" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if [ "${{ steps.validate-drafts.outcome }}" == "success" ]; then
+            echo "| Drafts Validation | ✅ Passed |" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "| Drafts Validation | ❌ Failed |" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if [ "${{ steps.validate-html.outcome }}" == "success" ]; then
+            echo "| HTML Validation | ✅ Passed |" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "| HTML Validation | ❌ Failed |" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if [ "${{ steps.validate-images.outcome }}" == "success" ]; then
+            echo "| Image Validation | ✅ Passed |" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "| Image Validation | ❌ Failed |" >> $GITHUB_STEP_SUMMARY
+          fi

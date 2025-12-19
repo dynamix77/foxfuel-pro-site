@@ -1,0 +1,143 @@
+# Daily Resource Publishing Workflow
+# Runs daily at 6:10 AM America/New_York (11:10 UTC during EST, 10:10 UTC during EDT)
+# Checks if any resources transition from future to published, and triggers deploy if so
+
+name: Daily Resource Publisher
+
+on:
+  schedule:
+    # 11:10 UTC = 6:10 AM EST (winter) / 7:10 AM EDT (summer)
+    # Using 10:10 UTC to ensure 6:10 AM during EDT
+    - cron: '10 10 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  check-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Get today's date (America/New_York)
+        id: get-date
+        run: |
+          TODAY=$(TZ='America/New_York' date '+%Y-%m-%d')
+          echo "today=$TODAY" >> $GITHUB_OUTPUT
+          echo "Today (America/New_York): $TODAY"
+
+      - name: Check for newly publishable resources
+        id: check-publish
+        run: |
+          TODAY="${{ steps.get-date.outputs.today }}"
+
+          # Check both manifest (legacy) and drafts folder (new content)
+          NEW_PUBLISH=$(node -e "
+            const fs = require('fs');
+            const path = require('path');
+            const today = '$TODAY';
+            let newlyPublishable = [];
+
+            // 1. Check manifest for legacy published resources
+            const manifestPath = 'resources/resources.manifest.json';
+            if (fs.existsSync(manifestPath)) {
+              const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+              const manifestResources = manifest.resources.filter(r => r.publishDate === today);
+              newlyPublishable = newlyPublishable.concat(manifestResources.map(r => r.slug));
+            }
+
+            // 2. Check drafts folder for front matter resources
+            const draftsDir = 'resources/drafts';
+            if (fs.existsSync(draftsDir)) {
+              const files = fs.readdirSync(draftsDir).filter(f => f.endsWith('.md'));
+              files.forEach(file => {
+                const content = fs.readFileSync(path.join(draftsDir, file), 'utf-8');
+                // Parse YAML front matter
+                const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
+                if (fmMatch) {
+                  const dateMatch = fmMatch[1].match(/publishDate:\\s*[\"']?(\\d{4}-\\d{2}-\\d{2})[\"']?/);
+                  const slugMatch = fmMatch[1].match(/slug:\\s*[\"']?([^\"'\\n]+)[\"']?/);
+                  if (dateMatch && dateMatch[1] === today && slugMatch) {
+                    newlyPublishable.push(slugMatch[1]);
+                  }
+                }
+              });
+            }
+
+            if (newlyPublishable.length > 0) {
+              console.log('PUBLISH=true');
+              console.log('RESOURCES=' + newlyPublishable.join(','));
+            } else {
+              console.log('PUBLISH=false');
+            }
+          ")
+
+          if echo "$NEW_PUBLISH" | grep -q "PUBLISH=true"; then
+            echo "needs_publish=true" >> $GITHUB_OUTPUT
+            RESOURCES=$(echo "$NEW_PUBLISH" | grep "RESOURCES=" | cut -d= -f2)
+            echo "resources=$RESOURCES" >> $GITHUB_OUTPUT
+            echo "New resources to publish: $RESOURCES"
+          else
+            echo "needs_publish=false" >> $GITHUB_OUTPUT
+            echo "No new resources to publish today."
+          fi
+
+      - name: Generate HTML from drafts
+        if: steps.check-publish.outputs.needs_publish == 'true'
+        run: |
+          node scripts/generate-resources.js
+
+      - name: Regenerate index
+        if: steps.check-publish.outputs.needs_publish == 'true'
+        run: |
+          node scripts/regenerate-index.js
+
+      - name: Check for changes
+        if: steps.check-publish.outputs.needs_publish == 'true'
+        id: check-changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected."
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected:"
+            git diff --stat
+          fi
+
+      - name: Commit and push changes
+        if: steps.check-publish.outputs.needs_publish == 'true' && steps.check-changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          git add -A
+          git commit -m "Publish scheduled resources: ${{ steps.get-date.outputs.today }}
+
+          Resources published:
+          ${{ steps.check-publish.outputs.resources }}
+
+          Automated by Daily Resource Publisher workflow."
+
+          git push
+
+      - name: Summary
+        run: |
+          echo "## Daily Publisher Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date (America/New_York):** ${{ steps.get-date.outputs.today }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ steps.check-publish.outputs.needs_publish }}" == "true" ]; then
+            echo "**Status:** Resources published" >> $GITHUB_STEP_SUMMARY
+            echo "**Resources:** ${{ steps.check-publish.outputs.resources }}" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**Status:** No resources scheduled for today" >> $GITHUB_STEP_SUMMARY
+          fi
