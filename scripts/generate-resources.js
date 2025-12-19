@@ -378,9 +378,11 @@ function generateResourcePage(frontMatter, markdownBody, template) {
   );
 
   // Replace article content placeholder
-  const articleBodyRegex = /<article class="content-body">[\s\S]*?<div class="container container--narrow">([\s\S]*?)<\/div>\s*<\/article>/;
+  // Use a function replacement to avoid $ interpretation issues in bodyContent
+  // (dollar signs in financial figures like $312,000 would otherwise be treated as backreferences)
+  const articleBodyRegex = /<article class="content-body">[\s\S]*?<div class="container container--narrow">[\s\S]*?<\/div>\s*<\/article>/;
 
-  html = html.replace(articleBodyRegex, `<article class="content-body">
+  html = html.replace(articleBodyRegex, () => `<article class="content-body">
       <div class="container container--narrow">
 
 ${bodyContent}
